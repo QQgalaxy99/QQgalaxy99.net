@@ -1,0 +1,139 @@
+html, body {
+  color: #1f1f1f;
+}
+
+a {
+  color: #1f1f1f;
+}
+
+input {
+  background-color: #fff;
+  color: #808080;
+  border-color: #ccc;
+}
+
+button {
+  background-color: #033544;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #00859b;
+}
+
+h3 {
+  color: #fff;
+}
+
+h5 {
+  color: #461b76;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+}
+
+/*Border Set*/
+.borderdot {
+  border-top-color: #bfbfbf;
+}
+
+.border-R {
+  border-right-color: #fff;
+}
+
+.border-R-dot {
+  border-right-color: #aeaeae;
+}
+
+/*-----Btn Set-----*/
+.btn, .btn-link {
+  background-color: #CECECE;
+}
+
+.btn:hover, .btn-link:hover {
+  background-color: #2a9daf;
+}
+
+.btn-link {
+  background-color: #2a9daf;
+}
+
+.navmenu ul a {
+  color: #fff;
+}
+
+.navmenu ul a:hover {
+  background-color: #aeafff;
+}
+
+.box_con {
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.47);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.47);
+}
+
+.box_con h3 {
+  color: #323232;
+  border-bottom-color: #ccc;
+}
+
+.box_con h4 {
+  color: #0098a2;
+}
+
+.box_con span {
+  color: #8e41d9;
+}
+
+.chip_privi span {
+  color: #fff;
+}
+
+.chip_privi th {
+  color: #454545;
+}
+
+.chip_privi td {
+  color: #fff;
+  border-color: #222;
+}
+
+.chip_privi tr {
+  background-color: #545454;
+}
+
+.chip_privi tr:nth-child(even) {
+  background-color: #414141;
+}
+
+.chip_privi thead tr:first-child {
+  background: transparent;
+}
+
+.chip_privi tfoot td {
+  color: #c6a127;
+}
+
+.chip_privi .reward_prompt {
+  color: #c6a127;
+}
+
+.contact a {
+  color: #33135b;
+}
+
+/*dark background User pic*/
+/*.chip_privi .user{
+  background-image: url(../images/user-shape-light.png);
+}*/
+
+.seo_wrap {
+  background-color: rgba(244,244,244,0.75);
+}
+
+.seo_wrap h2,
+.seo_wrap h3{
+  color: #2b2b2b;
+}
+
+.seo_wrap p{
+  color: #545454;
+}
