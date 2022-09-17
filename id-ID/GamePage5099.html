@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/GamePage?Provider=STL&RealMoney=True by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:19:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Transfer</title>
+    <link href="https://qqgalaxyca.com/Content/Web/sitecss?v=eXLhbJVrOA7TvAVjuq3yOmtmD7BgcHt2IhqnYJza95U1" rel="stylesheet"/>
+
+</head>
+<body>
+    
+
+
+<input type="hidden" id="hdnAntiForgeryTokens" runat="server" value="ioxEgARx5ISglU5XW1Cu-IxP_8NVw1Feq3SbfcwIaq4sE3JpwIIBVTnndvfUGIWAchh5OrSOxGrRd3PHO4KadP6BSfY1:JfvSr6uZvyja1FHiZ3Ekwdy-OKgF-MtFJ2KmJc1qsnfnDRXf34AMK8vVpSIvkdhUqf3acfK5scQIW5VWEqzC3qfbq5g1" />
+    <div>
+    </div>
+    <div class="wait_icon" style="display: none;">
+        <div class="content">
+            <img src="../Content/Web/common/images/wait_load.gif" alt="">Loading...
+        </div>
+    </div>
+
+    <script src="https://qqgalaxyca.com/Content/Web/library?v=ntj4GcOZ3ESAxq5fUEd_3fVVjtiCqlIeDNPP_T5IW7k1"></script>
+
+    <script>
+    var ckLogin = 'False'.toUpperCase();
+    </script>
+    <script src="https://qqgalaxyca.com/Content/Web/basejs?v=qIGClSKkBvVeBp_1V-ZiVhIMThgKsleIc8Nfb8rXWq41"></script>
+
+    <script src="../Content/Web/Scripts/pages/AccountHelpers5302.js?c5e9a6;" type="text/javascript"></script>
+    <script src="../Content/Web/Scripts/pages/Transfer5302.js?c5e9a6;" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            var data = {"TransferMainMenu":null,"TransferSubMenu":null,"Approve":false,"MainwalletAmt":0.0,"Position":null,"ProviderId":null,"ProviderType":null,"ProviderName":null,"ProviderAmt":0.0,"CheckDeposit":false,"CheckPlayPoker":false,"IsAutoTransfer":false,"PromotionList":null};
+            var gameUrl = '';
+            if (99 !== 0) {
+                if (99 == 40408) {
+                    popMessage("Silahkan masuk terlebih dahulu.");
+                    $(document).on('click', '#dialog-close,#dialog-mask,.wait_icon',
+                        function(e) {
+                            window.location.replace(gameUrl);
+                        });
+                } else {
+                    $(document).on('click', '#dialog-close', function (e) {
+                        e.preventDefault();
+                        window.close();
+                    });
+                    $(document).mouseup(function (e) {
+                        var container = $("#dialog");
+                        if (!container.is(e.target) && container.has(e.target).length === 0) {
+                            window.close();
+                        }
+                    });
+                    popMessage("Silahkan masuk terlebih dahulu.");
+                }
+            } else if (data.Approve) {
+                var autoTransfer = data.IsAutoTransfer;
+                $('#TransferFrom').val('-');
+                $('#LastTransferFrom').val('-');
+                $('#TransferTo').val(data.ProviderId);
+                $('#LastTransferTo').val(data.Position.concat('-', data.ProviderId, '-', data.ProviderType));
+                $("#TransferToName").html(data.ProviderName);
+                if (data.PromotionList.length > 0) {
+                    $("#Promotionli").empty();
+                    $("#Promotionli").append(' <li id="NoPromotion" value="">' + GetMessage('NoThanks') + '</li>');
+                    $.each(data.PromotionList,
+                        function (i, o) {
+                            var content = "";
+                            if (o.IsCustom) {
+                                content = o.CustomContent;
+                            }
+                            $("#Promotionli")
+                                .append(' <li data-promotion-rate="' +
+                                    o.Rate +
+                                    '" data-max-amt="' +
+                                    o.MaxAmt +
+                                    '" data-min-amt="' +
+                                    o.MinAmt +
+                                    '" data-times="' +
+                                    o.Times +
+                                    '" data-formula="' +
+                                    content +
+                                    '" value="' +
+                                    o.PromoteId +
+                                    '">' +
+                                    o.PromoteTitle +
+                                    '</li>');
+                        });
+                    $('#promotionlistDiv').show();
+                    $("#Promotionli > li").off('click');
+                    $("#Promotionli > li").on('click',
+                        function () {
+                            var fromId = $(this).attr('value');
+                            $("#PromoteId").val(fromId);
+                            $("#PromotionName").text($(this).html());
+                            $("#PromoteId").attr("data-promotion-rate", $(this).attr("data-promotion-rate"));
+                            $("#PromoteId").attr("data-formula", $(this).attr("data-formula"));
+                            $("#PromoteId").attr("data-max-amt", $(this).attr("data-max-amt"));
+                            $("#PromoteId").attr("data-min-amt", $(this).attr("data-min-amt"));
+                            $("#PromoteId").attr("data-times", $(this).attr("data-times"));
+                            $("#PreviewBonusBox").show();
+                            var amount = autoTransfer ? Number(RemoveComma($("#Amount").text())) : Number(RemoveComma($("#Amount").val()))
+                            PreviewBonus(amount);
+                        });
+                    $('#NoPromotion').click();
+                } else {
+                    $("#Promotionli").empty();
+                    $('#promotionlistDiv').hide();
+                    initPromoteId();
+                    $('#PreviewBonusBox').hide();
+                    $("#PromotionName").text(GetMessage('NoThanks'));
+                }
+                if (!autoTransfer) {
+                    $("#TransferFromName").html(GetMessage('MainWallet'));
+                    $('#FromCash').html(parseFloat(data.MainwalletAmt).toFixed(2));
+                    $('#ToCash').html(parseFloat(data.ProviderAmt).toFixed(2));
+                    var lastAmt = !$.cookie('the_last_transfer_amt') ? 0 : $.cookie('the_last_transfer_amt');
+                    var amount = (parseFloat(lastAmt) !== 0 && parseFloat(data.MainwalletAmt) >= parseFloat(lastAmt)) ? lastAmt : data.MainwalletAmt;
+                    $('#Amount').val(AppendComma(Math.floor(parseFloat(amount))), false);
+                    $("#ProviderFromli").empty();
+                    $("#ProviderToli").empty();
+                    $("#MainMenuFromli").empty();
+                    $("#MainMenuToli").empty();
+                    var providerList = "";
+                    $.each(data.TransferSubMenu,
+                        function (i, o) {
+                            providerList += "<li style='display:none;'><a position='" + o.Position + "' provider-type='" + o.PositionProviderType + "' value='" + o.PositionProvider + "'>" + o.DisplayName + "</a></li>";
+                        });
+                    var mainMenu = "";
+                    $.each(data.TransferMainMenu,
+                        function (i, o) {
+                            switch (o.Position.toUpperCase()) {
+                                case "EGAME":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_slot'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "FISHHUNTER":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_fish'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "LIVECASINO":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_casino'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "SPORTSBOOK":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_sports'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "LOTTERY":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_lottery'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "POKER":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_poker'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                case "RACING":
+                                    mainMenu += "<li><a position='" + o.Position + "'><i class='icon_racing'>" + o.DisplayName + "</i></a></li>";
+                                    break;
+                                default:
+                            }
+                        });
+                    $('#ProviderFromli').append(providerList);
+                    $('#ProviderToli').append(providerList);
+                    $('#MainMenuFromli').append(mainMenu);
+                    $('#MainMenuToli').append(mainMenu);
+                    var fromPosition = $('#LastTransferFrom').val().split('-')[0];
+                    var toPosition = $('#LastTransferTo').val().split('-')[0];
+                    $('div .select_group').find('ol li').removeClass('active');
+                    $('div .select_group').find('.provider_name li').hide();
+                    MainMenuClick($('#ProviderFrom').find('ol a[position=' + fromPosition + ']'));
+                    MainMenuClick($('#ProviderTo').find('ol a[position=' + toPosition + ']'));
+                } else if (autoTransfer) {
+                    $('#Amount').text(AppendComma(Math.floor(parseFloat(data.MainwalletAmt))), false);
+                }
+            }
+
+            $(document).on('click', '#transpop_close',
+                function (e) {
+                    e.preventDefault();
+                    window.close();
+            });
+
+            $('#FastTransferCancel').on('click',
+                function () {
+                window.location.replace(gameUrl);
+            });
+
+        
+
+            $("#TransferSubmitFrm").submit(function (e) {
+                e.preventDefault();
+                var pass = false;
+                var transferFrom = $('#TransferFrom').attr('value');
+                var transferTo = $('#TransferTo').attr('value');
+
+                // 判斷是否登入
+                if (ckLogin == 'FALSE') {
+                    window.close();
+                    return false;
+                }
+
+                if (transferFrom === '') {
+                    popMessage(GetMessage('fromProviderBlank'));
+                    return false;
+                }
+                if (transferTo === '') {
+                    popMessage(GetMessage('toProviderBlank'));
+                    return false;
+                }
+                if (transferFrom === transferTo) {
+                    popMessage(GetMessage('differProvider'));
+                    return false;
+                }
+                var pureAmount = 0
+                if (data.IsAutoTransfer) {
+                    pureAmount = RemoveComma($("#Amount").text());
+                }
+                else {
+                    pureAmount = RemoveComma($("#Amount").val());
+                }
+                var reg = /^[1-9][0-9]*$/;
+                if (!reg.test(pureAmount)) {
+                    popMessage(GetResources('Code_tranInt'));
+                    return false;
+                }
+                var fromValue = parseFloat($('#FromCash').html()).toFixed(2);
+                var amount = parseFloat(pureAmount).toFixed(2);
+                if (parseFloat(fromValue) < parseFloat(amount)) {
+                    popMessage(GetMessage('CashInsufficient'));
+                    return false;
+                }
+                if (isNaN(amount) || amount < 0) {
+                    popMessage(GetResources('validAmount'));
+                    return false;
+                }
+                if (amount.length < 1) {
+                    popMessage(GetResources('amtBlank'));
+                    return false;
+                }
+                if (transferFrom !== "-" && transferTo !== "-") {
+                    GetBalance("-",
+                        function (data) {
+                            var mwamount = data;
+                            if (parseFloat(mwamount) < 0) {
+                                var r = confirm(GetMessage('MainWalletMinus'));
+                                if (r == true) {
+                                    $(".wait_icon").show(); //開啟遮罩
+                                    pass = true;
+                                } else {
+                                    pass = false;
+                                }
+                            }
+                            else {
+                                $(".wait_icon").show(); //開啟遮罩
+                            }
+                        });
+                }
+                else {
+                    $(".wait_icon").show();//開啟遮罩
+                    pass = true;
+                }
+
+                if (pass) {
+                    var form = {};
+                    var formData = $(this).serializeArray();
+                    var token = {};
+                    $.each(formData, function (i, field) {
+                        if (field.name != '__RequestVerificationToken')
+                            form[field.name] = field.value;
+                        else
+                            token = field.value;
+                    });
+
+                    axios.post('/api/Account/TransferSubmit', form, {
+                        headers: {
+                            '__RequestVerificationToken': token
+                        }
+                    })
+                        .then(function (response) {
+                            var code = response.data.code;
+                            var msg = response.data.msg;
+                            if (code == 0) {
+                                window.location.replace(gameUrl);
+                            } else if (code == 40408) {
+                                popMessage(msg);
+                                $(document).on('click', '#dialog-close,#dialog-mask,.wait_icon', function (e) {
+                                    window.location.replace(gameUrl);
+                                });
+                            } else {
+                                $(".wait_icon").hide();
+                                popMessage(msg);
+                            }
+                        })
+                        .catch(function (error) {
+                            $(".wait_icon").hide();
+                            popMessage(error);
+                        });
+                }
+            });
+
+    });
+    </script>
+</body>
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/GamePage?Provider=STL&RealMoney=True by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:19:47 GMT -->
+</html>

@@ -1,0 +1,2325 @@
+/*@import "dark_menu.css";
+@import "dark_footer.css";
+@import "dark_modle.css";*/
+@import "dark_nav.css";
+
+/*--popup common style--*/
+.info_popup, .mes_popup, .freebet_popup, .freebet_popup_sub, .prompt_popup, .reward_popup, .reward_pop {
+  background-color: #f3f4f5;
+}
+
+.login_popup .tabs_teal, .info_popup .tabs_teal, .mes_popup .tabs_teal, .wait_icon .tabs_teal, .freebet_popup .tabs_teal, .freebet_popup_sub .tabs_teal, .prompt_popup .tabs_teal, .reward_popup .tabs_teal {
+  background-color: #008196;
+  border-bottom-color: #DCDCDC;
+}
+
+.register-popup .tabs_teal a, .login_popup .tabs_teal a, .info_popup .tabs_teal a, .mes_popup .tabs_teal a, .wait_icon .tabs_teal a, .freebet_popup .tabs_teal a, .freebet_popup_sub .tabs_teal a, .prompt_popup .tabs_teal a, .reward_popup .tabs_teal a, .reward_pop .tabs_teal a {
+  color: #EBEBEB;
+}
+
+.register-popup .tabs_teal a:hover, .login_popup .tabs_teal a:hover, .info_popup .tabs_teal a:hover, .mes_popup .tabs_teal a:hover, .wait_icon .tabs_teal a:hover, .freebet_popup .tabs_teal a:hover, .freebet_popup_sub .tabs_teal a:hover, .prompt_popup .tabs_teal a:hover, .reward_popup .tabs_teal a:hover, .reward_pop .tabs_teal a:hover {
+  color: #fff;
+}
+
+.register-popup .tabs_teal .opt, .login_popup .tabs_teal .opt, .info_popup .tabs_teal .opt, .mes_popup .tabs_teal .opt, .wait_icon .tabs_teal .opt, .freebet_popup .tabs_teal .opt, .freebet_popup_sub .tabs_teal .opt, .prompt_popup .tabs_teal .opt, .reward_popup .tabs_teal .opt, .reward_pop .tabs_teal .opt {
+  color: #fff;
+  background-color: #331143;
+}
+
+.register-popup .tabs_teal, .login_popup .tabs_teal, .info_popup .tabs_teal, .mes_popup .tabs_teal, .wait_icon .tabs_teal, .freebet_popup .tabs_teal, .freebet_popup_sub .tabs_teal, .prompt_popup .tabs_teal, .reward_popup .tabs_teal, .reward_pop .tabs_teal {
+  background-color: #9544bc;
+  border-bottom-color: #331143;
+}
+
+.register-popup .top_select h5, .login_popup .top_select h5, .info_popup .top_select h5, .mes_popup .top_select h5, .wait_icon .top_select h5, .freebet_popup .top_select h5, .freebet_popup_sub .top_select h5, .prompt_popup .top_select h5, .reward_popup .top_select h5, .reward_pop .top_select h5 {
+  color: #fff;
+}
+
+.register-popup .top_select, .login_popup .top_select, .info_popup .top_select, .mes_popup .top_select, .wait_icon .top_select, .freebet_popup .top_select, .freebet_popup_sub .top_select, .prompt_popup .top_select, .reward_popup .top_select, .reward_pop .top_select, .trans_popup .top_select, .provider_popup .top_select {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9544bc+0,aeafff+50,9544bc+100 */
+  background: #9544bc; /* Old browsers */
+  background: -moz-linear-gradient(left, #9544bc 0%, #aeafff 50%, #9544bc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9544bc', endColorstr='#9544bc',GradientType=1 ); /* IE6-9 */
+}
+
+.trans_popup{
+  background-color: #353535;
+}
+
+/*-----Html common style-----*/
+html, body {
+  background-color: #f3f4f5;
+}
+
+a {
+  color: #1f1f1f;
+}
+
+input {
+  background-color: #d4d4d4;
+  color: #121212;
+  border: 1px solid rgba(177,177,177,0.65);
+}
+
+button {
+  background-color: #0c113c;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #00859b;
+}
+
+h3 {
+  color: #fff;
+}
+
+h5 {
+  color: #4C4C4C;
+}
+
+h6 {
+  color: #1d1d1d;
+}
+
+.main{
+  background-color: #fff;
+}
+
+/*-----Border Set-----*/
+.borderdot {
+  border-top-color: #848484;
+}
+
+.border-R {
+  border-right-color: #fff;
+}
+
+.border-R-dot {
+  border-right-color: #aeaeae;
+}
+
+/*-----Btn Set-----*/
+.btn, .btn-link, .bx-wrapper .bx-pager.bx-default-pager a, .owl-theme .owl-dots .owl-dot span{
+  background-color: #d0d0d0;
+}
+
+.btn:hover, .btn-link:hover, .bx-wrapper .bx-pager.bx-default-pager a:hover, .owl-theme .owl-dots .owl-dot span:hover{
+  background-color: #323232;
+}
+
+.btn-link, .bx-wrapper .bx-pager.bx-default-pager a.active, .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background-color: #4f4f4f;
+}
+
+/*-----popup style-----*/
+.login_popup p {
+  color: #dd0404;
+}
+
+.login_popup .login_info h3 {
+  color: #2e2e2e;
+}
+
+.login_popup .login_info label {
+  color: #252525;
+}
+
+.login_popup .login_info .active {
+  color: #9544bc;
+}
+
+.login_popup .login_info input[type=text], .login_popup .login_info input[type=password] {
+  border-bottom-color: #505050;
+}
+
+.login_popup .login_info input[type=text]:focus, .login_popup .login_info input[type=password]:focus {
+  border-bottom-color: #9544bc;
+  -webkit-box-shadow: 0 1px 0 0 #9544bc;
+  box-shadow: 0 1px 0 0 #9544bc;
+}
+
+.login_popup .login_info a {
+  color: #8b619f;
+}
+
+.login_popup .login_info span {
+  color: #BF0000;
+}
+
+.login_popup .login_info ul li:nth-child(2) a {
+  color: #d07b19;
+}
+
+.info_popup p {
+  color: #252525;
+}
+
+.mes_popup p {
+    border-color: #a3a3a3;
+    background-color: #f6f6f6;
+  	color: #252525;
+}
+
+.mes_popup .btn_type01 {
+  background-color: #737373;
+}
+
+.mes_popup .btn_type01:hover {
+  background-color: #505050;
+}
+
+.wait_icon .content {
+  color: #252525;
+  background-color: #d8d8d8;
+}
+
+.freebet_popup table {
+  border-bottom-color: #003147;
+}
+
+.freebet_popup thead {
+  background-color: #0c113c;
+}
+
+.freebet_popup th {
+  color: #fff;
+}
+
+.freebet_popup td a {
+  background-color: transparent;
+  border-color: #343434;
+  color: #000;
+}
+
+.freebet_popup td a:hover {
+  color: #fff;
+  background-color: #8b4fb6;
+  border-color: #68219f;
+}
+
+.freebet_popup tr:nth-child(even) {
+  background-color: #c7c7c7;
+}
+
+.freebet_popup_sub span {
+  color: #dd0404;
+}
+
+.freebet_popup_sub .send {
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffada6;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffada6;
+  box-shadow: inset 0px 1px 0px 0px #ffada6;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e0281b), color-stop(1, #b01e11));
+  background: -moz-linear-gradient(top, #e0281b 5%, #b01e11 100%);
+  background: -webkit-linear-gradient(top, #e0281b 5%, #b01e11 100%);
+  background: -o-linear-gradient(top, #e0281b 5%, #b01e11 100%);
+  background: -ms-linear-gradient(top, #e0281b 5%, #b01e11 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #e0281b), to(#b01e11));
+  background: linear-gradient(to bottom, #e0281b 5%, #b01e11 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0281b', endColorstr='#b01e11',GradientType=0);
+  background-color: #e0281b;
+  text-shadow: 0px 1px 0px #810e05;
+  color: #fff;
+}
+
+.freebet_popup_sub .send:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b01e11), color-stop(1, #e0281b));
+  background: -moz-linear-gradient(top, #b01e11 5%, #e0281b 100%);
+  background: -webkit-linear-gradient(top, #b01e11 5%, #e0281b 100%);
+  background: -o-linear-gradient(top, #b01e11 5%, #e0281b 100%);
+  background: -ms-linear-gradient(top, #b01e11 5%, #e0281b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #b01e11), to(#e0281b));
+  background: linear-gradient(to bottom, #b01e11 5%, #e0281b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b01e11', endColorstr='#e0281b',GradientType=0);
+  background-color: #b01e11;
+}
+
+.prompt_popup .down_btn {
+  color: #646464;
+  -webkit-box-shadow: 0px 10px 14px -7px #7F7F7F;
+  box-shadow: 0px 10px 14px -7px #7F7F7F;
+  border-color: #646464;
+}
+
+.prompt_popup .down_btn:hover {
+  border-color: #7b3eac;
+  background-color: #f1f1f1;
+  color: #7331ae;
+  text-shadow: 0px 1px 0px #262626;
+  -webkit-box-shadow: 0px 1px 7px 3px #bdbdf0;
+  box-shadow: 0px 1px 7px 3px #bdbdf0;
+}
+
+.reward_popup table {
+  border-bottom-color: #2e0a49;
+}
+
+.reward_popup table th {
+  background-color: #2e0a49;
+  color: #fff;
+}
+
+.reward_popup table td a {
+	color: #343434;
+  border-color: #4C4C4C;
+}
+
+.reward_popup table td a:hover {
+  background-color: #4C4C4C;
+  color: #fff;
+}
+
+.reward_popup table tbody tr:nth-child(even) {
+  background-color: #bdbdbd;
+}
+
+.reward_popup table tbody tr:hover {
+  background-color: transparent;
+}
+
+.reward_popup table tbody tr:nth-child(even):hover {
+  background-color: #bdbdbd;
+}
+
+.reward_popup span {
+  background-color: #896c47;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(51, 51, 128, 0.4);
+  box-shadow: inset 2px 2px 2px rgba(51, 51, 128, 0.4);
+  color: #fff;
+}
+
+.reward_pop {
+  background-color: #353535;
+}
+
+.reward_pop .top_select {
+  border-top-color: #db4504;
+}
+
+.reward_pop .top_select p {
+  color: #fff;
+}
+
+.reward_pop .top_select span {
+  background-color: #081256;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(37, 37, 37, 0.5);
+  box-shadow: inset 2px 2px 2px rgba(37, 37, 37, 0.5);
+  color: #ECECEC;
+}
+
+.reward_pop .total_prize {
+  background-color: #000;
+}
+
+.reward_pop .total_prize h3 {
+  color: #FFD500;
+}
+
+.reward_pop .total_prize span {
+  background-color: #68427f;
+  color: #fff;
+}
+
+.reward_pop .col-3 h4 {
+  color: #fff;
+}
+
+.reward_pop .userid p, .reward_pop .account_hd .livehelp p, .account_hd .reward_pop .livehelp p {
+  color: #800000;
+}
+
+.reward_pop table {
+  color: #252525;
+  border-bottom-color: #000;
+  background-color: #ededed;
+}
+
+.reward_pop table tr:nth-child(even) {
+  background-color: #c7c7c7;
+}
+
+.reward_pop table th {
+  background-color: #121212;
+  color: #fff;
+}
+
+.reward_pop table td:hover {
+  background-color: rgba(115, 68, 176, 0.76);
+  color: #fff;
+}
+
+.reward_pop dl dd {
+  color: #b2963c;
+}
+
+.register-popup .register-popup-content {
+  background-color: #ececec;
+}
+
+.register-popup .register-popup-content h3 {
+  color: #252525;
+}
+
+.register-popup .register-popup-content h4 {
+  color: #4b0a72;
+}
+
+.register-popup .register-popup-content .icon-img {
+  border-color: #b3b3b3;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,cccccc+100 */
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #cccccc 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, white 0%, #cccccc 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#cccccc));
+  background: -o-linear-gradient(top, white 0%, #cccccc 100%);
+  background: linear-gradient(to bottom, white 0%, #cccccc 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#CCCCCC',GradientType=0 );
+  /* IE6-9 */
+}
+
+.register-popup .register-popup-content .icon-img:hover {
+  border-color: #c879dd;
+}
+
+.register-popup .register-popup-content .icon-img:hover:after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.register-popup .register-popup-content p {
+  color: #646464;
+}
+
+.register-popup .register-popup-content span {
+  color: #fff;
+}
+
+/*-----header style-----*/
+.header {
+  background-color: #eaecee;
+}
+
+.top {
+  background-color: #fff;
+}
+
+.top dl a {
+  color: #bb7027;
+}
+
+.livechat .livehelp:hover {
+  color: #db4504;
+}
+
+.listMenu li {
+  color: #8f8f8f;
+}
+
+.listMenu .freebet-btn, .listMenu .antiblocker {
+  color: #b70a0a;
+}
+
+.listMenu .antiblocker {
+  color: #a20fb0;
+}
+
+.dropMenu {
+  background-color: #eaecee;
+  border-color: #959595;
+}
+
+.dropMenu a:hover {
+  background-color: #c79ce9;
+}
+
+.login_wrap input:hover {
+  border-color: #707070;
+  -webkit-box-shadow: 0 0 3px #c4c4c4;
+  box-shadow: 0 0 3px #c4c4c4;
+}
+
+.login_wrap input:focus {
+  background-color: #fff;
+  border-color: #707070;
+  color: #000;
+}
+
+.login_wrap ol .email strong, .login_wrap ol .contact_grids .livechat24 strong, .contact_grids .login_wrap ol .livechat24 strong {
+  background-color: #ce0000;
+  color: #fff;
+}
+
+.login_wrap ul .deposit_icon, .login_wrap ul .promotion_icon, .login_wrap ul .transfer_icon, .login_wrap ul .withdrawal_icon {
+  background-color: #ddd;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.login_wrap ul .promotion_icon::after {
+  color: #535353;
+}
+.login_wrap ul .promotion_icon:hover::after {
+  color: #8b0eb2;
+}
+.login_wrap .icon_title {
+  color: #666;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.login_wrap .icon_title:before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #fff;
+}
+
+.login_wrap .officuser {
+  background-color: #B80F0F;
+}
+
+.login_wrap .officuser:hover {
+  background-color: #E51313;
+}
+
+.login_wrap .impotitle {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#993ab0+0,5b3b86+99 */
+  background: #993ab0; /* Old browsers */
+  background: -moz-linear-gradient(top, #993ab0 0%, #5b3b86 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #993ab0 0%,#5b3b86 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #993ab0 0%,#5b3b86 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#993ab0', endColorstr='#5b3b86',GradientType=0 ); /* IE6-9 */
+  color: #ffd200;
+  border-color: #242424;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.login_wrap .impotitle:hover {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5b3b86+1,993ab0+100 */
+  background: #5b3b86; /* Old browsers */
+  background: -moz-linear-gradient(top, #5b3b86 1%, #993ab0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5b3b86 1%,#993ab0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #5b3b86 1%,#993ab0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b3b86', endColorstr='#993ab0',GradientType=0 ); /* IE6-9 */
+}
+
+.freebet {
+  border-color: #656565;
+}
+
+.freebet dt {
+  color: #f3f4f5;
+  background-color: #656565;
+}
+
+.freebet span {
+  color: #ad7138;
+}
+
+/*-----account header style-----*/
+.account_hd {
+  background-color: #5c239f;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+.account_hd a {
+  color: #fff;
+}
+
+.account_hd .livehelp:hover {
+  color: #fdc337;
+}
+
+.account_hd .logout {
+  border-left-color: #fff;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7837d0+0,bd55ed+100 */
+  background: #7837d0; /* Old browsers */
+  background: -moz-linear-gradient(top, #7837d0 0%, #bd55ed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #7837d0 0%,#bd55ed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #7837d0 0%,#bd55ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7837d0', endColorstr='#bd55ed',GradientType=0 ); /* IE6-9 */
+}
+
+.account_hd .logout:hover {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bd55ed+0,7837d0+100 */
+  background: #bd55ed; /* Old browsers */
+  background: -moz-linear-gradient(top, #bd55ed 0%, #7837d0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bd55ed 0%,#7837d0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bd55ed 0%,#7837d0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd55ed', endColorstr='#7837d0',GradientType=0 ); /* IE6-9 */
+}
+
+.account_nav {
+  background-color: #190530;
+  box-shadow: none;
+}
+
+.account_nav ul li {
+  border-right-color: rgba(255, 255, 255, 0.49);
+}
+
+.account_nav ul a:hover, .account_nav ul a.choice {
+  color: #fff;
+  background-color: #904ab6;
+}
+
+.account_nav .choice_nav {
+  background-color: #d8d8d8;
+}
+
+.account_nav .choice_nav p {
+  background-color: #4B4B4B;
+  color: #fff;
+}
+
+.account_nav .choice_nav ol li {
+  background-color: rgba(255, 255, 255, 0.68);
+}
+
+.account_nav .choice_nav ol a:hover {
+  color: #a84ce4;
+}
+
+/*-----navbar menu style-----*/
+.navbar {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9544bc+0,aeafff+50,9544bc+100 */
+  background: #9544bc; /* Old browsers */
+  background: -moz-linear-gradient(left, #9544bc 0%, #aeafff 50%, #9544bc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9544bc', endColorstr='#9544bc',GradientType=1 ); /* IE6-9 */
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:hover {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9c8fff+0,931cca+100 */
+  background: #9c8fff; /* Old browsers */
+  background: -moz-linear-gradient(top, #9c8fff 0%, #931cca 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #9c8fff 0%,#931cca 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #9c8fff 0%,#931cca 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c8fff', endColorstr='#931cca',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar .comingsoon {
+  color: #FFC700;
+}
+
+.navbar .comingsoon:hover {
+  background-color: transparent;
+}
+
+.navbar .comingsoon span {
+  background-color: #FFC700;
+  color: #000;
+}
+
+.navbar .nav_name{
+  background-color: #320f69;
+}
+
+.subnavbar {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7837d0+0,bd55ed+100 */
+  background: #7837d0; /* Old browsers */
+  background: -moz-linear-gradient(top, #7837d0 0%, #bd55ed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #7837d0 0%,#bd55ed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #7837d0 0%,#bd55ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7837d0', endColorstr='#bd55ed',GradientType=0 ); /* IE6-9 */
+  border-bottom-color: #7c19a2;
+  -webkit-box-shadow: inset 0px 3px 23px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 3px 23px 0px rgba(0, 0, 0, 0.4);
+}
+
+.subnavbar .gameNav a:hover {
+  background-color: #632a89;
+}
+
+/*-----projackpot style-----*/
+.projackpot {
+  color: #fff;
+  font-family: 'Tahoma';
+}
+
+.projackpot h2 {
+  text-shadow: 0 2px #000, 0 3px 0 rgba(150, 150, 150, 0.5);
+}
+
+/*-----main style-----*/
+.box {
+  background-color: #fff;
+  background-image: -webkit-radial-gradient(bottom center, 50% 5px, rgba(0, 0, 0, 0.2), transparent);
+  background-image: -o-radial-gradient(bottom center, 50% 5px, rgba(0, 0, 0, 0.2), transparent);
+  background-image: radial-gradient(50% 5px at bottom center, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.box h4 {
+  color: #151515;
+  border-bottom-color: #595959;
+}
+
+.box dt {
+  color: #3c4bff;
+  font-weight: 600;
+}
+
+.box dd {
+  color: #585858;
+}
+
+.serviceagens .onlineuser h5{
+  color: #2f2f2f;
+}
+
+.serviceagens .onlineuser strong {
+  color: #904cbe;
+}
+
+.depositime .run_number {
+  background-color: #3B3B3B;
+}
+
+.progressbar {
+  background-color: #cecece;
+}
+
+.progressbar div {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#be6ee7+1,a7a8ff+100 */
+  background: #be6ee7; /* Old browsers */
+  background: -moz-linear-gradient(left, #be6ee7 1%, #a7a8ff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #be6ee7 1%,#a7a8ff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #be6ee7 1%,#a7a8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be6ee7', endColorstr='#a7a8ff',GradientType=1 ); /* IE6-9 */
+}
+
+.floating-apk {
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.64));
+}
+
+.floating-apk-title {
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.74);
+  border-color: #c766ff;
+  background-image: linear-gradient(to top, #8115d2, #bf5af9 80%);
+}
+
+/*-----sub menu style-----*/
+.submenu{
+  background-color: #fff;
+}
+
+.submenu ul {
+  color: #848484;
+}
+
+.submenu ul a {
+  color: #474747;
+}
+
+.submenu ul a:hover {
+  color: #9245c4;
+}
+
+.submenu span {
+  color: #474747;
+}
+
+/*-----Left downloadbar style-----*/
+.downloadbar {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a88941+0,f8d801+100 */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, #f8d801;
+  /* Old browsers */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, -moz-linear-gradient(top, #f8d801 0%, #a88941 100%);
+  /* FF3.6-15 */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8d801), color-stop(100%,#a88941));
+  /* Chrome4-9,Safari4-5 */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, -webkit-linear-gradient(top, #f8d801 0%,#a88941 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, -o-linear-gradient(top, #f8d801 0%,#a88941 100%);
+  /* Opera 11.10-11.50 */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, -ms-linear-gradient(top, #f8d801 0%,#a88941 100%);
+  /* IE10 preview */
+  background: url(../images/icon-livehelp-dld.png) no-repeat, linear-gradient(to bottom, #f8d801 0%,#a88941 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.downloadbar p {
+  color: #000;
+}
+
+.downloadbar .content a {
+  color: #121212;
+  background-color: #eee;
+}
+
+.downloadbar .content a:hover {
+  color: #fff;
+  background-color: #a27bde;
+}
+
+.downloadbar .content .android, .downloadbar .content .game_title .ios, .game_title .downloadbar .content .ios, .downloadbar .content .game_title .pc, .game_title .downloadbar .content .pc {
+  border-bottom-color: #000;
+}
+
+.downloadbar .content .ios {
+  border-bottom-color: #000;
+}
+
+.downloadbar .content ol a {
+  background-color: #dbdbdb;
+}
+
+/*-----Right siderbar style-----*/
+.siderbar p {
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a88941+0,f8d801+100 */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, #a88941 ;
+  /* Old browsers */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, -moz-linear-gradient(left, #a88941 0%, #f8d801 100%);
+  /* FF3.6-15 */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, -webkit-gradient(linear, left top, right top, color-stop(0%,#a88941), color-stop(100%,#f8d801));
+  /* Chrome4-9,Safari4-5 */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, -webkit-linear-gradient(left, #a88941 0%,#f8d801 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, -o-linear-gradient(left, #a88941 0%,#f8d801 100%);
+  /* Opera 11.10-11.50 */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, -ms-linear-gradient(left, #a88941 0%,#f8d801 100%);
+  /* IE10 preview */
+  background: url(../images/icon-livehelp-contact.png) no-repeat right center, linear-gradient(to right, #a88941 0%,#f8d801 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.siderbar .memberser {
+  color: #fff;
+  background-color: #30074f;
+}
+
+.siderbar .lang_nav {
+  background-color: #30074f;
+}
+
+.siderbar .contact_col {
+  background-color: #d8d8d8;
+  -webkit-box-shadow: 0 1px 2px #545454;
+  box-shadow: 0 1px 2px #545454;
+}
+
+.siderbar .contact_col a {
+  color: #656565;
+}
+
+.siderbar .contact_col a:hover {
+  color: #000;
+}
+
+.liveitem a {
+  color: #fff;
+  background-color: #d10000;
+}
+
+.liveitem a:hover {
+  color: #ECD115;
+  background-color: #d10000;
+}
+
+.liveitem .joinselect {
+  color: #fff;
+  background-color: #462ba1;
+}
+
+.liveitem .joinselect:hover {
+  color: #ECD115;
+  background-color: #3C17B9;
+}
+
+
+/*-----betting_rules style-----*/
+.rules_subnav a {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.24);
+  -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.rules_subnav a:hover {
+  background-color: #9c31d5;
+}
+
+.rules_title {
+  color: #151515;
+}
+
+.sidebar_wrap {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar_wrap h3 {
+  background-color: #671191;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar_wrap li {
+  border-bottom-color: #c6c6c6;
+  background-color: #ededed;
+}
+
+.sidebar_wrap a:hover {
+  border-left-color: #9b5ccb;
+  color: #9b5ccb;
+}
+
+.sidebar_wrap .present, .sidebar_wrap .more_on:hover {
+  color: #9b5ccb;
+  border-left-color: #9b5ccb;
+}
+
+.sidebar_wrap .navitem {
+  background-color: #D4D4D4;
+}
+
+.sidebar_wrap .navitem li {
+  background-color: #bcbcbc;
+}
+
+.sidebar_wrap .navitem a:hover, .sidebar_wrap .navitem a.selected {
+  color: #400d84;
+  background-color: rgba(246, 246, 246, 0.45);
+}
+
+.main_wrap {
+  -webkit-box-shadow: 0 0 1px rgba(38, 38, 38, 0.24);
+  box-shadow: 0 0 1px rgba(38, 38, 38, 0.24);
+  background-color: #ededed;
+}
+
+.main_wrap h3 {
+  color: #252525;
+  border-bottom-color: #671191;
+}
+
+.main_wrap strong {
+  color: #964bc0;
+}
+
+.main_wrap a {
+  color: #00859b;
+}
+
+.main_wrap dl dd {
+  color: #252525;
+}
+
+.main_wrap dl span {
+  color: #d34304;
+}
+
+.main_wrap table {
+  border-color: #727272;
+}
+
+.main_wrap table tr:nth-child(odd) {
+  background-color: rgba(179, 179, 179, 0.54);
+}
+
+.main_wrap table th {
+  background-color: #b3b3b3;
+  color: #191919;
+  border-bottom-color: #646464;
+}
+
+.main_wrap ol li {
+  color: #3C3C3C;
+}
+
+.main_wrap ol li:before {
+  color: #8328b0;
+}
+
+.main_wrap ol span {
+  color: #1B1B1B;
+}
+
+.contact_wrap {
+  background-color: #e3e3e3;
+}
+
+.contact_wrap h4 {
+  background-color: #2d0b59;
+  color: #fff;
+}
+
+.con_wrap_box {
+  color: #061694;
+  background-color: #fff;
+}
+
+.con_wrap_box p {
+  color: #000;
+}
+
+.con_wrap_box span {
+  color: #5C5C5C;
+}
+
+.con_wrap_box strong:before {
+  background-color: #ddd;
+}
+
+.con_wrap_box strong:after {
+  background-color: #9a59c9;
+}
+
+.con_wrap_box i {
+  border-color: #9a59c9;
+  background-color: #fff;
+}
+
+/*-----android ios html5 platform style-----*/
+.platform li {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/*-----game model overlay button style-----*/
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.overlay a {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.overlay a:hover {
+  color: #fff;
+  background-color: #974fc3;
+  border-color: transparent;
+}
+
+.overlay .qrcode {
+  background-color: #fff;
+}
+
+.overlay .download {
+  background-color: #fff;
+}
+
+.overlay .issue_btn {
+  background-color: #ececec;
+  color: #fff;
+}
+
+.overlay .issue_btn:hover {
+  color: #000;
+  background-color: #7b3cab;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+/*-----game model style-----*/
+.modle {
+  background-color: #f3f4f5;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.18);
+}
+
+/*-----egame style-----*/
+.projackpot_title dl {
+  color: #252525;
+  background-color: #f3f4f5;
+}
+
+.projackpot_title dd {
+  color: #9240be;
+}
+
+.game_title {
+  background-color: #f3f4f5;
+}
+
+.game_title a {
+  color: #252525;
+}
+
+.game_title a:hover, .game_title a.pick {
+  background-color: #913ebd;
+  color: #fff;
+  -webkit-box-shadow: 0 -3px rgb(243, 202, 33) inset;
+  box-shadow: 0 -3px rgb(243, 202, 33) inset;
+}
+
+.game_group span {
+  background-color: #d5dbdc;
+}
+
+.game_slot:hover {
+  background-color: #242424;
+}
+
+.game_group:hover span {
+  background-color: #0e3d4c;
+  color: #fff;
+}
+
+.game_slot:hover button {
+  color: #fff;
+  background-color: #984fc3;
+}
+
+.game_group:hover button:hover {
+  color: #ffb700;
+  background-color: #15D0F0;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6) inset;
+}
+
+.game_slot:hover .btn_try {
+  background-color: #000;
+}
+
+.game_group:hover .btn_try:hover {
+  background-color: #fff;
+}
+
+/*-----promotion style-----*/
+.promotion_group {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.34);
+}
+
+.promotion_group .liveitem a {
+  border-color: #4b235f;
+  background-color: #ab56d6;
+}
+
+.promotion_group .liveitem a:hover {
+  color: #F5EA13;
+  background-color: #4b235f;
+  border-color: #4b235f;
+}
+
+.promotion_group .liveitem .joinselect {
+  border-color: #C80000;
+}
+
+.promotion_group .liveitem .joinselect:hover {
+  color: #C80000;
+}
+
+.info_wrap {
+  border-color: #646464;
+}
+
+.info_wrap .btn_close {
+  background-color: #656565;
+}
+
+/*-----main title style-----*/
+.title {
+  background-color: rgba(243, 244, 245, 0.87);
+}
+
+.title span {
+  background-color: #3b0e51;
+}
+
+.title button {
+  background-color: #BF0000;
+}
+
+.title button:hover {
+  background-color: #E40000;
+}
+
+.tab_title a {
+  color: #e1e1e1;
+}
+
+.tab_title a:hover {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.48);
+}
+
+.tab_title .pick {
+  color: #fff;
+  background-color: #353535;
+}
+
+.tab_title .pick:hover {
+  color: #fff;
+  background-color: #AE3500;
+}
+
+/*-----joinnow style-----*/
+.notetext a {
+  color: #FCE415;
+  text-decoration: none;
+}
+
+.notetext a:hover {
+  color: #FCE415;
+  text-decoration: underline;
+}
+
+.notetext span {
+  color: #C90000;
+}
+
+.con_box {
+  color: #252525;
+  background-color: rgba(150, 72, 191, 0.64);
+}
+
+.con_item h4 {
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+}
+
+.con_item h4:before {
+  border-left-color: #fff;
+}
+
+.con_item input[type=text]:hover, .con_item input[type=password]:hover, .con_item input[type=number]:hover {
+  border-color: #4d4d4d;
+  -webkit-box-shadow: 0 0 3px #4d4d4d;
+  box-shadow: 0 0 3px #4d4d4d;
+}
+
+.con_item input[type=text]:focus, .con_item input[type=password]:focus, .con_item input[type=number]:focus {
+  background-color: #fff;
+  border-color: #353535;
+}
+
+.con_item .info {
+  background-color: #ececec;
+}
+
+.con_item .info_type {
+  border-color: #A8A8A8;
+  background-color: #D4D4D4;
+  color: #000;
+}
+
+.form-group input {
+  color: #252525;
+  border-color: #303030;
+  background-color: #f3f4f5;
+}
+
+.form-group textarea {
+  border-color: #303030;
+  background-color: #ececec;
+}
+
+.form-group textarea:hover {
+  border-color: #4d4d4d;
+  -webkit-box-shadow: 0 0 3px #4d4d4d;
+  box-shadow: 0 0 3px #4d4d4d;
+}
+
+.form-group textarea:focus {
+  background-color: #fff;
+  border-color: #353535;
+}
+
+.form-group span {
+  color: #ffc300;
+}
+
+.form-group .transcash .cash {
+  border-color: #b04fe7;
+  color: #353535;
+  background-color: #ececec;
+}
+
+.form-group .explain_text span {
+  color: #ae9f44;
+}
+
+.select_input {
+  border-color: #303030;
+  background-color: #ececec;
+}
+
+.select_input input[type=text]:focus {
+  background-color: #f5f5f5;
+}
+
+.close-toggle:after{
+    background: #383838;
+}
+
+.close-toggle:before{
+    background: #383838;
+}
+
+.conlist {
+  background-color: #fff;
+  border-color: #4f4f4f;
+}
+
+.conlist li:hover {
+  color: #000;
+  background-color: #c3c3c3;
+}
+
+.conlist h5{
+  color: #383838;
+}
+
+.select_group ul li, .select_group ol li{
+  border-color: #c8c8c8;
+}
+
+.select_group .provider_name{
+  background-color: #f3f3f3;
+}
+
+.select_group ul li:hover, .select_group ol li:hover{
+  border-color: #747474;
+  background-color: #747474;
+}
+
+.select_group ul li:hover a, .select_group ol li:hover a{
+  color: #fff;
+}
+
+.select_group ol li.active{
+  background-color: #747474;
+}
+
+.select_group ol li.active:before{
+  background: #747474;
+}
+
+.select_group ol li.active a{
+  color: #fff;
+}
+
+input[type=submit], input[type=button], input[type=reset] {
+  color: #fff;
+  background-color: #836140;
+  -webkit-box-shadow: 0 2px 0 0 #836140;
+  box-shadow: 0 2px 0 0 #836140;
+}
+
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover {
+  background-color: #624020;
+  box-shadow: 0 2px 0 0 #624020;
+}
+
+/*-----announcement / maintenance style-----*/
+.bx-controls dl dt {
+  color: #B41111;
+}
+
+.top_info ul li {
+  color: #252525;
+}
+
+.top_info .time_group {
+  color: #252525;
+  background-color: #d8d8d8;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.top_info .time_group p {
+  background-color: #515151;
+  color: #fff;
+}
+
+.top_info .time_group ol li:nth-child(odd) {
+  background-color: #333333;
+}
+
+.top_info .time_group ol strong {
+  color: #fff;
+  border-bottom-color: #181818;
+}
+
+.top_info .time_group ol span {
+  color: #fff;
+  background-color: #606060;
+  border-top-color: #888;
+}
+
+.contact_grids a {
+  border-color: #848484;
+  color: #4D4D4D;
+}
+
+.contact_grids a:hover {
+  color: #fff;
+  background-color: #9c62ce;
+  border-color: #4e166b;
+}
+
+.sub_title {
+  color: #fff;
+}
+
+/*-----retrict style-----*/
+.template {
+  color: #252525;
+  border-bottom-color: #4d1b6b;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.template dt {
+  color: #121212;
+}
+
+/*-----reward style-----*/
+.prize01 p, .prize02 p, .prize03 p {
+  color: #fff;
+}
+
+.reward_wrap .title_type {
+  background-color: rgba(243, 244, 245, 0.87);
+}
+
+.reward_wrap .title_type h3 {
+  background-color: #3a21ab;
+}
+
+.reward_wrap .title_type dd {
+  color: #8a4a01;
+}
+
+.reward_wrap .special th, .reward_wrap .grand th {
+  background-color: #2c2b43;
+  color: #fff;
+}
+
+.reward_wrap .special td, .reward_wrap .grand td {
+  background-color: #f7f7f7;
+  border-bottom-color: rgba(0, 0, 0, 0.24);
+  border-right-color: rgba(0, 0, 0, 0.24);
+}
+
+.reward_wrap .special td:hover, .reward_wrap .grand td:hover {
+  background-color: #d7d7d7;
+}
+
+.reward_wrap .grand tr:hover td {
+  background-color: #d7d7d7;
+}
+
+.reward_list h3 {
+  background-color: #3a21ab;
+}
+
+.list_col {
+  background-color: #f5f5f5;
+}
+
+.list_col dl {
+  color: #000;
+}
+
+.list_col dt {
+  color: #9744dd;
+}
+
+.list_col span {
+  color: #fff;
+}
+
+.list_col h4 {
+  color: #977611;
+}
+
+.list_col strong {
+  color: #151515;
+}
+
+/*-----referral style-----*/
+.referral_wrap th {
+  background-color: #363636;
+  color: #fff;
+  border-right-color: #585858;
+}
+
+.referral_wrap tbody {
+  background-color: #ededed;
+}
+
+.referral_wrap td {
+  border-bottom-color: #9f9f9f;
+  color: #151515;
+  border-right-color: #9f9f9f;
+}
+
+.referral_wrap ul {
+  color: #252525;
+  border-color: #747474;
+  background-color: rgba(255, 255, 255, 0.49);
+}
+
+.copylink {
+  border-color: #262626;
+  background-color: #e9e9e9;
+}
+
+.copylink input[type=text] {
+  color: #252525;
+  background-color: #e9e9e9;
+}
+
+.copylink a {
+  color: #000;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eab92d+0,c79810+100;Yellow+3D+%232 */
+  background: #eab92d; /* Old browsers */
+  background: -moz-linear-gradient(top, #eab92d 0%, #c79810 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eab92d 0%,#c79810 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eab92d 0%,#c79810 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eab92d', endColorstr='#c79810',GradientType=0 ); /* IE6-9 */
+  border-left-color: #5c5c5c;
+  text-shadow: 0px 1px 0px #7a2a1d;
+}
+
+.copylink a:hover {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c79810+0,eab92d+100 */
+  background: #c79810; /* Old browsers */
+  background: -moz-linear-gradient(top, #c79810 0%, #eab92d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c79810 0%,#eab92d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c79810 0%,#eab92d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c79810', endColorstr='#eab92d',GradientType=0 ); /* IE6-9 */
+}
+
+/*-----mbr_account / mbr_profile style-----*/
+.getcode-btn {
+  color: #fff;
+  background-color: #b451e9;
+}
+
+.getcode-btn:hover {
+  background-color: #5c239f;
+}
+
+.btn_type .btn_default {
+  background-color: #747474;
+  -webkit-box-shadow: 0 2px 0 0 #747474;
+  box-shadow: 0 2px 0 0 #747474;
+}
+
+.btn_type .btn_default:hover {
+  background-color: #5c5c5c;
+  box-shadow: 0 2px 0 0 #5c5c5c;
+}
+
+.deposit_content .srchbtn span {
+  background-color: #3AA935 ;
+}
+
+.deposit_content .srchbtn ol {
+  background-color: #3AA935;
+  color: #fff;
+  outline: 1px dashed #424242;
+}
+
+.progress_tracker .step:before {
+  background-color: #aaa;
+  color: #fff;
+  border-color: #9D9D9D;
+}
+
+.progress_tracker .active:before {
+  background-color: #5c239f;
+  border-color: #aa4de5;
+}
+
+.progress_tracker .active .step-name {
+  color: #ececec;
+}
+
+.progress_tracker .step-name {
+  border-top-color: #aaa;
+  color: #5D5D5D;
+}
+
+.datetime_info {
+  background-color: #ececec;
+}
+
+.datetime_info h5 {
+  color: #fff;
+  background-color: #0f22ba;
+}
+
+.datetime_info h6 {
+  color: #0f22ba;
+}
+
+.datetime_info .date_info table thead, .datetime_info .timeh_info table thead, .datetime_info .mnute_info table thead {
+  background-color: #2434aa;
+  color: #fff;
+  border-left-color: #000b60;
+  border-top-color: #000b60;
+  border-right-color: #000b60;
+}
+
+.datetime_info .date_info table td, .datetime_info .timeh_info table td, .datetime_info .mnute_info table td {
+  border-color: #000b60;
+  color: #757575;
+}
+
+.datetime_info .date_info table td:hover, .datetime_info .timeh_info table td:hover, .datetime_info .mnute_info table td:hover, .datetime_info .date_info table td.opt, .datetime_info .timeh_info table td.opt, .datetime_info .mnute_info table td.opt {
+  background-color: #3549fd;
+  color: #FAFAFA;
+  border-color: #000b60;
+}
+
+.datetime_info .date_info table .pres, .datetime_info .timeh_info table .pres, .datetime_info .mnute_info table .pres {
+  color: #8E8E8E;
+  border-color: #A9A9A9;
+  background-color: #ddd;
+}
+
+.datetime_info .date_info table .pres:hover, .datetime_info .timeh_info table .pres:hover, .datetime_info .mnute_info table .pres:hover {
+  background-color: #ddd;
+  border-color: #A9A9A9;
+  color: #8E8E8E;
+}
+
+.datetime_info .date_info .year a, .datetime_info .timeh_info .year a, .datetime_info .mnute_info .year a, .datetime_info .date_info .months a, .datetime_info .timeh_info .months a, .datetime_info .mnute_info .months a {
+  color: #545454;
+  border-color: #000b60;
+  background-color: #F5F5F5;
+}
+
+.datetime_info .date_info .year a:hover, .datetime_info .timeh_info .year a:hover, .datetime_info .mnute_info .year a:hover, .datetime_info .date_info .months a:hover, .datetime_info .timeh_info .months a:hover, .datetime_info .mnute_info .months a:hover, .datetime_info .date_info .year a.opt, .datetime_info .timeh_info .year a.opt, .datetime_info .mnute_info .year a.opt, .datetime_info .date_info .months a.opt, .datetime_info .timeh_info .months a.opt, .datetime_info .mnute_info .months a.opt {
+  background-color: #051ad5;
+  color: #FAFAFA;
+  border-color: #000b60;
+}
+
+.datetime_info .date_info .year .pres, .datetime_info .timeh_info .year .pres, .datetime_info .mnute_info .year .pres, .datetime_info .date_info .months .pres, .datetime_info .timeh_info .months .pres, .datetime_info .mnute_info .months .pres {
+  color: #8E8E8E;
+  border-color: #A9A9A9;
+  background-color: #ddd;
+}
+
+.datetime_info .date_info .year .pres_typeL, .datetime_info .timeh_info .year .pres_typeL, .datetime_info .mnute_info .year .pres_typeL, .datetime_info .date_info .months .pres_typeL, .datetime_info .timeh_info .months .pres_typeL, .datetime_info .mnute_info .months .pres_typeL, .datetime_info .date_info .year .pres_typeR, .datetime_info .timeh_info .year .pres_typeR, .datetime_info .mnute_info .year .pres_typeR, .datetime_info .date_info .months .pres_typeR, .datetime_info .timeh_info .months .pres_typeR, .datetime_info .mnute_info .months .pres_typeR {
+  color: #8E8E8E;
+  border-color: #A9A9A9;
+  background-color: #ddd;
+}
+
+.datetime_info .date_info .months .pres:hover, .datetime_info .timeh_info .months .pres:hover, .datetime_info .mnute_info .months .pres:hover {
+  background-color: #ddd;
+  border-color: #A9A9A9;
+  color: #8E8E8E;
+}
+
+.datetime_info .timeh_info a, .datetime_info .mnute_info a {
+  color: #545454;
+  border-color: #000b60;
+  background-color: #F5F5F5;
+}
+
+.datetime_info .timeh_info a:hover, .datetime_info .mnute_info a:hover, .datetime_info .timeh_info a.opt, .datetime_info .mnute_info a.opt {
+  background-color: #3549fd;
+  color: #FAFAFA;
+  border-color: #000b60;
+}
+
+.transicon span {
+  border-top-color: #c0c0c0;
+  border-right-color: #c0c0c0;
+}
+
+.bulletin span {
+  color: #5c239f;
+}
+
+.bulletin p {
+  color: #464646;
+  border-left-color: #a3a3a3;
+}
+
+.bulletin .livehelp:hover {
+  color: #51411a;
+}
+
+.wallet {
+  border-color: #848484;
+  background-color: #ececec;
+}
+
+.wallet .top_title {
+  color: #C5C5C5;
+}
+
+.wallet .total, .wallet .primary {
+  color: #FFA500;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+.wallet .total .btn_total, .wallet .primary .btn_total {
+  color: #fff;
+}
+
+.wallet .primary {
+  color: #fff;
+}
+
+.wallet .content li:hover {
+  background-color: #DBDBDB;
+}
+
+.wallet .content a {
+  color: #fff;
+}
+
+.wallet .content span {
+  color: #000;
+}
+
+.wallet .content .soscash {
+  background-color: #D81400;
+  -webkit-box-shadow: 0px 2px 0px 0px #910E00;
+  box-shadow: 0px 2px 0px 0px #910E00;
+}
+
+.wallet .content .soscash:hover {
+  background-color: #F03623;
+}
+
+.wallet .content .refreshcash {
+  background-color: #6d6d6d;
+  -webkit-box-shadow: 0 2px 0 0 #3E3E3E;
+  box-shadow: 0 2px 0 0 #3E3E3E;
+}
+
+.wallet .content .refreshcash:hover {
+  background-color: #7E7E7E;
+}
+
+.account_list h4 {
+  color: #242424;
+}
+
+.account_list h4:before {
+  border-left-color: #242424;
+}
+
+.account_list .account_info {
+  border-bottom-color: #171717;
+  background-color: #c3c3c3;
+}
+
+.account_list .account_info thead {
+  background-color: #352747;
+}
+
+.account_list .account_info th {
+  color: #fff;
+  border-right-color: rgba(255, 255, 255, 0.37);
+}
+
+.account_list .account_info tbody tr:hover {
+  background-color: #989898;
+}
+
+.account_list .account_info tr:nth-of-type(even) {
+  background-color: #fff;
+}
+
+.account_list .account_info td {
+  border-right-color: rgba(255, 255, 255, 0.68);
+}
+
+.account_group span {
+  color: #fff;
+  background-color: #AB0A0A;
+}
+
+.table_con {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  border-bottom-color: #161616;
+  background-color: #e8e8e8;
+}
+
+.table_con thead {
+  color: #fff;
+  background-color: #454545;
+}
+
+.table_con th {
+  border-color: #252525;
+}
+
+.table_con tbody tr:nth-of-type(even) {
+  background-color: #C8C8C8;
+}
+
+.tab_report {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  border-bottom-color: #210a3c;
+  background-color: #e8e8e8;
+  *background-color: #e8e8e8;
+}
+
+.tab_report thead {
+  color: #fff;
+  background-color: #210a3c;
+}
+
+.tab_report tbody tr:nth-of-type(even) {
+  background-color: #C8C8C8;
+}
+
+.color_Loss, .color_Win {
+  color: #fff;
+  background-color: #e32b1d;
+}
+
+.color_Win {
+  background-color: #001aff;
+}
+
+.type_select button {
+  background-color: #535353;
+  -webkit-box-shadow: 0px 2px 0px 0px #2B2B2B;
+  box-shadow: 0px 2px 0px 0px #2B2B2B;
+}
+
+.type_select button:hover {
+  background-color: #ae4ee7;
+}
+
+.date_list .selection {
+  border-color: #848484;
+  background-color: #fff;
+  color: #333;
+}
+
+.date_list .selection:hover {
+  color: #aa51e3;
+}
+
+.page_list a:hover {
+  color: #151515;
+  background-color: #cbcbcb;
+}
+
+.info_subnav a {
+  background-color: #959595;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.info_subnav a:hover, .info_subnav a.selsct {
+  background-color: #434343;
+}
+
+.info_subnav span {
+  color: #000;
+  background-color: #ffd200;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+}
+
+.info_subnav i {
+  border-right-color: rgba(255, 255, 255, 0.4);
+}
+
+.info_list li {
+  border-left-color: #79569b;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.34);
+}
+
+.info_list span {
+  color: #444;
+}
+
+.info_list .read {
+  border-left-color: #8C8C8C;
+}
+
+.mes_type {
+  color: #252525;
+  background-color: #cfcfcf;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.info_contact {
+  color: #252525;
+  background-color: #f1f1f1;
+}
+
+.info_contact h4 {
+  color: #431482;
+  border-bottom-color: #431482;
+}
+
+.info_contact span {
+  color: #431482;
+}
+
+/*----common style-----*/
+.title_color {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9544bc+0,aeafff+50,9544bc+100 */
+  background: #9544bc; /* Old browsers */
+  background: -moz-linear-gradient(left, #9544bc 0%, #aeafff 50%, #9544bc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #9544bc 0%,#aeafff 50%,#9544bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9544bc', endColorstr='#9544bc',GradientType=1 ); /* IE6-9 */
+  border-bottom-color: #dcdcdc;
+}
+
+.sub_color {
+  background-color: #431482;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.bgcolor_gray {
+  background-color: #f3f4f5;
+}
+
+/*-----footer style-----*/
+.footer {
+  background-color: #fff;
+}
+
+.footer_nav_list p {
+  color: #545454;
+}
+
+.provider_group {
+  border-color: #dcdcdc;
+}
+
+.provider_group p {
+  background-color: #fafafa;
+}
+
+.masking:after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.otp_explain .icon_info{
+  background-color: #555;
+}
+
+.otp_explain p{
+  background-color: #3AA935;
+}
+
+.verify_wrap input[type=text]:hover, .verify_wrap input[type=password]:hover, .con_item input[type=number]:hover {
+  border-color: #4d4d4d;
+  -webkit-box-shadow: 0 0 3px #4d4d4d;
+  box-shadow: 0 0 3px #4d4d4d;
+}
+
+.verify_wrap input[type=text]:focus, .verify_wrap input[type=password]:focus, .con_item input[type=number]:focus {
+  background-color: #fff;
+  border-color: #353535;
+}
+
+.form_group_category .otp_explain .info{
+  background-color: #3AA935;
+}
+
+
+.main_bg{
+  background-color: #f3f4f5;
+}
+
+.home_main_bg{
+  background: #fafafa url(../images/main_bg.jpg)no-repeat top center;
+}
+
+.main_bg .main, .main_bg .submenu{
+  background-color: transparent;
+}
+
+.top dl dd {
+    color: #252525;
+    background-color: transparent;
+}
+
+.login_wrap a {
+  color: #212121;
+}
+
+.login_wrap button {
+  color: #fff;
+  background-color: #be844d;
+}
+
+.login_wrap button:hover {
+  color: #fff;
+  background-color: #9D6B3D;
+}
+
+.lazyload .preload {
+  background-color: #212121;
+}
+
+.game_slot:hover button:hover {
+  background-color: #661b8f;
+}
+
+.game_slot:hover .btn_try:hover {
+  background-color: #141414;
+}
+
+.conlist a {
+	color: #121212;
+}
+
+.reward_pop dl {
+  color: #e7e7e7;
+}
+
+.page_list a {
+  color: #121212;
+}
+
+.reward_popup table td {
+  color: #252525;
+}
+
+.popup .content button:hover{
+	background-color: #2f2f2f;
+}
+
+.freebet_popup_sub {
+	color: #252525;
+}
+
+.freebet_popup_sub .content input {
+	color: #252525;
+	border-color: #646464;
+  background-color: #ececec;
+}
+
+.login_popup .login_info {
+	color: #252525;
+  background-color: #f3f4f5;
+}
+
+.login_info .input_field input {
+	color: #252525;
+}
+
+.prompt_popup ol {
+	color: #252525;
+}
+
+.freebet_popup tbody {
+	color: #252525;
+    background-color: #d8d8d8;
+}
+
+.checkCode {
+    background-color: #fff;
+    border-color: #565656;
+}
+
+.account_nav a {
+	color: #d3d3d3;
+}
+
+.account_list {
+  color: #252525;
+}
+
+.col-3 {
+  color: #252525;
+}
+
+.livechat a {
+	color: #db4504;
+}
+
+.info_wrap p {
+	color: #252525;
+}
+
+.footer_nav_license a {
+  color: #ff5911;
+}
+
+.register-popup-content button {
+  background-color: #a27c57;
+}
+
+.register-popup-content button:hover {
+  background-color: #624020;
+}
+
+.grand td, .special td {
+  color: #242424;
+}
+
+.bx-controls dl {
+  background-color: #f1f1f1;
+}
+
+.bx-controls dl dd {
+  color: #252525;
+}
+
+.freebet dd {
+  color: #656565;
+}
+
+.contact_wrap h5 {
+  color: #303030;
+}
+
+.con_wrap_box:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+.game_slot.lazyload:hover .figure-text p {
+  color: #fff;
+}
+
+.game_slot.lazyload:hover, .game_slot.masking:hover .figure-text p {
+	color: #fff;
+}
+
+.trans_popup .top_select {
+  border-top: 1px solid #db4504;
+}
+
+.otp_wrap a {
+  background-color: #e6e6e6;
+}
+
+.otp_wrap .getcode:hover{
+ background-color: #444;
+}
+
+.otp_wrap .open:hover{
+  background-color: #114C9A;
+}
+
+.wallet {
+  color: #444;
+}
+
+.date_list {
+  color: #121212;
+}
+
+.bulletin h5 {
+  color: #151515;
+}
+
+.bulletin a {
+  color: #a58332;
+}
+
+.type_select {
+  color: #151515;
+}
+
+.type_select .select_input{
+  color: #252525;
+}
+
+.info_popup .top_select, .trans_popup .top_select, .reward_pop .top_select, .freebet_popup_sub .top_select, .mes_popup .top_select, .prompt_popup .top_select{
+  box-shadow: none;
+}
+
+.login_popup .login_info input[type=button]:hover{
+  box-shadow: none;
+}
+
+.info_popup p a {
+  color: #93288c;
+}
+
+.form-group label{
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+}
+
+.bgcolor_gray .con_box{
+  background-color: #353535;
+}
+
+.select_group .cols-wrap ol li, .select_group .cols-wrap ul li{
+  background-color: #858585;
+}
+
+.select_group .cols-wrap ol li.active, .select_group .cols-wrap ul li.active{
+  background-color: #8d53ad;
+}
+
+.select_group .cols-wrap ol li.active:before, .select_group .cols-wrap ul li.active:before{
+  background: #8d53ad;
+}
+
+.select_group .cols-wrap ol li:hover, .select_group .cols-wrap ul li:hover{
+  background-color: #8d53ad;
+}
+
+.form-group .explain_text{
+  color: #d3d3d3;
+}
+
+.account_nav .choice_nav ol a{
+  color: #151515;
+}
+
+.trans_popup .form-group label{
+  color: #fff;
+}
+
+.register-popup button, .login_popup button, .info_popup button, .wait_icon button, .freebet_popup button, .freebet_popup_sub button, .prompt_popup button, .reward_popup button, .reward_pop button, .trans_popup button{
+  background-color: #545454;
+}
+
+.mes_popup button{
+  background-color: #836140;
+}
+
+.popup.mes_popup .content button:hover{
+  background-color: #624020;
+}
+
+.popup.mes_popup .content .btn_type01:hover{
+  background-color: #2f2f2f;
+}
+
+.login_wrap .rebate_info strong{
+  color: #a20fb0;
+}
+
+.seo_wrap p{
+  color: #646464;
+}
+
+.form_group_category.mode_plan label{
+  border-color: #959595;
+  color: #a5a5a5;
+}
+
+.form_group_category.mode_plan input:checked + label {
+  color: #fff;
+  border-color: #836140;
+  background-color: #1c1c1c;
+}
+
+.form_group_category.mode_plan input:checked + label:before{
+  border-color: #836140 transparent transparent transparent;
+}
+
+.seo_wrap{
+  background-color:rgba(169,169,169,0.18);
+}
+
+.seo_wrap h2{
+  color: #333;
+}
+
+.seo_wrap p{
+  color: #949494;
+}
+
+.bulleted input[type=checkbox] + label{
+  color: #c3c3c3;
+}
+
+.bulleted input[type=checkbox].filled-in:not(:checked) + label:after{
+  border-color: #858585;
+}
+
+.bulleted input[type=checkbox].filled-in:checked + label:before{
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.bulleted input[type=checkbox].filled-in:checked + label:after{
+  border-color: #703ab9;
+  background-color: #703ab9;
+}
+
+.setting-box{
+	background: #2b2b2b;
+}
+
+.payment_info{
+  background-color: #fff;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.34);
+}
+
+.payment_info h3{
+  color: #242424;
+  border-bottom-color: #CACACA;
+}
+
+.payment_info .payment_info_img{
+  background-color: #ececec;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.34);
+}
+
+.payment_info .payment_info_img i{
+  color: #4e2b62;
+}
+
+.payment_info .item strong{
+  color: #747474;
+}
+
+.payment_info .item span{
+  color: #4e2b62;
+}
+
+.provider_popup .content p{
+  color: #151515;
+}
+
+.provider_mainten_list .item{
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.26);
+}
+
+.provider_mainten_list .avatar{
+  border-right-color: #d1d1d1;
+}
+
+.provider_mainten_list .info{
+  border-left-color: #fff;
+}
+
+.provider_mainten_list .provider_name{
+  color: #1f1f1f;
+}
+
+.provider_popup .content .provider_mainten_list .sub_info{
+  color: #1f1f1f;
+}
+
+.provider_popup .content .provider_mainten_list .date_info{
+  color: #3c4bff;
+}
+
+.provider_popup {
+  background-color: #f3f4f5;
+}
