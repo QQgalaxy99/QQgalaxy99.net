@@ -1,0 +1,14 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sat, 17 Sep 2022 14:19:09 at https://qqgalaxyca.com/id-ID/Home +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://qqgalaxyca.com/id-ID/Home -O1 "C:\Users\LENOVO 4\Music\qqgalaxy" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:19:47	Warning: 	Link https://qqgalaxyca.com/id-ID/GamePage?Provider=CDL&RealMoney=True not scanned (follow robots meta tag)
+14:19:47	Warning: 	Link https://qqgalaxyca.com/id-ID/GamePage?Provider=ICL&RealMoney=True not scanned (follow robots meta tag)
+14:20:21	Warning: 	Link https://qqgalaxyca.com/id-ID/GamePage?Provider=ICL&RealMoney=True&GameCode=numbergame not scanned (follow robots meta tag)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 58 seconds : 196 links scanned, 195 files written (14039116 bytes overall) [5637147 bytes received at 47772 bytes/sec], 10677317 bytes transferred using HTTP compression in 119 files, ratio 18%, 45.1 requests per connection
+(No errors, 3 warnings, 0 messages)
