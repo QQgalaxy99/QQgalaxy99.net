@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<html lang="id-ID" id="id-ID">
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/Live-Casino/LiveCasinoAgc by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:19:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="https://qqgalaxyca.com/Content/Web/common/images/favicon.ico?v=da04e18fba9174a07dcfe66a7e3dafc3faf5c67f.x-icon" type="image/x-icon" />
+        <meta property="og:image" content="../../Content/Web/common/images/logo.png" />
+    <meta property="og:image:type" content="image/png">
+    <link rel="canonical" href="https://95.111.195.144:20318/" />
+
+<meta name="google-site-verification" content="BQcMymulwNFVsNdEXmINWgWr9LvHUn9HRBiRmgkFupE" />
+<meta name="google-site-verification" content="Ar3nua7CH1U9QVTfbkfhc9dIeQRPgr-SXZH9KVxydFA" />
+<meta name="google-site-verification" content="MndNNS0wvt9WO7yfG0ZIjt5ocb5C-rfT76hSklwUcgY" />
+<meta name="google-site-verification" content="D5qRUx2FybnJaMe42pbfKFXKsIOHhjnl8DuTtJj79-8" />
+<meta name="google-site-verification" content="wrQFCOKho6qXq_XcqVg50vPzzhg1HQTgAq4KBnmDU0s" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SGKTM8NVV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7SGKTM8NVV');
+</script>
+    
+    <link href="https://qqgalaxyca.com/Content/Web/css?v=1m5caVPIhNQAvJcifAEvje8747qbw-S6qh18Oesp4pk1" rel="stylesheet"/>
+
+    <link href="https://qqgalaxyca.com/Content/Web/sitecss?v=eXLhbJVrOA7TvAVjuq3yOmtmD7BgcHt2IhqnYJza95U1" rel="stylesheet"/>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SGKTM8NVV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7SGKTM8NVV');
+        </script>
+</head>
+<body id="layout">
+    
+
+
+<input type="hidden" id="hdnAntiForgeryTokens" runat="server" value="IliFk2UtEvhEp9I26psFcPXGMUhM53vNWu7yi5HPOls2deVJ-ho8xcBhpyXhGwlriwqNBTo6fOw6TnCuxx22DH4tg5o1:rG3-8jnOVOQq-6xYZQuRe4aapYiT30Mh8FfVTtYvYbdp5ufSPJKx9PkpOuq1BDDXSa7xny_DcyhlHNneOBiKStXVyo81" />
+    <input type="hidden" id="CheckLogin" value="False" readonly="readonly" />
+    <div class="wait_icon" style="display: none;">
+        <div class="content">
+            <img src="../../Content/Web/common/images/wait_load.gif" alt="">Loading...
+        </div>
+    </div>
+    
+
+<!-- provider maintenance info popup -->
+<div class="provider_popup" style="display: none" id="provider_maintenance_popup">
+    <div class="top_select">
+        <h5>Info Provider Maintenance</h5>
+        <a class="btn_close" href="#" id="providerMaintenancepop_close" v-on:click="closeProviderMaintenancePop()">CLOSE</a>
+    </div>
+    <div class="content">
+        <p>Penyedia akan ditutup dan semua layanan terkait untuk sementara tidak tersedia.</p>
+        <div class="provider_mainten_list">
+            <div class="item" v-for="row in Math.ceil(providerMaintenanceList.length)">
+                <template v-for="col in 1">
+                    <div class="avatar">
+                        <span :class="providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderLogo + ' color'" title="">{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderId : '' }}</span>
+                    </div>
+                    <div class="info">
+                        <strong class="provider_name">[{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderName : '' }}]</strong>
+                        <p class="sub_info">Jadwal untuk mengaktifkan pemeliharaan sistem</p>
+                        <p class="date_info">
+                            dari {{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].NextCloseTime : '' }}
+                            hingga
+                            <template v-if="providerMaintenanceList[(col - 1) + ((row - 1) * 1)].UntilNotice">
+                                sampai pemberitahuan lebih lanjut
+                            </template>
+                            <template v-else>
+                                {{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].NextOpenTime : '' }}
+                            </template>
+                            (GMT{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].OffsetGmt : '' }})
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+<div id="dialog-mask" style="display: none;"></div>
+
+    <div id="logRegModal" class="popup login_popup" style="display: none;">
+        <ul class="tabs_teal" id="tabs_choice">
+            <li><a class="opt" href="javascript:showLoginInfo();" datashow="login_info">Masuk</a></li>
+        </ul>
+        <a class="close_icon" href="#" id="btn_close_login">CLOSE</a>
+        
+<form ID="LoginActionFrms" action="https://qqgalaxyca.com/id-ID/Home/LoginAction" method="post"><input name="__RequestVerificationToken" type="hidden" value="seN2dtc5FVlCjIHxskmByYJV8jVcZymf4UwUK9zZ8HIHMlsJDrWcAY2f4OvyL6S0A2Qc0w8nB0u1GeHeiXfD0aNhfN41" />                <div id="fasterlogin" class="login_info">
+                    <h3>SELAMAT DATANG</h3>
+                    <div class="input_field">
+                        <input type="text" id="loginIds" name="loginIds" value="" maxlength="15">
+                        <input type="hidden" id="loginidHiddens" name="loginidHiddens">
+                        <label for="loginIds">Username</label>
+                    </div>
+                    <div class="input_field">
+                        <input type="password" id="loginPwds" name="loginPwds" value="" maxlength="256">
+                        <input type="hidden" id="loginPwdHiddens" name="loginPwdHiddens">
+                        <label for="loginPwds">Kata sandi</label>
+                    </div>
+                    <center>
+                        <input type="hidden" id="loginUrlHiddens" name="loginUrlHiddens">
+                        <input type="button" id="LoginErrorButtons" name="LoginErrorButtons" value="Kirim" />
+                        <ul>
+                            <li><a href="../Member/Forgotpassword.html">Lupa sandi?</a></li>
+                            <li><a href="../Member/Register.html">BERGABUNG SEKARANG</a></li>
+                        </ul>
+                        
+                    </center>
+                </div>
+</form>
+    </div>
+<div class="wait_icon" style="display: none;">
+    <div class="content">
+        <img src="../../Content/Web/common/images/wait_load.gif" alt="">Loading...
+    </div>
+</div>
+<div id="FreeBetTelVerify" class="popup freebet_popup_sub" style="display: none;">
+    <div class="top_select">
+        <h5>FREEBETS</h5>
+        <a class="btn_close" href="#">Tutup</a>
+    </div>
+    <div class="content">
+        <dl>
+            <dt>Nomor telepon</dt>
+            <dt>Kode verifikasi</dt>
+            <dd><input type="text" id="telverification"></dd>
+        </dl>
+        <button id="btn_confirm_freebet_popup_sub">Konfirm</button>
+    </div>
+</div>
+
+<div id="FreeBetModal" class="popup freebet_popup" style="display: none;">
+    <div class="top_select">
+        <h5>FREEBETS</h5>
+        <a class="btn_close" href="#">CLOSE</a>
+    </div>
+    <table>
+        
+        <thead>
+            <tr>
+                <th>TRANSFER DOMPET</th>
+                <th>PROMOSI</th>
+                <th>PENGGUNA HITUNGAN</th>
+                <th>DAPATKAN PROMOSI</th>
+            </tr>
+        </thead>
+        <tbody id="promotionlistbody"></tbody>
+    </table>
+</div>
+
+<div class="popup prompt_popup" id="DNSpopup" style="display: none;">
+    <div class="top_select">
+        <h5>Anti-Blocker</h5>
+        <a class="btn_close" href="#">Tutup</a>
+    </div>
+    <div class="content">
+        <ol>
+            <li>Download Nawala Unblocker</li>
+            <li>Install dan Jalankan</li>
+            <li>Pilih &quot; Google Public DNS &quot; dan Tekan Flush DNS</li>
+            <li>Lalu Klik &quot; Apply DNS &quot;</li>
+            <li>Buka browser dan Ketik QQGALAXY</li>
+        </ol>
+        <a class="down_btn" href="http://www.sordum.org/7952/dns-jumper-v2-0/" target="_blank">DOWNLOAD</a>
+    </div>
+</div>
+
+    <div class="header">
+        <div class="top">
+            <div class="main_width">
+                <ul class="livechat">
+                            <li><a class="twitter" contact-type="twiter">Twitter</a></li>
+                            <li><a class="facebook" contact-type="facebook">Facebook</a></li>
+                            <li><a class="linkind" contact-type="linkedin">Linkind</a></li>
+                            <li><a class="pinterest" contact-type="pinterest">Pinterest</a></li>
+
+                </ul>
+                <dl href="../Home/Announcement.html" type="memberNotice">
+                    <dt></dt>
+                    <dd id="Notice"></dd>
+                </dl>
+                <ul class="listMenu">
+
+                                                <li>|<a class="vpn_logo" href="https://chrome.google.com/webstore/detail/accel-vpn/hghhhfmjdmdgfjnpkmfbelagbdcjamek?hl=id&amp;authuser=2" target="_blank">AZ VPN</a></li>
+                                            <li>|<a class="transmobile" href="http://qqgalaxyca.com/mobile/id-ID/Home/TransferDevice?SwitchDevice=I%2blCIQTHBGKUXCyhhiSU9YFIYfuOEpbYXT2StR2LwxaIA2TKyIY3S%2b1B%2fHuUSuUmqaTUNw6ope4%3d&amp;" title="Gotowebsite">transfer mobile</a></li>
+                    <li>|<a class="betrules" type="help" href="../Help/RulesSportsbook.html" title="ATURAN TARUHAN" target="_blank"></a></li>
+                    <li>|<a class="contactus" type="help" href="../Home/Contact.html" title="HUBUNGI KAMI" target="_blank"></a></li>
+
+                    <li>
+                        <a id="CurrLang" class="flags en" href="javascript:void(0)">flags<span>arrow</span></a>
+                        <ul class="dropMenu">
+                                        <li><a class="indo" datafld="id-ID" group="lang" title="Bahasa Indonesia" href="javascript:void(0)">Indonesia</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_width">
+            <h1></h1>
+            <div class="logo"><a href="https://qqgalaxyca.com/"><img src="../../Content/Web/common/images/logod920.png?v=b4cd6da9f96e9ab4527f52f8e8a98ec8d993b7c1" alt="logo"></a></div>
+
+            
+
+<form ID="LoginActionFrm" action="https://qqgalaxyca.com/id-ID/Home/LoginAction" method="post"><input name="__RequestVerificationToken" type="hidden" value="_UjLL3x8JIsgFugEUWvTh6BFBxkGlLVByU4IqLZpyysSe-6VGXz0MVa3lQ3wOIPZ94vVPRWsIfDNZx1AGb_UH9vm7hE1" />        <div class="login_wrap">
+            <input type="hidden" id="loginidHidden" name="loginidHidden" />
+            <input type="text" id="loginId" name="loginId" value="" placeholder="Pilih Nama Pengguna">
+            <input type="hidden" id="loginPwdHidden" name="loginPwdHidden" />
+            <input type="password" id="loginPwd" name="loginPwd" value="" placeholder="Kata sandi" maxlength="256">
+            <input type="hidden" id="loginUrlHidden" name="loginUrlHidden">
+            <button type="button" id="LoginButton" name="LoginButton">Masuk</button>
+            <div class="clear"></div>
+            <a class="impotitle" href="../Member/Register.html" title="BERGABUNG SEKARANG" id="mainmenuJoinNow">BERGABUNG SEKARANG<span></span></a>
+            <a class="float-R" href="../Member/Forgotpassword.html">Lupa sandi?</a>
+        </div>
+</form>
+
+
+        </div>
+    </div>
+    
+<div class="navbar">
+    <div class="main_width">
+        <ul>
+                         
+
+                         
+
+                         
+                <li class="sport">
+                    <a href="../SportsBook.html">
+                        <i class="icon_sports"></i>
+                        <strong class="nav_name">SPORTS</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li>
+                    <a   class="csport"
+ position="SportsBook" href="../GamePage8697.html?Provider=CDL&amp;RealMoney=True" target="_blank">
+                        C-Sport
+                    </a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="bti"
+ position="SportsBook" href="../GamePagee233.html?Provider=BTL&amp;RealMoney=True" target="_blank">B-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="sbobet"
+ position="SportsBook" href="../GamePage5099.html?Provider=STL&amp;RealMoney=True" target="_blank">S-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="isport"
+ position="SportsBook" href="../GamePage9f13.html?Provider=ICL&amp;RealMoney=True" target="_blank">
+                        i-Sport
+                    </a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="opuscasino"
+ position="SportsBook" href="../GamePage4786.html?Provider=OPL&amp;GameCode=xs&amp;RealMoney=True" target="_blank">O-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="iml"
+ position="SportsBook" href="../GamePage158c.html?Provider=IML&amp;RealMoney=True" target="_blank">IM-Sport</a>
+                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="casino">
+                    <a href="../Live-Casino.html">
+                        <i class="icon_casino"></i>
+                        <strong class="nav_name">CASINO</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a class=pragmatic href="LiveCasinoPpc.html">PP Casino</a></li>
+
+                                             
+                <li><a class=mg href="LiveCasinoMgc.html">MG Kasino</a></li>
+
+                                             
+                <li><a class=ogpluscasino href="LiveCasinoOgc.html">OG Kasino</a></li>
+
+                                             
+                <li><a class=dgcasino href="LiveCasinoDg.html">DG Kasino</a></li>
+
+                                             
+                <li><a class=bgcasino href="LiveCasinoBg.html">BG Kasino</a></li>
+
+                                             
+                <li><a class=gpcasino href="LiveCasinoGp.html">GP Kasino</a></li>
+
+                                             
+                <li><a class=opuscasino href="LiveCasinoOpc.html">OPUS Kasino</a></li>
+
+                                             
+                <li><a class=allbetcasino href="LiveCasinoAbc.html">Allbet Casino</a></li>
+
+                                             
+                <li><a class=agcasino href="LiveCasinoAgc.html">AG Kasino</a></li>
+
+                                             
+                <li><a class=playtech href="LiveCasinoPt.html">PT Kasino</a></li>
+
+                                             
+                <li><a class=ebetcasino href="LiveCasinoEbc.html">EBET</a></li>
+
+                                             
+                <li><a class=sexycasino href="LiveCasinoSec.html">AE Sexy</a></li>
+
+                                             
+                <li><a class=egccasino href="LiveCasinoEgc.html">Evo Casino</a></li>
+
+                                             
+                <li><a class=saccasino href="LiveCasinoSac.html">SA Casino</a></li>
+
+                                             
+                <li><a class=wmcasino href="LiveCasinoWmc.html">WM Casino</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="egame">
+                    <a href="../Slot-Games.html">
+                        <i class="icon_slot"></i>
+                        <strong class="nav_name">SLOT</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a  href="../Slot-Games/SgsGames.html"><img src="../../Content/Web/common/images/catch/3386E699611BF748EA73CDF4A3D0E40A75FD6C50.png" />Spadegaming</a></li>
+
+                                             
+                <li><a class=mg href="../Slot-Games/MgsGames.html">Microgaming</a></li>
+
+                                             
+                <li><a  href="../Slot-Games/PpsGames.html"><img src="../../Content/Web/common/images/catch/E99D2DED962538564EFD50CC8F9D6D87E911C288.png" />Pragmatic Play</a></li>
+
+                                             
+                <li><a class=booongo href="../Slot-Games/BgsGames.html">Boongo</a></li>
+
+                                             
+                <li><a class=joker href="../Slot-Games/JksGames.html">Joker</a></li>
+
+                                             
+                <li><a class=pgsoft href="../Slot-Games/PgsGames.html">PG Soft</a></li>
+
+                                             
+                <li><a class=ygg href="../Slot-Games/YgsGames.html">YGG</a></li>
+
+                                             
+                <li><a class=habanero href="../Slot-Games/HbsGames.html">HABANERO</a></li>
+
+                                             
+                <li><a class=cq9 href="../Slot-Games/CqsGames.html">CQ9 Slot</a></li>
+
+                                             
+                <li><a class=playtech href="../Slot-Games/Ptegames.html">Playtech</a></li>
+
+                                             
+                <li><a class=ttg href="../Slot-Games/TtgGames.html">TTG</a></li>
+
+                                             
+                <li><a class=betsoft href="../Slot-Games/BssGames.html">BETSOFT</a></li>
+
+                                             
+                <li><a class=playson href="../Slot-Games/PssGames.html">Playson</a></li>
+
+                                             
+                <li><a class=playstar href="../Slot-Games/PrsGames.html">Playstar</a></li>
+
+                                             
+                <li><a class=kingmaker href="../Slot-Games/AwdGames.html">AWC</a></li>
+
+                                             
+                <li><a class=yds href="../Slot-Games/YdsGames.html">DC Slot</a></li>
+
+                                             
+                <li><a class=aes href="../Slot-Games/AesGames.html">AE Slot</a></li>
+
+                                             
+                <li><a class=sws href="../Slot-Games/SwsGames.html">Skywind</a></li>
+
+                                             
+                <li><a class=nes href="../Slot-Games/NesGames.html">NETENT</a></li>
+
+                                             
+                <li><a class=nss href="../Slot-Games/NssGames.html">NSoft</a></li>
+
+                                             
+                <li><a class=fss href="../Slot-Games/FssGames.html">Fastspin</a></li>
+
+                                             
+                <li><a class=bns href="../Slot-Games/BnsGames.html">BBIN</a></li>
+
+                                             
+                <li><a class=jls href="../Slot-Games/JlsGames.html">JILI</a></li>
+
+                                             
+                <li><a class=cgs href="../Slot-Games/CgsGames.html">CG</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="fishhunter">
+                    <a href="../Fishing-Games.html">
+                        <i class="icon_fish"></i>
+                        <strong class="nav_name">FISH</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a  href="../Slot-Games/SgsGames.html#FISHING"><img src="../../Content/Web/common/images/catch/2DC7961DCBE9B52E171389AF2EE93E415A36FF47.png" />SG FISH</a></li>
+
+                                             
+                <li><a class=joker href="../Slot-Games/JksGames.html#FISHING">Joker FISH</a></li>
+
+                                             
+                <li><a class=pragmatic href="../Slot-Games/PpsGames.html#FISHING">PP FISH</a></li>
+
+                                             
+                <li><a class=cq9 href="../Slot-Games/CqsGames.html#FISHING">CQ9 FISH</a></li>
+
+                                             
+                <li><a class=playstar href="../Slot-Games/PrsGames.html#FISHING">Playstar FISH</a></li>
+
+                                             
+                <li><a class=playtech href="../Slot-Games/Ptegames.html#FISHING">PT Cash Fish</a></li>
+
+                                             
+                <li><a class=bns href="../Slot-Games/BnsGames.html#FISHING">BBIN FISH</a></li>
+
+                                             
+                <li><a class=jls href="../Slot-Games/JlsGames.html#FISHING">JL FISH</a></li>
+
+                                             
+                <li><a class=fss href="../Slot-Games/FssGames.html#FISHING">FS FISH</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="lottery">
+                    <a href="../Lottery.html">
+                        <i class="icon_lottery"></i>
+                        <strong class="nav_name">LOTTERY</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li>
+                    <a   class="keno"
+ position="Lottery" href="../MaintenanceProviderfef2.html?Provider=KNN&amp;GameCode=keno" target="_blank">
+                        QQKENO
+                    </a>
+                </li>
+
+                                             
+                <li><a class=isport position="Lottery" href="../GamePagec6d1.html?Provider=ICL&amp;RealMoney=True&amp;GameCode=numbergame" target="_blank">Number Game</a></li>
+
+                                             
+                <li>
+                    <a   class="qqnumber"
+ position="Lottery" href="../MaintenanceProvider208d.html?Provider=QNN&amp;GameCode=qnn" target="_blank">
+                        QQNumber
+                    </a>
+                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+
+                         
+            <li>
+                <a href="../Promotion.html">
+                    <i class="icon_promo"></i>
+                    <strong class="nav_name">PROMOTION</strong>
+                </a>
+            </li>
+
+                         
+            <li>
+                <a href="../Referral.html">
+                    <i class="icon_referral"></i>
+                    <strong class="nav_name">REFERRAL</strong>
+                </a>
+            </li>
+
+                         
+                <li>
+                    <a href="../VIP/About.html" target="_blank">
+                        <i class="icon_vip"></i>
+                        <strong class="nav_name">VIP</strong>
+                    </a>
+                </li>
+
+
+        </ul>
+    </div>
+</div>
+    
+<div id="bannerSlider" style="display:none" v-show="bannerShow">
+    <div class="kv lazyload" id="mainKv" v-if="bannerLength > 1">
+        <div class="owl-carousel owl-theme">
+            <template v-for="item in banner">
+                <div class="item" v-if="item.TargetLink != ''">
+                    <a :href="item.TargetLink" :target="item.PopUpLink ? '_blank':'_self'">
+                        <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                    </a>
+                </div>
+                <div class="item" v-else>
+                    <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                </div>
+            </template>
+        </div>
+    </div>
+    <template v-for="item in banner" v-else-if="bannerLength == 1">
+        <div class="kv">
+            <div class="item" v-if="item.TargetLink != ''">
+                <a :href="item.TargetLink" :target="item.PopUpLink ? '_blank':'_self'">
+                    <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                </a>
+            </div>
+            <div class="item" v-else>
+                <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+            </div>
+        </div>
+    </template>
+    <template v-if="pathName == 'Reward-Default'">
+        <div class="kv prize_con">
+            <img src="../../Content/Web/common/images/banner/img-reward-bn.jpg" alt="">
+            <div class="main_width">
+                <div class="col-3 prize01">
+                    <p><span id="Prize1St"></span></p>
+                </div>
+                <div class="col-3 prize02">
+                    <p><span id="Prize2St"></span></p>
+                </div>
+                <div class="col-3 prize03">
+                    <p><span id="Prize3St"></span></p>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+    <div id="main_bg" class="main_bg">
+        <div class="main">
+            
+<div class="container lazyload" id="GamePanel">
+    <template v-for="item in supportGames">
+        <div class="col-4">
+            <div class="modle">
+                <template v-for="title in item.Language">
+                    <h4>{{title.Name}}</h4>
+                    <img :src="'/static/images/'+ title.ImgId" :alt="title.Name">
+                </template>
+                <div class="overlay">
+                    <a :href="cultureRoute + item.TargetLink" position='LiveCasino'>
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+
+
+
+</div>
+        </div>
+        
+<div class="submenu">
+    <div class="main_width borderdot">
+        <ul>
+            <li><a type="help" href="../Home/Contact.html" target="_blank">HUBUNGI KAMI</a></li>
+                <li>|&nbsp;&nbsp;<a href="http://qqgalaxyca.com/mobile/id-ID/Home/TransferDevice?SwitchDevice=I%2blCIQTHBGKUXCyhhiSU9YFIYfuOEpbYXT2StR2LwxaIA2TKyIY3S%2b1B%2fHuUSuUmqaTUNw6ope4%3d&amp;" target="_blank">GOTOWEBSITE</a></li>
+        </ul>
+        <span>Hak Cipta &#169; 2021 QQGALAXY Semua hak dilindungi undang-undang.</span>
+    </div>
+</div>
+    </div>
+
+
+    
+<div class="footer">
+    <div class="main_width">
+        <div class="footer_nav_list">
+                <div class="footer_nav_license">
+                    <h6>Lisensi</h6>
+                        <a><img src="../../Content/Web/common/images/license_logo_default.png" alt="license"></a>
+                </div>
+            
+<div class="footer_nav_resp">
+    <h6>Permainan yang Bertanggung Jawab</h6>
+    <a href="#">License</a>
+</div>
+<div class="footer_nav_browser">
+    <h6>Mendukung Peramban</h6>
+    <ol>
+        <li><a class="chrome" title="Chrome">Chrome</a></li>
+        <li><a class="firefox" title="Firefox">Firefox</a></li>
+        <li><a class="ie" title="IE">IE</a></li>
+        <li><a class="safari" title="Safari">Safari</a></li>
+    </ol>
+</div>
+
+        </div>
+        <div class="footer_nav_list" data-item="ckGame">
+            <h6>Pemberi</h6>
+            
+                <div class="provider_group col-12-width">
+                    <p>SPORTS</p>
+                    <ul>
+                                    <li><a class="logo_bet368" href=../GamePage8697.html?Provider=CDL&amp;RealMoney=True position="SportsBook" target="_blank" title="C-Sport">C-Sport</a></li>
+                                    <li><a class="logo_bti" href=../GamePagee233.html?Provider=BTL&amp;RealMoney=True position="SportsBook" target="_blank" title="B-Sport">B-Sport</a></li>
+                                    <li><a class="logo_sbobet" href=../GamePage5099.html?Provider=STL&amp;RealMoney=True position="SportsBook" target="_blank" title="S-Sport">S-Sport</a></li>
+                                    <li><a class="logo_isport" href=../GamePage9f13.html?Provider=ICL&amp;RealMoney=True position="SportsBook" target="_blank" title="i-Sport">i-Sport</a></li>
+                                    <li><a class="logo_opus" href=../GamePage4786.html?Provider=OPL&amp;GameCode=xs&amp;RealMoney=True position="SportsBook" target="_blank" title="O-Sport">O-Sport</a></li>
+                                    <li><a class="logo_iml" href=../GamePage158c.html?Provider=IML&amp;RealMoney=True position="SportsBook" target="_blank" title="IM-Sport">IM-Sport</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>CASINO</p>
+                    <ul>
+                                    <li><a class="logo_pragmatic" href=../GamePage0235.html?Provider=PPC&amp;GameCode=101&amp;RealMoney=True position="LiveCasino" target="_blank" title="PP Casino">PP Casino</a></li>
+                                    <li><a class="logo_mg" href=../GamePagef9e6.html?Provider=MGC&amp;GameCode=Baccarat&amp;RealMoney=True position="LiveCasino" target="_blank" title="MG Kasino">MG Kasino</a></li>
+                                    <li><a class="logo_ogplus" href=../GamePaged8ec.html?Provider=OGC&amp;GameCode=xo&amp;RealMoney=True position="LiveCasino" target="_blank" title="OG Kasino">OG Kasino</a></li>
+                                    <li><a class="logo_dg" href=../GamePage50e1.html?Provider=DGC&amp;GameCode=10101&amp;RealMoney=True position="LiveCasino" target="_blank" title="DG Kasino">DG Kasino</a></li>
+                                    <li><a class="logo_bg" href=../GamePage426c.html?Provider=BGC&amp;GameCode=10101&amp;RealMoney=True position="LiveCasino" target="_blank" title="BG Kasino">BG Kasino</a></li>
+                                    <li><a class="logo_gameplay" href=../GamePagebfb6.html?Provider=GPC&amp;RealMoney=True&amp;GameCode=2d position="LiveCasino" target="_blank" title="GP Kasino">GP Kasino</a></li>
+                                    <li><a class="logo_opus" href=../GamePageffb6.html?Provider=OPC&amp;GameCode=xx&amp;RealMoney=True position="LiveCasino" target="_blank" title="OPUS Kasino">OPUS Kasino</a></li>
+                                    <li><a class="logo_allbet" href=../GamePagec1d5.html?Provider=ABC&amp;RealMoney=True position="LiveCasino" target="_blank" title="Allbet Casino">Allbet Casino</a></li>
+                                    <li><a class="logo_ag" href=../GamePage4982.html?Provider=AGC&amp;RealMoney=True&amp;GameCode=1 position="LiveCasino" target="_blank" title="AG Kasino">AG Kasino</a></li>
+                                    <li><a class="logo_playtech" href=../GamePagec882.html?Provider=PT&amp;GameCode=7bal&amp;RealMoney=True position="LiveCasino" target="_blank" title="PT Kasino">PT Kasino</a></li>
+                                    <li><a class="logo_ebet" href=../GamePage4694.html?Provider=EBC&amp;GameCode=1&amp;RealMoney=True position="LiveCasino" target="_blank" title="EBET">EBET</a></li>
+                                    <li><a class="logo_sexy" href=../GamePage650a.html?Provider=SEC&amp;GameCode=MX-LIVE-001&amp;RealMoney=True position="LiveCasino" target="_blank" title="AE Sexy">AE Sexy</a></li>
+                                    <li><a class="logo_egccasino" href=../GamePagef091.html?Provider=EGC&amp;GameCode=game_shows&amp;RealMoney=True position="LiveCasino" target="_blank" title="Evo Casino">Evo Casino</a></li>
+                                    <li><a class="logo_sagaming" href=../GamePagedf3c.html?Provider=SAC&amp;GameCode=A1058&amp;RealMoney=True position="LiveCasino" target="_blank" title="SA Casino">SA Casino</a></li>
+                                    <li><a class="logo_wmcasino" href=../GamePage73db.html?Provider=WMC&amp;GameCode=Lobby&amp;RealMoney=True position="LiveCasino" target="_blank" title="WM Casino">WM Casino</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>SLOT</p>
+                    <ul>
+                                    <li><a class="logo_Spadegaming" href=../Slot-Games/SgsGames.html title="Spadegaming">Spadegaming</a></li>
+                                    <li><a class="logo_mg" href=../Slot-Games/MgsGames.html title="Microgaming">Microgaming</a></li>
+                                    <li><a class="logo_pragmatic" href=../Slot-Games/PpsGames.html title="Pragmatic Play">Pragmatic Play</a></li>
+                                    <li><a class="logo_booongo" href=../Slot-Games/BgsGames.html title="Boongo">Boongo</a></li>
+                                    <li><a class="logo_joker" href=../Slot-Games/JksGames.html title="Joker">Joker</a></li>
+                                    <li><a class="logo_pgsoft" href=../Slot-Games/PgsGames.html title="PG Soft">PG Soft</a></li>
+                                    <li><a class="logo_ygg" href=../Slot-Games/YgsGames.html title="YGG">YGG</a></li>
+                                    <li><a class="logo_habanero" href=../Slot-Games/HbsGames.html title="HABANERO">HABANERO</a></li>
+                                    <li><a class="logo_cq9" href=../Slot-Games/CqsGames.html title="CQ9 Slot">CQ9 Slot</a></li>
+                                    <li><a class="logo_playtech" href=../Slot-Games/Ptegames.html title="Playtech">Playtech</a></li>
+                                    <li><a class="logo_ttg" href=../Slot-Games/TtgGames.html title="TTG">TTG</a></li>
+                                    <li><a class="logo_betsoft" href=../Slot-Games/BssGames.html title="BETSOFT">BETSOFT</a></li>
+                                    <li><a class="logo_playson" href=../Slot-Games/PssGames.html title="Playson">Playson</a></li>
+                                    <li><a class="logo_playstar" href=../Slot-Games/PrsGames.html title="Playstar">Playstar</a></li>
+                                    <li><a class="logo_kingmaker" href=../Slot-Games/AwdGames.html title="AWC">AWC</a></li>
+                                    <li><a class="logo_yds" href=../Slot-Games/YdsGames.html title="DC Slot">DC Slot</a></li>
+                                    <li><a class="logo_aes" href=../Slot-Games/AesGames.html title="AE Slot">AE Slot</a></li>
+                                    <li><a class="logo_sws" href=../Slot-Games/SwsGames.html title="Skywind">Skywind</a></li>
+                                    <li><a class="logo_nes" href=../Slot-Games/NesGames.html title="NETENT">NETENT</a></li>
+                                    <li><a class="logo_nss" href=../Slot-Games/NssGames.html title="NSoft">NSoft</a></li>
+                                    <li><a class="logo_fss" href=../Slot-Games/FssGames.html title="Fastspin">Fastspin</a></li>
+                                    <li><a class="logo_bns" href=../Slot-Games/BnsGames.html title="BBIN">BBIN</a></li>
+                                    <li><a class="logo_jls" href=../Slot-Games/JlsGames.html title="JILI">JILI</a></li>
+                                    <li><a class="logo_cgs" href=../Slot-Games/CgsGames.html title="CG">CG</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>FISH</p>
+                    <ul>
+                                    <li><a class="logo_Spadegaming" href=../Slot-Games/SgsGames.html#FISHING title="SG FISH">SG FISH</a></li>
+                                    <li><a class="logo_joker" href=../Slot-Games/JksGames.html#FISHING title="Joker FISH">Joker FISH</a></li>
+                                    <li><a class="logo_pragmatic" href=../Slot-Games/PpsGames.html#FISHING title="PP FISH">PP FISH</a></li>
+                                    <li><a class="logo_cq9" href=../Slot-Games/CqsGames.html#FISHING title="CQ9 FISH">CQ9 FISH</a></li>
+                                    <li><a class="logo_playstar" href=../Slot-Games/PrsGames.html#FISHING title="Playstar FISH">Playstar FISH</a></li>
+                                    <li><a class="logo_playtech" href=../Slot-Games/Ptegames.html#FISHING title="PT Cash Fish">PT Cash Fish</a></li>
+                                    <li><a class="logo_bns" href=../Slot-Games/BnsGames.html#FISHING title="BBIN FISH">BBIN FISH</a></li>
+                                    <li><a class="logo_jls" href=../Slot-Games/JlsGames.html#FISHING title="JL FISH">JL FISH</a></li>
+                                    <li><a class="logo_fss" href=../Slot-Games/FssGames.html#FISHING title="FS FISH">FS FISH</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>LOTTERY</p>
+                    <ul>
+                                    <li><a class="logo_qqkeno" href=../MaintenanceProviderfef2.html?Provider=KNN&amp;GameCode=keno position="Lottery" target="_blank" title="QQKENO">QQKENO</a></li>
+                                    <li><a class="logo_isport" href=../GamePagec6d1.html?Provider=ICL&amp;RealMoney=True&amp;GameCode=numbergame position="Lottery" target="_blank" title="Number Game">Number Game</a></li>
+                                    <li><a class="logo_qqnumber" href=../MaintenanceProvider208d.html?Provider=QNN&amp;GameCode=qnn position="Lottery" target="_blank" title="QQNumber">QQNumber</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-5-width">
+                    <p>RACING</p>
+                    <ul>
+                    </ul>
+                </div>
+
+            <div class="clear"></div>
+                    <p> <h3 style="text-align: left;"><span style="color: #800080;">QQGalaxy Situs Judi Slot Online Resmi dan Terpercaya 2021</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Permainan judi online sekarang sudah menjadi salah satu kegiatan yang paling sering dimainkan oleh bettor seluruh dunia termasuk mereka yang tinggal di dalam negeri. Casino memiliki banyak sekali tipe permainan di dalamnya termasuk dengan slot online yang selalu dianggap sebagai judi terpopuler dibandingkan yang lainnya. Belum lagi jackpot online uang asli dalam bentuk progresif bisa kamu menangkan kalau kamu beruntung untuk mendapatkan kombinasi yang sama.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">3 Alasan Harus Gabung Dengan Situs Judi Slot Online Resmi QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Menemukan situs judi online terbaik saat ini bukan hal yang cukup mudah karena banyak situs saling bersaing satu dengan yang lainnya untuk dapat memberikanmu keuntungan yang maksimal. Kamu bisa mencari rekomendasi yang akan benar-benar memberikanmu referensi tentang situs terbaik yang kamu mau dan kamu bisa bergabung dengan QQGalaxy. Kamu yang sudah tidak asing dengan dunia judi online tentu akan mengetahui situs ini dengan baik dan banyak direkomendasikan bettor.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Ini merupakan situs judi slot online resmi yang terpercaya dan terbaik dengan reputasi terkenal yang bukan hanya berlaku di wilayah Indonesia saja melainkan juga di seluruh Asia. Bettor profesional banyak yang menyarankan para pemula untuk dapat bergabung dengan QQGalaxy ini apabila ingin bermain judi casino terbaik termasuk <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Slot-Games"><strong>slot online</strong></a> karena begitu banyak provider yang mereka gunakan di dalamnya. Keuntungannya pun juga berlimpah dan inilah alasan mengapa kamu harus coba gabung dengan QQGalaxy antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>1. Permainan Slot Online Terlengkap Bisa Deposit Pulsa</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Memiliki permainan slot beragam yang berasal dari berbagai provider terkenal di seluruh dunia seperti contohnya Spadegaming, <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Slot-Games/MgsGames"><strong>Microgaming</strong></a>, Pragmatic Play, Playtech dan lainnya yang semuanya dikenal sebagai perusahaan game dan judi online terbaik di dunia dengan pengalaman lebih dari belasan bahkan puluhan tahun.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>2. Situs Slot Online Terbaik dan Terpercaya</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Dibekali dengan banyak provider terbaik di permainan judi online slot ini menyebabkan terdapat ratusan bahkan ribuan judul mesin slot dengan tema yang unik dan juga berkesan untuk bettor. Ditambah lagi, kamu juga bukan hanya melihat tema yang bagus saja melainkan kamu juga akan melihat tipe slot berbeda yang disediakan untukmu seperti tipe klasik yang memiliki 3 reel, tipe modern yaitu video slot dengan 5 reel, tipe modern yang memiliki banyak payline, bonus slot dan sebagainya. Semua itu bisa kamu mainkan di dalam situs <a style="color: #800080;" href="https://95.111.195.144:20318/"><strong>QQGalaxy</strong></a> ini tanpa kesulitan atau batasan tertentu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>3. Judi Slot Online Jackpot Terbesar</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Situs QQGalaxy memberikanmu jackpot progresif untuk hampir semua mesin slot yang mereka miliki sehingga kamu akan bertambah semangat untuk melakukan taruhan dengan nominal jackpot online penghasil uang yang terus bertambah seiring dengan taruhan yang masuk ke dalamnya. Jackpot yang diberikan oleh mesin ini pun juga tidak dimulai dari nominal yang kecil karena starting point dari jackpot ini besar sehingga kalau ada bettor beruntung yang mendapatkannya lagi, maka mereka tidak akan kecewa dengan hasilnya.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Tips Daftar Jackpot Online di Dalam Situs QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Siapa yang tidak akan tertarik dengan hadiah yang besar apalagi jackpot di dalam permainan dengan metode memainkan yang begitu sederhana? QQGalaxy dianggap sebagai situs jackpot online Indonesia yang paling royal dalam memberikan hadiah dan ini semua dikarenakan semua provider yang bekerja sama dengan agen menyiapkan jackpot yang nominalnya bisa mengubah kehidupan bettor menjadi jauh lebih baik. Kini sudah waktunya kamu untuk gabung dengan situs tersebut.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tidak sulit sama sekali untuk mendapatkan akun di dalam QQGalaxy untuk bermain casino dan agen akan mempermudah sekaligus mempercepat seluruh macam prosesnya selama kamu sudah memegang dan memiliki syarat maupun prosedur yang dibutuhkan untuk melakukan registrasi. Kalau kamu ingin registrasi dengan lancar, maka ikuti dulu beberapa tips yang akan sangat membantu ini:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu sudah cukup umur untuk bermain di QQGalaxy karena hanya mereka yang berusia minimal 18 tahun ke atas yang boleh bermain judi online dan sudah dianggap dewasa untuk memiliki penghasilan sendiri dan bertanggung jawab atas diri mereka.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu sudah memiliki semua identitas atau informasi pribadi yang dibutuhkan untuk melakukan registrasi sehingga kamu tidak akan mendapatkan penolakan sama sekali. Pastikan kalau semua identitas yang kamu miliki termasuk dengan rekening bank itu atas namamu dan bukan nama orang lain atau meminjam karena kalau kamu meminjam milik orang lain bahkan meskipun itu adalah milik keluargamu sendiri, kamu akan ditolak oleh agen.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu tidak melakukan kesalahan ketik apapun ketika registrasi dan mengisi data diri karena kalau kamu salah ketik, maka ini bisa menjadi masalah dan akhirnya ada problem ketika transaksi dilakukan. Hal ini akan sangat fatal untukmu yang menginginkan keuntungan dan manfaat ketika bermain judi di dalam situs ini. Daripada kamu buru-buru untuk registrasi, lebih baik kamu pelan-pelan saja dalam mengetik sekaligus melakukan double check supaya kamu bisa tenang dan memastikan tidak ada kesalahan yang dibuat.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Ketika melakukan <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Member/Register"><strong>register</strong></a> / daftar jackpot online, pastikan kalau kamu sudah percaya dengan peraturan yang terdapat di dalam situs tersebut dan terlebih lagi kamu juga harus mengikuti ketentuan yang diberikan sehingga kamu tidak akan lagi protes dengan apapun dan bisa bermain dengan lancar.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Apa Saja Keunggulan Permainan Jackpot Online Indonesia di Situs QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Meskipun slot online mungkin menjadi bintang atau produk yang paling sering dicari oleh bettor yang bergabung dengan QQGalaxy, tapi kamu harus tahu bahwa yang kamu mainkan di dalam situs tersebut bukan hanya slot online saja melainkan beragam permainan judi online lengkap dan menguntungkan untukmu. Kamu bisa bermain beragam jenis permainan judi casino yang lainnya seperti Baccarat, Blackjack dan sebagainya bahkan dalam versi live yang saat ini sedang disukai.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Kamu bahkan juga bisa memainkan togel di dalamnya karena agen QQGalaxy ini juga menyediakan permainan togel terbaik dari berbagai jenis pasaran yang ada di seluruh dunia plus adanya jackpot online togel yang menguntungkan untukmu dengan nominal menjanjikan. Kamu bisa memainkannya dengan lengkap dan terlebih lagi, masih ada pula keunggulan yang dimiliki QQGalaxy sebagai situs casino plus togel yang tidak akan dapat kamu temukan di dalam situs judi yang lainnya antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Judi Slot Deposit Pulsa 10 rb</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Sistem deposit yang sangat canggih karena sekarang kamu tidak lagi harus memainkan judi dengan metode deposit yang ribet atau harus membuat kamu mengantri di ATM. Selain memiliki sistem e-wallet yang canggih dengan dukungan banyak platform keuangan seperti OVO dan sebagainya, situs QQGalaxy ini juga menyediakan sistem paling canggih saat ini untuk deposit yaitu dengan menggunakan pulsa. Kamu cukup mengirimkan transfer pulsa dengan menggunakan provider ponsel yang sama yaitu Telkomsel dan dana itu bisa kamu gunakan untuk bermain judi yang kamu suka di dalam situs ini dan kalau menang, uang kemenangan itu akan langsung dikirimkan pada akun rekening milikmu dan bukan pulsa.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Dikelolah Oleh Agen Judi Online yang Profesional</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Semua permainan judi di dalam QQGalaxy selalu dimaintain atau dikelola dengan baik oleh provider masing-masing termasuk agen sehingga tidak akan ada masalah maupun kendala seperti error yang akan membuatmu tidak nyaman dalam bermain. Semuanya selalu dirawat dan dicek secara berkala sehingga bisa tetap memberikanmu pengalaman bermain judi online yang positif tanpa kamu harus bergabung dengan agen judi yang lainnya lagi. Dikarenakan cukup banyak provider yang gabung dengan situs ini, maka pengecekan berkala selalu dilakukan demi tetap menjaga keamanan dan kenyamanan semua member.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- 1 User ID untuk Semua Permainan</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">ukup menggunakan satu ID saja untuk memainkan semua jenis permainan judi yang kamu bisa temukan di dalam agen QQGalaxy ini tanpa harus mempersiapkan akun cadangan apapun. Entah kamu mau memainkan casino, togel atau slot dari berbagai macam provider yang ada di dalamnya, kamu hanya membutuhkan yang namanya satu ID saja sehingga tidak lagi harus melakukan registrasi kembali, kamu juga tidak perlu harus mengingat lebih banyak akun judi yang melelahkan dan sebagainya. Satu ID saja sudah cukup untuk membuatmu nyaman dalam bermain judi.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Download Jackpot Online Casino dan Togel</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Situs download jackpot online yang satu ini tidak lagi perlu dikhawatirkan sama sekali kredibilitas dari segi pelayanan yang diberikan sebab agen yang satu ini akan memberikanmu pelayanan bak raja yang cepat dan responsif. Kamu tidak harus menunggu CS untuk waktu lama dalam menjawab seluruh macam pertanyaan, kritik hingga masalah yang kamu miliki sebab CS disini profesional dan bukan pegawai dengan pengalaman yang masih sedikit. CS yang dimiliki agen QQGalaxy ini memiliki sikap yang ramah, sopan, cepat tanggap, bertanggung jawab, cerdas dalam memberikan solusi dan tidak akan meremehkanmu.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Situs QQGalaxy Unggul Dalam Hal Provider Jackpot Online Casino</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Keunggulan lain yang terlihat di dalam situs QQGalaxy ini adalah dari segi provider yang paling banyak karena provider yang dimiliki oleh agen ini adalah puluhan yang mana semuanya merupakan provider terkenal yang namanya bahkan dikenal bukan hanya di kalangan bettor saja melainkan mereka yang suka dengan permainan game online biasa. Inilah yang menyebabkan jackpot online casino yang agen ini tawarkan bahkan jauh lebih besar dibandingkan dengan situs judi serupa lain.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tak tanggung-tanggung bukan hanya slot online saja yang diberikan jackpot besar melainkan juga seluruh permainan casino di dalamnya termasuk game judi online di luar kategori casino sesuai dengan provider masing-masing. Memiliki provider satu saja itu sulit sebab agen yang mau bekerja sama dengan mereka harus memenuhi berbagai syarat yang diberikan dan diminta oleh provider ini supaya provider mau memberikan pelayanan servis permainan yang mereka inginkan untuk bisnis.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Bukan hanya harus memenuhi syarat dan juga lolos dari kualifikasi yang provider inginkan melainkan agen judi yang mau menggunakan permainan dan menawarkannya ke dalam situs mereka juga harus mengeluarkan modal sebab bekerja sama dengan provider itu tidak murah. Tentu saja provider juga berbisnis dan ingin untung supaya tetap bertahan sehingga agen harus mengeluarkan modal sesuai dengan nilai yang diminta untuk menggunakan seluruh permainan dan menawarkannya.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Keamanan Situs Slot Online Terbaik 2021 dari QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Melihat banyaknya provider ini, sudah pasti bettor akan berpikir bahwa situs slot online terbaik 2021 ini adalah QQGalaxy karena mereka bonafit dan sudah menunjukkan seberapa besar modal yang mereka miliki untuk dikembangkan ke dalam situs judi mereka. Untuk itulah, kamu sama sekali tidak perlu lagi meragukan situs yang satu ini dan bisa percaya kepada mereka sebab agen ini juga memberikan keamanan kepada semua member yang belum tentu bisa dilakukan oleh agen judi yang lainnya antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">A. Menggunakan teknologi yang canggih dan terbaru untuk sistem keamanan di dalam situs mereka sehingga identitas bettor semua yang bergabung dengan mereka tetap aman dan tidak akan digunakan untuk kepentingan yang lainnya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">B. Menyediakan bank yang terkenal di dalam metode deposit dan withdraw sehingga kamu tidak akan ragu untuk transfer dana maupun memberikan seluruh keterangan mengenai nama bank atau rekening kepada agen. Kamu tidak harus pula melakukan transfer antar bank sebab agen ini menyediakan semua bank yang terkenal dan dinilai bettor memiliki rekeningnya. Belum lagi kamu juga tidak harus melakukan transfer menuju bank luar negeri yang prosedurnya rumit dan bisa jadi justru gagal melakukannya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">C. Tidak akan menjual identitas yang kamu miliki kepada pihak ketiga hingga menyebabkan email yang kamu miliki itu penuh dengan spam yang asalnya bukan dari situs judi ini. Apabila kamu bergabung dengan agen judi lain dan menemukan spam di dalam kotak masuk email milikmu tapi bukan berasal dari agen tempat kamu bergabung dengan mereka, maka dapat dipastikan jika agen yang kamu pilih itu sudah melakukan penjualan identitas kepada pihak lain demi keuntungan mereka. QQGalaxy ini merupakan situs judi slot online terpercaya 2021 yang tidak akan melakukan tindakan seperti itu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">D. Fair dan bebas dari manipulasi atau kecurangan apapun. Mereka tidak menggunakan bot sama sekali pada sistem table games maupun meminta admin untuk memainkan judi sehingga bettor tidak bisa menang atau lainnya. Mereka juga tidak akan sama sekali menggunakan sistem atau software yang akan membuat permainan tertentu akan memberikan hasil yang tidak dapat dimenangkan atau apapun. Permainan slot online yang mereka punya pun juga merupakan permainan judi yang diatur sempurna oleh RNG sehingga hasilnya benar-benar acak dan hanya keberuntungan yang akan kamu gunakan.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Apa Kelebihan Mesin Slot di Dalam Situs Judi Slot Online Jackpot Terbesar QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">QQGalaxy benar-benar dikenal sebagai situs judi slot online jackpot terbesar akibat dukungan dari provider yang mereka pilih dan beberapa provider memang telah dikenal memiliki keunggulan yang lebih tinggi di bidang slot online daripada permainan casino yang lain sehingga wajar kalau bettor akan menikmati pengalaman seru bermain slot di dalamnya. Selain itu, slot yang dimiliki oleh agen ini memiliki beberapa keuntungan yang lebih baik daripada situs judi lain yang memiliki provider berbeda antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Tersedianya Ratusan Jenis Mesin Slot Online yang Aktraktif</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Slot online yang ada di dalam situs ini memiliki beragam tipe seperti yang telah disampaikan sebelumnya dan tema yang berbeda-beda dimana tema yang ada di dalam mesin ini sama sekali tidak akan membosankan seperti dulu. Jika dulu tema permainan slot hanya sekedar buah-buahan atau tema animasi biasa yang membosankan, kini provider sudah banyak mengembangkan permainan slot yang memiliki tema seperti film, superhero dan masih banyak lagi yang lainnya dan sesuai dengan apa yang masyarakat sukai saat ini.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tema di dalam slot online situs QQGalaxy ini dibuat bukan hanya untuk bagian depan atau covernya saja melainkan seluruh simbol yang terdapat di dalam <a style="color: #800080;" href="https://en.wikipedia.org/wiki/Slot_machine"><strong>mesin slot</strong></a> itu juga dibuat sesuai dengan temanya. Contohnya adalah Marvel dimana simbol di dalamnya adalah superhero terkenal yang sudah Anda sukai dengan beragam simbol khusus untuk hadiah tertentu di dalamnya sehingga semakin menarik secara visual dan tidak akan membosankan.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Mesin slot online yang terdapat di dalam situs ini juga berbeda dengan yang lain karena tidak hanya akan dimainkan dalam waktu yang singkat saja. Seperti yang kamu tahu, permainan slot online itu selalu selesai hanya dalam hitungan detik kecuali bettor mendapatkan beberapa bonus yang dapat memperpanjang waktu mereka bermain disana sebelum kemudian melakukan taruhan lagi untuk mulai bermain kembali. Slot online agen yang satu ini memiliki tema dimana tema itu akan muncul sebagai cerita atau narasi di dalam mesin slot tersebut sehingga bettor dapat menikmati cerita yang ada di dalamnya dan tidak hanya sekedar menekan tombol spin saja.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Game Slot RTP Tertinggi</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Nilai RTP yang dimiliki situs judi slot online resmi ini juga jauh lebih menguntungkan dibandingkan dengan nilai RTP yang terdapat di dalam mesin slot casino darat yang ada di seluruh dunia. Di dalam casino darat, nilai RTP mesin slot tidak besar atau bahkan jarang ada yang mencapai 90% karena mereka memiliki banyak sekali tanggungan pembayaran yang lain seperti menggaji karyawan, melakukan perawatan rutin di dalam casino dan sebagainya. Tapi nilai RTP mesin slot online yang ada di dalam situs judi QQGalaxy ini bahkan di atas 95% dan ada yang benar-benar mendekati 99% sehingga pengembalian atau return yang akan kamu dapatkan kalau berhasil menang itu sungguh besar nominalnya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Free Spin Slot yang Mudah Didapatkan</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Berbeda dengan mesin slot jaman dulu yang bonusnya sedikit, mesin slot online yang terdapat di dalam QQGalaxy ini bonusnya banyak sehingga kamu juga tidak harus selalu mengeluarkan jumlah uang yang sama terus untuk bermain. Terdapat belasan bahkan puluhan bonus free spin di dalam mesin slot ini sehingga kamu bisa menggunakannya untuk menekan tombol spin tanpa harus dengan uang taruhan dan puluhan free spin itu bahkan terdapat di dalam satu mesin saja. Masih ada pula bonus game dimana kamu bisa mendapatkan bonus free spin atau yang lainnya dengan cara menyelesaikan mini game yang akan muncul di layar kamu apabila kamu mendapatkan kombinasi bonus game itu.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">7 Tips Bermain Aman di Situs Slot Online Terlengkap QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Di dalam situs slot online terlengkap ini, kamu memiliki banyak peluang untuk menang dan memilih mesin slot mana yang paling kamu inginkan atau yang paling menguntungkan buatmu. Kamu diberikan kebebasan memainkan judi apapun selain slot online kalau kamu mau dan cukup mencari di dalam menu permainan kemudian temukan game yang kamu suka. Selanjutnya kamu melakukan deposit dan berjuang untuk mendapatkan kemenangan yang kamu harapkan di dalam permainan itu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tapi kalau kamu begitu tertarik dengan permainan slot online yang begitu mendominasi situs QQGalaxy ini, maka kamu sebaiknya memiliki beberapa tips yang cukup membantumu untuk dapat meraih untung atau bisa juga kamu gunakan untuk mencegah kerugian besar yang selalu muncul. Dibandingkan dengan permainan judi yang lain, slot memang jauh lebih mudah tapi sayangnya house edge permainan ini cukup besar dan itu yang membuatmu tidak bisa selalu konsisten dalam meraih kemenangan.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Slot murni hanya kamu mainkan dengan mengandalkan hoki yang kamu punya dan untuk itulah, tidak ada yang dapat menebak kapan kamu akan berhasil menang, kapan kamu dapat jackpot atau yang lainnya. Semuanya murni keberuntungan dan hanya waktu yang bisa menentukannya sehingga kamu hanya cukup berjuang dan berusaha menang supaya kamu dapat memperoleh untung yang besar. Gunakan beberapa tips maupun saran berikut yang akan memberikanmu pencerahan dalam memainkan slot online di dalam agen QQGalaxy ini antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">1. Pilih lebih dulu tipe mesin slot apa yang kamu mau mainkan karena hal ini juga nantinya akan berpengaruh terhadap berapa jumlah uang taruhan yang mau kamu gunakan, berapa target kemenangan yang mau kamu dapatkan dan sebagainya. Setiap mesin itu berbeda dimana mesin klasik yang memiliki 3 reel tidak memberikan hasil kemenangan sebesar video slot yang punya banyak payline atau baris pembayaran di dalam mesin itu. Kalau kamu suka dengan model permainan judi klasik yang lebih aman khususnya untuk taruhan, maka kamu bisa memainkan itu tapi kalau kamu ingin jackpot progresif yang besar, video slot 5 reel adalah pilihan yang tepat.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">2. Ketika kamu memainkan judi di dalam slot online terpercaya deposit pulsa ini dan mengincar jackpot progresif, maka kamu harus menyiapkan uang lebih dari cukup untuk digunakan melakukan taruhan maksimum sebab taruhan yang maksimum itu adalah yang kamu butuhkan untuk mengejar terus jackpot progresif dan meningkatkan nilainya. Kalau mesin slot itu meminta lima koin yang merupakan nilai maksimum taruhan, maka kamu harus setorkan setiap kali bermain lima koin itu karena jackpot di dalam permainan slot ini hanya bisa diperoleh kalau kamu bermain dengan taruhan maksimum saja.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">3. Selalu pilih slot yang nilai RTP melebihi 95% sebab makin tinggi RTP di dalamnya, makin besar pengembalian mesinnya sehingga kamu dapat menutupi jumlah kekalahan apabila berhasil mendapatkan hadiah kemenangan itu. Meskipun RTP di dalam slot online itu tinggi, kamu tetap harus bisa menentukan mana yang paling layak untuk kamu mainkan dan jangan hanya tertarik pada tema saja tapi lupa memperhatikan bahwa yang paling penting di dalam slot adalah persentase RTP-nya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">4. Lupakan tentang mitos ketika bermain slot online karena mitos itu tidak akan terjadi di dalam dunia slot dengan teknologi yang canggih ini. Mitos seperti mesin yang dingin bisa memberikanmu kemenangan lebih cepat sementara mesin yang panas itu sulit untuk dimenangkan karena begitu banyak bettor yang memainkannya. Tidak perlu percaya mitos semacam itu karena seperti yang telah disinggung sebelumnya dimana permainan slot ini hanya menggunakan RNG yang acak sehingga mesin manapun punya peluang yang sama dan kemenangan itu hanya keberuntungan yang akan menentukannya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">5. Memainkan slot online setiap hari bukan pilihan yang tepat karena hal ini akan merugikan kondisi keuanganmu sebab slot itu bisa menguras uang dengan cepat apabila pemasukan yang kamu punya tidak sebanding dengan pengeluaran yang dilakukan di dalam permainan judi itu. Kalau kamu mau memainkan slot lebih konsisten, pastikan pemasukan yang kamu punya itu cukup banyak dan kamu juga bisa memilih permainan judi lain di dalam situs QQGalaxy ini yang bisa memberikanmu uang seperti judi dengan strategi. Kalau kamu berhasil menang dengan menggunakan taktik yang kamu punya, maka sebagian uang yang kamu menangkan juga bisa digunakan untuk main slot.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">6. Mainkan semua tipe slot yang ada dan jangan hanya bergantung pada satu tipe apalagi satu judul slot saja karena kamu tidak tahu mesin mana di dalam situs itu yang akan memberikanmu kemenangan. Kamu tidak tahu mesin mana yang kamu bisa menangkan sehingga kamu jangan hanya bertahan cukup lama dalam satu mesin slot online apalagi sampai menghabiskan uang di dalam mesin itu karena merasa sebentar lagi kamu akan menang di dalamnya. Kalau kamu sudah kalah bahkan lebih dari 10 kali, sebaiknya jangan berpikir kamu akan menang sebentar lagi tapi hentikan permainanmu untuk saat ini atau lebih memilih mesin lain yang punya kesempatan besar.Lebih baik membuat jadwal ketika bermain slot karena main setiap hari atau setiap waktu itu juga beresiko pada kondisi finansial yang kamu punya apalagi kamu hidup tidak untuk main judi saja melainkan masih ada tanggung jawab dan keputusan yang lainnya. Selama kamu bisa mengatur jadwal main slot dengan dana yang kamu punya, maka kamu tidak akan rugi ketika memainkan slot. Jadwal yang kamu buat pun harus yang tepat dan mengandung dana di dalamnya yang mau kamu gunakan termasuk juga harus muncul yang namanya waktu seperti berapa kali kamu bermain slot per harinya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">7. Jangan lupakan bonus karena bonus bukan hanya ditemukan di dalam mesin slot saja tapi agen QQGalaxy ini sudah memberikanmu bonus di luar permainan slot yang bisa kamu dapatkan supaya kamu pun bisa menggunakan uang bonus itu sebagai deposit untuk taruhan slot kembali. Kamu hanya cukup memaksimalkan usaha dan memenuhi syarat yang terdapat di dalamnya apakah kamu mau bonus deposit, bonus referral, bonus komisi mingguan, bonus cashback atau khusus untuk bettor baru, bonus new member. Kalau kamu konsisten memperoleh bonus, maka kamu pun bisa mengurangi beban taruhan yang kamu selalu harus keluarkan kalau kamu bermain slot.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Mainkan Game Slot Online Dimana Saja Dengan Sistem Mobile</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Meskipun bermain slot itu terkadang ada resikonya karena tidak sama seperti permainan judi yang lain, tapi judi yang satu ini adalah hiburan yang terbaik untuk semua bettor sebab mereka belum tentu akan menemukan lagi permainan judi menarik yang satu ini dengan menggunakan uang asli. Permainan slot online yang satu ini juga menguntungkan karena kamu bisa memainkanya mobile atau dengan menggunakan gadget mobile seperti tablet dan ponsel pintar tanpa harus duduk di depan layar monitor PC kamu lagi.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Kamu bisa memainkannya dimanapun kamu berada selama kamu terhubung dengan internet dan selama kamu punya cukup dana untuk taruhan. Kamu bisa iseng memainkannya karena siapa tahu keberuntungan akan memihakmu dengan cepat sekarang. Baik dengan PC maupun dengan mobile gadget, tidak akan ada yang berubah dari metode memainkannya, nominal taruhannya sampai dengan berapa jumlah hadiah yang kamu bisa menangkan di dalamnya sehingga kamu bisa pilih mana yang lebih nyaman.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tak mengherankan lagi sekarang jika agen QQGalaxy ini disebut sebagai situs judi slot online terpercaya 2021 karena semua kecanggihan teknologi hingga keuntungannya bisa diraih sempurna oleh bettor dan agen tetap melayani dengan baik menggunakan pengalamannya bertahun-tahun di bisnis judi online ini.</span></p> </p>
+
+        </div>
+    </div>
+</div>
+    <div class="pagetop" title="Scroll Back to Top"></div>
+    <div class="downloadbar">
+        <p>DOWNLOAD</p>
+        <ul class="content">
+            <li><a class="android" href="../MobileExplorec31b.html?android">ANDROID<br />DOWNLOAD</a></li>
+            <li><a class="ios" href="../MobileExplore9e30.html?ios">IOS<br />DOWNLOAD</a></li>
+            
+        </ul>
+    </div>
+    <div class="siderbar  siderbar_close" id="siderbar">
+        <p>HUBUNGI KAMI<span>arrow</span></p>
+        <div class="content">
+            <dl class="memberser">
+                <dt>24<span>X</span>7</dt>
+                <dd>Layanan Pemain</dd>
+            </dl>
+            <ul class="liveitem">
+                <li><a href="../Home/GetLiveChat.html" target="livechat">LIVE HELP</a></li>
+                    <li><a class="joinselect notlogin" href="../Member/Register.html">BERGABUNG SEKARANG</a></li>
+            </ul>
+            <ul class="lang_nav">
+                            <li><a class="indo" title="Bahasa Indonesia" datafld="id-ID" group="lang" href="#">Indonesia</a></li>
+            </ul>
+            <div id="contact_col">
+                        <div class="contact_col">
+                            <span class="icon_contact_phone" contact-type="phone"></span>
+                            <a href="#">+6281384218101</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_whatsapp" contact-type="watsapp"></span>
+                            <a href="#">+6281384218101</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_line" contact-type="line"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_skype" contact-type="skype"></span>
+                            <a href="#">QQGalaxy</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_wechat" contact-type="wechat"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_bbm" contact-type="bbm"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_email" contact-type="email"></span>
+                            <a href="#"><span class="__cf_email__" data-cfemail="dc8d8dbbbdb0bda4a5e4e4e5e59cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_yahoo" contact-type="yahoo"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_qq" contact-type="qq"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_kakaotalk" contact-type="kakaotalk"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_telegram" contact-type="telegram"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_zalo" contact-type="zalo"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://qqgalaxyca.com/Content/Web/library?v=ntj4GcOZ3ESAxq5fUEd_3fVVjtiCqlIeDNPP_T5IW7k1"></script>
+
+    <script>
+        var ckLogin = $('#CheckLogin').val().toUpperCase();
+    </script>
+    <script src="https://qqgalaxyca.com/Content/Web/basejs?v=qIGClSKkBvVeBp_1V-ZiVhIMThgKsleIc8Nfb8rXWq41"></script>
+
+
+    
+
+    
+    <script src="../../Content/Web/Scripts/pages/ProviderMaintenancePopup400b.js?c5e9a6"></script><script>
+         $("#loginPwd").keypress(function (e) {
+             var code = (e.keyCode ? e.keyCode : e.which);
+             if (code == 13) {
+                 $("#LoginButton").trigger('click');
+             }
+         });
+    </script>
+    <script src="https://qqgalaxyca.com/Content/Web/app/livecasinojs?v=xcLySFux0X288RQRBR4CQBkJkJCKhboMochMiFjP-181"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ('True' === 'False') {
+                CheckCashbackRule();
+                CheckFreeBetRule();
+            }
+            var contactSlider = "";
+            $('#contact_col').append(contactSlider);
+            $(document).on("click", "#GamePanel .game_slot button, #GamePanel a, [data-item='ckGame'] a, .product-modle a", function (e) {
+                var url = !$(this).attr("href") ? $(this).attr("data") : $(this).attr("href");
+                if (url && url.toLowerCase().indexOf("gamepage") > -1) {
+                    e.preventDefault();
+                    Experience($(this));
+                }
+            });
+
+            // https或http
+            const expiresTime = new Date(new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1); // 當天有效時間
+            $.cookie("protocol", location.protocol, { expires: expiresTime, path: '/' });
+            var getProtocol = $.cookie('protocol');
+            if ($.cookie('protocol')) {
+                if ((getProtocol == "https%3A" || getProtocol == "LiveCasinoAgc.html") && (location.protocol != "https%3A") && (location.protocol != "LiveCasinoAgc.html")) {
+                    window.location.href = window.location.origin.replace('LiveCasinoAgc.html','LiveCasinoAgc.html');
+                }
+            }
+        });
+    </script>
+
+    
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+<script type="text/javascript">
+  window.__lc = window.__lc || {};
+  window.__lc.license = 11674920;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+</script>
+<noscript>
+<a href="https://www.livechatinc.com/chat-with/11674920/" rel="nofollow">Chat with us</a>,
+powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+</noscript>
+<!-- End of LiveChat code -->
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+6281384218101", // WhatsApp number
+            call_to_action: "Klik disini untuk WA QQGalaxy", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+    </body>
+
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/Live-Casino/LiveCasinoAgc by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:19:54 GMT -->
+</html>

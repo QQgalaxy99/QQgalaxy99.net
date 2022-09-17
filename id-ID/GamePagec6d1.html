@@ -1,0 +1,184 @@
+        <script>
+            window.location.replace('https://b8d6ob.mekd061.com/Newindex?lang=id&amp;act=numbergame&amp;OType=2');
+        </script>
+
+
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/GamePage?Provider=ICL&RealMoney=True&GameCode=numbergame by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:20:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <title>ICL Game</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+    <link href="https://qqgalaxyca.com/Content/Web/common/css/style.css" rel="stylesheet"/>
+
+    <link href="https://qqgalaxyca.com/Content/Web/common/css/theme.css" rel="stylesheet"/>
+
+    <link rel="icon" href="https://qqgalaxyca.com/Content/Web/common/images/favicon.ico?v=da04e18fba9174a07dcfe66a7e3dafc3faf5c67f.x-icon" type="image/x-icon" />
+    <script src="https://qqgalaxyca.com/Content/Web/Scripts/libs/jquery/jquery.js"></script>
+
+    <script src="https://qqgalaxyca.com/Content/Web/Scripts/libs/jquery/plugin/jquery.cookie.js"></script>
+
+</head>
+
+<body>
+    <div id="GamePage" style="height: 100%; width: 100%;">
+
+        <!-- provider maintenance info popup -->
+        <div class="provider_popup" style="display: none" id="provider_maintenance_popup">
+            <div class="top_select">
+                <h5>Info Provider Maintenance</h5>
+                <a class="btn_close" href="#" id="providerMaintenancepop_close" onclick="closeProviderMaintenancePop()">CLOSE</a>
+            </div>
+            <div class="content">
+                <p>Penyedia akan ditutup dan semua layanan terkait untuk sementara tidak tersedia.</p>
+                <div class="provider_mainten_list">
+                    
+                </div>
+            </div>
+        </div>
+                <script language="javascript" type="text/javascript">
+                    window.onload = function () {
+                        var tempJsonData = "[{&quot;ProviderId&quot;:&quot;INP&quot;,&quot;NextCloseTime&quot;:&quot;2022-08-21 00:00&quot;,&quot;NextOpenTime&quot;:&quot;2023-08-31 12:00&quot;,&quot;UntilNotice&quot;:false}]";
+                        var gameMaintenanceList = JSON.parse(tempJsonData.replace(/&quot;/g, '"'));
+
+                        var isChanged = false;
+                        var storageKey = "newGameMaintenanceList";
+                        var newGameMaintenanceList = localStorage.getItem(storageKey);
+                        if (newGameMaintenanceList != null) {
+                            // 比對遊戲維護資料有無變更
+                            var hasSameData = false;
+                            var newGameMaintenanceObj = JSON.parse(newGameMaintenanceList)
+                            for (i = 0; i < newGameMaintenanceObj.length; i++) {
+                                if (newGameMaintenanceObj[i].ProviderId == "ICL" && newGameMaintenanceObj[i].NextCloseTime == "" && newGameMaintenanceObj[i].NextOpenTime == "" && newGameMaintenanceObj[i].UntilNotice.toString() == "false") {
+                                    hasSameData = true;
+                                    break;
+                                }
+                            }
+
+                            if (hasSameData == false) {
+                                isChanged = true; // 資料有變更
+                            }
+
+                            if (newGameMaintenanceList != JSON.stringify(gameMaintenanceList)) {
+                                // 儲存資料
+                                localStorage.setItem(storageKey, JSON.stringify(gameMaintenanceList));
+                            }
+                        } else {
+                            // 儲存資料
+                            localStorage.setItem(storageKey, JSON.stringify(gameMaintenanceList));
+                        }
+
+                        if ("False" == "True") {
+                            if (isNullOrWhitespace($.cookie("isShowMaintenancePopup")) || $.cookie("isShowMaintenancePopup").indexOf("ICL") == -1) {
+                                $('#provider_maintenance_popup').css("display", "block");
+                                const expiresTime = new Date(new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1); // 當天有效時間
+                                $.cookie("isShowMaintenancePopup", ($.cookie("isShowMaintenancePopup") + "ICL"), { expires: expiresTime, path: '/' });
+                            } else {
+                                // 該遊戲供應商-維護資料有變更
+                                if (isChanged) {
+                                    $('#provider_maintenance_popup').css("display", "block");
+                                }
+                            }
+
+                        }
+                    };
+
+                    function isNullOrWhitespace(input) {
+                        if (typeof input === 'undefined' || input == null) return true;
+                        return input.replace(/\s/g, '').length < 1;
+                    }
+                    function closeProviderMaintenancePop() {
+                        $('#provider_maintenance_popup').css("display", "none");
+                    }
+
+                    function getUrlParam(name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+                        if (r != null)
+                            return unescape(r[2]);
+                        return null; //返回参数值
+                    }
+
+                    function fullScreen () {
+                        var document = window.document;
+                        var fullScreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
+                        if (fullScreenElement) {
+                            var exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen || document.mozExitFullscreen || document.msExitFullscreen
+                            exitFullscreen.call(document);
+                            var contentFrame = document.querySelector("iframe");
+                            contentFrame && contentFrame.contentWindow.postMessage({ fullScreen: false }, "*");
+                        } else {
+                            var documentElement = document.documentElement;
+                            var requestFullscreen = documentElement.requestFullscreen || documentElement.webkitRequestFullscreen || documentElement.mozRequestFullscreen || documentElement.msRequestFullscreen
+                            requestFullscreen.call(documentElement);
+                            var contentFrame = document.querySelector("iframe");
+                            contentFrame && contentFrame.contentWindow.postMessage({ fullScreen: true }, "*");
+                        }
+                    }
+
+                    function receiveMessage(e) {
+                        window.console.log("reload-page#message:" + e.data);
+                        window.console.log(e);
+                        switch (e.data) {
+                            case "reload":
+                                var times = getUrlParam("times");
+                                if (times == null) {
+                                    times = 1;
+                                } else {
+                                    times++;
+                                }
+                                if (times <= 3) {
+                                    window.location.href = "/id-ID" + "/GamePage?Provider=PT&GameCode=" + getUrlParam("GameCode") + "&RealMoney=True&times=" + times;
+                                } else {
+                                    alert("Sorry System Error!");
+                                }
+                                window.console.log(window.location.href);
+                                break;
+                            default:
+                                break;
+                        }
+                        if ("ICL" == "SGS") {
+                            fullScreen();
+                        }
+                        if ("ICL" == "YDS" && e.data.hasOwnProperty('state')) {
+                            if (e.data.state.hasOwnProperty('fullscreen')) {
+                                var document = window.document;
+                                var fullScreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
+                                if (fullScreenElement) {
+                                    var exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen || document.mozExitFullscreen || document.msExitFullscreen
+                                    exitFullscreen.call(document);
+                                    var contentFrame = document.querySelector("iframe");
+                                    contentFrame && contentFrame.contentWindow.postMessage({ fullScreen: false }, "*");
+                                }
+                                else {
+                                    var documentElement = document.documentElement;
+                                    var requestFullscreen = documentElement.requestFullscreen || documentElement.webkitRequestFullscreen || documentElement.mozRequestFullscreen || documentElement.msRequestFullscreen
+                                    requestFullscreen.call(documentElement);
+                                    var contentFrame = document.querySelector("iframe");
+                                    contentFrame && contentFrame.contentWindow.postMessage({ fullScreen: true }, "*");
+                                }
+                            }
+                        }
+                        window.console.log("reload-page-sucess");
+                    }
+
+                    window.addEventListener("message", receiveMessage, false);
+                </script>
+                    <iframe border="0" frameborder="0" id="GameFrm" src="https://b8d6ob.mekd061.com/Newindex?lang=id&amp;act=numbergame&amp;OType=2" style="height: 100%; width: 100%"></iframe>
+
+    </div>
+</body>
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/GamePage?Provider=ICL&RealMoney=True&GameCode=numbergame by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:20:21 GMT -->
+</html>

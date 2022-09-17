@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+<html lang="id-ID" id="id-ID">
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/Slot-Games/NesGames by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:20:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="https://qqgalaxyca.com/Content/Web/common/images/favicon.ico?v=da04e18fba9174a07dcfe66a7e3dafc3faf5c67f.x-icon" type="image/x-icon" />
+        <meta property="og:image" content="../../Content/Web/common/images/logo.png" />
+    <meta property="og:image:type" content="image/png">
+    <link rel="canonical" href="https://95.111.195.144:20318/" />
+
+<meta name="google-site-verification" content="BQcMymulwNFVsNdEXmINWgWr9LvHUn9HRBiRmgkFupE" />
+<meta name="google-site-verification" content="Ar3nua7CH1U9QVTfbkfhc9dIeQRPgr-SXZH9KVxydFA" />
+<meta name="google-site-verification" content="MndNNS0wvt9WO7yfG0ZIjt5ocb5C-rfT76hSklwUcgY" />
+<meta name="google-site-verification" content="D5qRUx2FybnJaMe42pbfKFXKsIOHhjnl8DuTtJj79-8" />
+<meta name="google-site-verification" content="wrQFCOKho6qXq_XcqVg50vPzzhg1HQTgAq4KBnmDU0s" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SGKTM8NVV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7SGKTM8NVV');
+</script>
+    
+    <link href="https://qqgalaxyca.com/Content/Web/css?v=1m5caVPIhNQAvJcifAEvje8747qbw-S6qh18Oesp4pk1" rel="stylesheet"/>
+
+    <link href="https://qqgalaxyca.com/Content/Web/sitecss?v=eXLhbJVrOA7TvAVjuq3yOmtmD7BgcHt2IhqnYJza95U1" rel="stylesheet"/>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SGKTM8NVV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7SGKTM8NVV');
+        </script>
+</head>
+<body id="layout">
+    
+
+
+<input type="hidden" id="hdnAntiForgeryTokens" runat="server" value="ZC6IiuJ5n1XsHvlNA891LCBH9QBN77bZqZJzAVh3j4CxObyz_YbogEWbOe0PA4d8_r0VPmg8hp8d834HMnUiqWqZkuo1:buNUCK8eenJN8liJywD6b-sW7LMcUGCbgH66eIomCLuhUiGG9O-gqW3gvOaz1X1xEtlI-pbxDopX7Irld4sArdZ6FL41" />
+    <input type="hidden" id="CheckLogin" value="False" readonly="readonly" />
+    <div class="wait_icon" style="display: none;">
+        <div class="content">
+            <img src="../../Content/Web/common/images/wait_load.gif" alt="">Loading...
+        </div>
+    </div>
+    
+
+<!-- provider maintenance info popup -->
+<div class="provider_popup" style="display: none" id="provider_maintenance_popup">
+    <div class="top_select">
+        <h5>Info Provider Maintenance</h5>
+        <a class="btn_close" href="#" id="providerMaintenancepop_close" v-on:click="closeProviderMaintenancePop()">CLOSE</a>
+    </div>
+    <div class="content">
+        <p>Penyedia akan ditutup dan semua layanan terkait untuk sementara tidak tersedia.</p>
+        <div class="provider_mainten_list">
+            <div class="item" v-for="row in Math.ceil(providerMaintenanceList.length)">
+                <template v-for="col in 1">
+                    <div class="avatar">
+                        <span :class="providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderLogo + ' color'" title="">{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderId : '' }}</span>
+                    </div>
+                    <div class="info">
+                        <strong class="provider_name">[{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].ProviderName : '' }}]</strong>
+                        <p class="sub_info">Jadwal untuk mengaktifkan pemeliharaan sistem</p>
+                        <p class="date_info">
+                            dari {{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].NextCloseTime : '' }}
+                            hingga
+                            <template v-if="providerMaintenanceList[(col - 1) + ((row - 1) * 1)].UntilNotice">
+                                sampai pemberitahuan lebih lanjut
+                            </template>
+                            <template v-else>
+                                {{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].NextOpenTime : '' }}
+                            </template>
+                            (GMT{{ providerMaintenanceList[(col - 1) + ((row - 1) * 1)] ?  providerMaintenanceList[(col - 1) + ((row - 1) * 1)].OffsetGmt : '' }})
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+<div id="dialog-mask" style="display: none;"></div>
+
+    <div id="logRegModal" class="popup login_popup" style="display: none;">
+        <ul class="tabs_teal" id="tabs_choice">
+            <li><a class="opt" href="javascript:showLoginInfo();" datashow="login_info">Masuk</a></li>
+        </ul>
+        <a class="close_icon" href="#" id="btn_close_login">CLOSE</a>
+        
+<form ID="LoginActionFrms" action="https://qqgalaxyca.com/id-ID/Home/LoginAction" method="post"><input name="__RequestVerificationToken" type="hidden" value="9v8yxSr0PWoHSB45Il_atQ0c2hBRSW7dsPXsyJY7tJBrJz1q99a8tjxaNad1LeXNtV6PVwNxDzW07uQAVNpdoPBtLus1" />                <div id="fasterlogin" class="login_info">
+                    <h3>SELAMAT DATANG</h3>
+                    <div class="input_field">
+                        <input type="text" id="loginIds" name="loginIds" value="" maxlength="15">
+                        <input type="hidden" id="loginidHiddens" name="loginidHiddens">
+                        <label for="loginIds">Username</label>
+                    </div>
+                    <div class="input_field">
+                        <input type="password" id="loginPwds" name="loginPwds" value="" maxlength="256">
+                        <input type="hidden" id="loginPwdHiddens" name="loginPwdHiddens">
+                        <label for="loginPwds">Kata sandi</label>
+                    </div>
+                    <center>
+                        <input type="hidden" id="loginUrlHiddens" name="loginUrlHiddens">
+                        <input type="button" id="LoginErrorButtons" name="LoginErrorButtons" value="Kirim" />
+                        <ul>
+                            <li><a href="../Member/Forgotpassword.html">Lupa sandi?</a></li>
+                            <li><a href="../Member/Register.html">BERGABUNG SEKARANG</a></li>
+                        </ul>
+                        
+                    </center>
+                </div>
+</form>
+    </div>
+<div class="wait_icon" style="display: none;">
+    <div class="content">
+        <img src="../../Content/Web/common/images/wait_load.gif" alt="">Loading...
+    </div>
+</div>
+<div id="FreeBetTelVerify" class="popup freebet_popup_sub" style="display: none;">
+    <div class="top_select">
+        <h5>FREEBETS</h5>
+        <a class="btn_close" href="#">Tutup</a>
+    </div>
+    <div class="content">
+        <dl>
+            <dt>Nomor telepon</dt>
+            <dt>Kode verifikasi</dt>
+            <dd><input type="text" id="telverification"></dd>
+        </dl>
+        <button id="btn_confirm_freebet_popup_sub">Konfirm</button>
+    </div>
+</div>
+
+<div id="FreeBetModal" class="popup freebet_popup" style="display: none;">
+    <div class="top_select">
+        <h5>FREEBETS</h5>
+        <a class="btn_close" href="#">CLOSE</a>
+    </div>
+    <table>
+        
+        <thead>
+            <tr>
+                <th>TRANSFER DOMPET</th>
+                <th>PROMOSI</th>
+                <th>PENGGUNA HITUNGAN</th>
+                <th>DAPATKAN PROMOSI</th>
+            </tr>
+        </thead>
+        <tbody id="promotionlistbody"></tbody>
+    </table>
+</div>
+
+<div class="popup prompt_popup" id="DNSpopup" style="display: none;">
+    <div class="top_select">
+        <h5>Anti-Blocker</h5>
+        <a class="btn_close" href="#">Tutup</a>
+    </div>
+    <div class="content">
+        <ol>
+            <li>Download Nawala Unblocker</li>
+            <li>Install dan Jalankan</li>
+            <li>Pilih &quot; Google Public DNS &quot; dan Tekan Flush DNS</li>
+            <li>Lalu Klik &quot; Apply DNS &quot;</li>
+            <li>Buka browser dan Ketik QQGALAXY</li>
+        </ol>
+        <a class="down_btn" href="http://www.sordum.org/7952/dns-jumper-v2-0/" target="_blank">DOWNLOAD</a>
+    </div>
+</div>
+
+    <div class="header">
+        <div class="top">
+            <div class="main_width">
+                <ul class="livechat">
+                            <li><a class="twitter" contact-type="twiter">Twitter</a></li>
+                            <li><a class="facebook" contact-type="facebook">Facebook</a></li>
+                            <li><a class="linkind" contact-type="linkedin">Linkind</a></li>
+                            <li><a class="pinterest" contact-type="pinterest">Pinterest</a></li>
+
+                </ul>
+                <dl href="../Home/Announcement.html" type="memberNotice">
+                    <dt></dt>
+                    <dd id="Notice"></dd>
+                </dl>
+                <ul class="listMenu">
+
+                                                <li>|<a class="vpn_logo" href="https://chrome.google.com/webstore/detail/accel-vpn/hghhhfmjdmdgfjnpkmfbelagbdcjamek?hl=id&amp;authuser=2" target="_blank">AZ VPN</a></li>
+                                            <li>|<a class="transmobile" href="http://qqgalaxyca.com/mobile/id-ID/Home/TransferDevice?SwitchDevice=I%2blCIQTHBGKUXCyhhiSU9YFIYfuOEpbYXT2StR2LwxaIA2TKyIY3S%2b1B%2fHuUSuUmqaTUNw6ope4%3d&amp;" title="Gotowebsite">transfer mobile</a></li>
+                    <li>|<a class="betrules" type="help" href="../Help/RulesSportsbook.html" title="ATURAN TARUHAN" target="_blank"></a></li>
+                    <li>|<a class="contactus" type="help" href="../Home/Contact.html" title="HUBUNGI KAMI" target="_blank"></a></li>
+
+                    <li>
+                        <a id="CurrLang" class="flags en" href="javascript:void(0)">flags<span>arrow</span></a>
+                        <ul class="dropMenu">
+                                        <li><a class="indo" datafld="id-ID" group="lang" title="Bahasa Indonesia" href="javascript:void(0)">Indonesia</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_width">
+            <h1></h1>
+            <div class="logo"><a href="https://qqgalaxyca.com/"><img src="../../Content/Web/common/images/logod920.png?v=b4cd6da9f96e9ab4527f52f8e8a98ec8d993b7c1" alt="logo"></a></div>
+
+            
+
+<form ID="LoginActionFrm" action="https://qqgalaxyca.com/id-ID/Home/LoginAction" method="post"><input name="__RequestVerificationToken" type="hidden" value="6R8n7XhpvPVbq22aRn6NV3mhG-iB_BRHup4i8DtjPNFV0P_pvm15TrHqHuELAvIuKm4nCn4avYhOu4HZ69OMERf7TRQ1" />        <div class="login_wrap">
+            <input type="hidden" id="loginidHidden" name="loginidHidden" />
+            <input type="text" id="loginId" name="loginId" value="" placeholder="Pilih Nama Pengguna">
+            <input type="hidden" id="loginPwdHidden" name="loginPwdHidden" />
+            <input type="password" id="loginPwd" name="loginPwd" value="" placeholder="Kata sandi" maxlength="256">
+            <input type="hidden" id="loginUrlHidden" name="loginUrlHidden">
+            <button type="button" id="LoginButton" name="LoginButton">Masuk</button>
+            <div class="clear"></div>
+            <a class="impotitle" href="../Member/Register.html" title="BERGABUNG SEKARANG" id="mainmenuJoinNow">BERGABUNG SEKARANG<span></span></a>
+            <a class="float-R" href="../Member/Forgotpassword.html">Lupa sandi?</a>
+        </div>
+</form>
+
+
+        </div>
+    </div>
+    
+<div class="navbar">
+    <div class="main_width">
+        <ul>
+                         
+
+                         
+
+                         
+                <li class="sport">
+                    <a href="../SportsBook.html">
+                        <i class="icon_sports"></i>
+                        <strong class="nav_name">SPORTS</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li>
+                    <a   class="csport"
+ position="SportsBook" href="../GamePage8697.html?Provider=CDL&amp;RealMoney=True" target="_blank">
+                        C-Sport
+                    </a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="bti"
+ position="SportsBook" href="../GamePagee233.html?Provider=BTL&amp;RealMoney=True" target="_blank">B-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="sbobet"
+ position="SportsBook" href="../GamePage5099.html?Provider=STL&amp;RealMoney=True" target="_blank">S-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="isport"
+ position="SportsBook" href="../GamePage9f13.html?Provider=ICL&amp;RealMoney=True" target="_blank">
+                        i-Sport
+                    </a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="opuscasino"
+ position="SportsBook" href="../GamePage4786.html?Provider=OPL&amp;GameCode=xs&amp;RealMoney=True" target="_blank">O-Sport</a>
+                </li>
+
+                                             
+                <li>
+                    <a   class="iml"
+ position="SportsBook" href="../GamePage158c.html?Provider=IML&amp;RealMoney=True" target="_blank">IM-Sport</a>
+                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="casino">
+                    <a href="../Live-Casino.html">
+                        <i class="icon_casino"></i>
+                        <strong class="nav_name">CASINO</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a class=pragmatic href="../Live-Casino/LiveCasinoPpc.html">PP Casino</a></li>
+
+                                             
+                <li><a class=mg href="../Live-Casino/LiveCasinoMgc.html">MG Kasino</a></li>
+
+                                             
+                <li><a class=ogpluscasino href="../Live-Casino/LiveCasinoOgc.html">OG Kasino</a></li>
+
+                                             
+                <li><a class=dgcasino href="../Live-Casino/LiveCasinoDg.html">DG Kasino</a></li>
+
+                                             
+                <li><a class=bgcasino href="../Live-Casino/LiveCasinoBg.html">BG Kasino</a></li>
+
+                                             
+                <li><a class=gpcasino href="../Live-Casino/LiveCasinoGp.html">GP Kasino</a></li>
+
+                                             
+                <li><a class=opuscasino href="../Live-Casino/LiveCasinoOpc.html">OPUS Kasino</a></li>
+
+                                             
+                <li><a class=allbetcasino href="../Live-Casino/LiveCasinoAbc.html">Allbet Casino</a></li>
+
+                                             
+                <li><a class=agcasino href="../Live-Casino/LiveCasinoAgc.html">AG Kasino</a></li>
+
+                                             
+                <li><a class=playtech href="../Live-Casino/LiveCasinoPt.html">PT Kasino</a></li>
+
+                                             
+                <li><a class=ebetcasino href="../Live-Casino/LiveCasinoEbc.html">EBET</a></li>
+
+                                             
+                <li><a class=sexycasino href="../Live-Casino/LiveCasinoSec.html">AE Sexy</a></li>
+
+                                             
+                <li><a class=egccasino href="../Live-Casino/LiveCasinoEgc.html">Evo Casino</a></li>
+
+                                             
+                <li><a class=saccasino href="../Live-Casino/LiveCasinoSac.html">SA Casino</a></li>
+
+                                             
+                <li><a class=wmcasino href="../Live-Casino/LiveCasinoWmc.html">WM Casino</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="egame">
+                    <a href="../Slot-Games.html">
+                        <i class="icon_slot"></i>
+                        <strong class="nav_name">SLOT</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a  href="SgsGames.html"><img src="../../Content/Web/common/images/catch/3386E699611BF748EA73CDF4A3D0E40A75FD6C50.png" />Spadegaming</a></li>
+
+                                             
+                <li><a class=mg href="MgsGames.html">Microgaming</a></li>
+
+                                             
+                <li><a  href="PpsGames.html"><img src="../../Content/Web/common/images/catch/E99D2DED962538564EFD50CC8F9D6D87E911C288.png" />Pragmatic Play</a></li>
+
+                                             
+                <li><a class=booongo href="BgsGames.html">Boongo</a></li>
+
+                                             
+                <li><a class=joker href="JksGames.html">Joker</a></li>
+
+                                             
+                <li><a class=pgsoft href="PgsGames.html">PG Soft</a></li>
+
+                                             
+                <li><a class=ygg href="YgsGames.html">YGG</a></li>
+
+                                             
+                <li><a class=habanero href="HbsGames.html">HABANERO</a></li>
+
+                                             
+                <li><a class=cq9 href="CqsGames.html">CQ9 Slot</a></li>
+
+                                             
+                <li><a class=playtech href="Ptegames.html">Playtech</a></li>
+
+                                             
+                <li><a class=ttg href="TtgGames.html">TTG</a></li>
+
+                                             
+                <li><a class=betsoft href="BssGames.html">BETSOFT</a></li>
+
+                                             
+                <li><a class=playson href="PssGames.html">Playson</a></li>
+
+                                             
+                <li><a class=playstar href="PrsGames.html">Playstar</a></li>
+
+                                             
+                <li><a class=kingmaker href="AwdGames.html">AWC</a></li>
+
+                                             
+                <li><a class=yds href="YdsGames.html">DC Slot</a></li>
+
+                                             
+                <li><a class=aes href="AesGames.html">AE Slot</a></li>
+
+                                             
+                <li><a class=sws href="SwsGames.html">Skywind</a></li>
+
+                                             
+                <li><a class=nes href="NesGames.html">NETENT</a></li>
+
+                                             
+                <li><a class=nss href="NssGames.html">NSoft</a></li>
+
+                                             
+                <li><a class=fss href="FssGames.html">Fastspin</a></li>
+
+                                             
+                <li><a class=bns href="BnsGames.html">BBIN</a></li>
+
+                                             
+                <li><a class=jls href="JlsGames.html">JILI</a></li>
+
+                                             
+                <li><a class=cgs href="CgsGames.html">CG</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="fishhunter">
+                    <a href="../Fishing-Games.html">
+                        <i class="icon_fish"></i>
+                        <strong class="nav_name">FISH</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li><a  href="SgsGames.html#FISHING"><img src="../../Content/Web/common/images/catch/2DC7961DCBE9B52E171389AF2EE93E415A36FF47.png" />SG FISH</a></li>
+
+                                             
+                <li><a class=joker href="JksGames.html#FISHING">Joker FISH</a></li>
+
+                                             
+                <li><a class=pragmatic href="PpsGames.html#FISHING">PP FISH</a></li>
+
+                                             
+                <li><a class=cq9 href="CqsGames.html#FISHING">CQ9 FISH</a></li>
+
+                                             
+                <li><a class=playstar href="PrsGames.html#FISHING">Playstar FISH</a></li>
+
+                                             
+                <li><a class=playtech href="Ptegames.html#FISHING">PT Cash Fish</a></li>
+
+                                             
+                <li><a class=bns href="BnsGames.html#FISHING">BBIN FISH</a></li>
+
+                                             
+                <li><a class=jls href="JlsGames.html#FISHING">JL FISH</a></li>
+
+                                             
+                <li><a class=fss href="FssGames.html#FISHING">FS FISH</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+                <li class="lottery">
+                    <a href="../Lottery.html">
+                        <i class="icon_lottery"></i>
+                        <strong class="nav_name">LOTTERY</strong>
+                    </a>
+                    <div class="subnavbar" data-item="ckGame">
+                        <div class="main_width">
+                            <ul class="gameNav">
+                                             
+                <li>
+                    <a   class="keno"
+ position="Lottery" href="../MaintenanceProviderfef2.html?Provider=KNN&amp;GameCode=keno" target="_blank">
+                        QQKENO
+                    </a>
+                </li>
+
+                                             
+                <li><a class=isport position="Lottery" href="../GamePagec6d1.html?Provider=ICL&amp;RealMoney=True&amp;GameCode=numbergame" target="_blank">Number Game</a></li>
+
+                                             
+                <li>
+                    <a   class="qqnumber"
+ position="Lottery" href="../MaintenanceProvider208d.html?Provider=QNN&amp;GameCode=qnn" target="_blank">
+                        QQNumber
+                    </a>
+                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                         
+
+                         
+            <li>
+                <a href="../Promotion.html">
+                    <i class="icon_promo"></i>
+                    <strong class="nav_name">PROMOTION</strong>
+                </a>
+            </li>
+
+                         
+            <li>
+                <a href="../Referral.html">
+                    <i class="icon_referral"></i>
+                    <strong class="nav_name">REFERRAL</strong>
+                </a>
+            </li>
+
+                         
+                <li>
+                    <a href="../VIP/About.html" target="_blank">
+                        <i class="icon_vip"></i>
+                        <strong class="nav_name">VIP</strong>
+                    </a>
+                </li>
+
+
+        </ul>
+    </div>
+</div>
+    
+<div id="bannerSlider" style="display:none" v-show="bannerShow">
+    <div class="kv lazyload" id="mainKv" v-if="bannerLength > 1">
+        <div class="owl-carousel owl-theme">
+            <template v-for="item in banner">
+                <div class="item" v-if="item.TargetLink != ''">
+                    <a :href="item.TargetLink" :target="item.PopUpLink ? '_blank':'_self'">
+                        <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                    </a>
+                </div>
+                <div class="item" v-else>
+                    <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                </div>
+            </template>
+        </div>
+    </div>
+    <template v-for="item in banner" v-else-if="bannerLength == 1">
+        <div class="kv">
+            <div class="item" v-if="item.TargetLink != ''">
+                <a :href="item.TargetLink" :target="item.PopUpLink ? '_blank':'_self'">
+                    <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+                </a>
+            </div>
+            <div class="item" v-else>
+                <img :src="'/Content/Web/common/images/catch/' + item.ImgId" :title="item.Title">
+            </div>
+        </div>
+    </template>
+    <template v-if="pathName == 'Reward-Default'">
+        <div class="kv prize_con">
+            <img src="../../Content/Web/common/images/banner/img-reward-bn.jpg" alt="">
+            <div class="main_width">
+                <div class="col-3 prize01">
+                    <p><span id="Prize1St"></span></p>
+                </div>
+                <div class="col-3 prize02">
+                    <p><span id="Prize2St"></span></p>
+                </div>
+                <div class="col-3 prize03">
+                    <p><span id="Prize3St"></span></p>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+    <div id="main_bg" class="main_bg">
+        <div class="main">
+            
+
+<div class="container" id="GamePanel">
+    <ul class="game_title" id="GameCategory">
+        <template v-for="(cate,index) in category">
+            <li data-tab="tab" :key="cate.Category">
+                <a href="#" :ref="cate.Category" v-on:click.prevent="changeTab(cate)" :class="{ pick: tab.Category == cate.Category }">{{cate.DisplayValue}}</a>
+            </li>
+        </template>
+        <li data-tab="tab">
+            <a v-on:click.prevent="changeTab('ALLGAME')" href="#" :class="{ pick: tab.Category ==  'ALLGAME' }">Semua Permainan</a>
+        </li>
+    </ul>
+    <template v-for="item in filterGame">
+        <div class="col-6 game_slot lazyload">
+            <template v-for="game in item.Language" v-if="game">
+                <div class="game_group" :class="[modelType]" :key="game.ImgId">
+                    <div class="preload">
+                        <div class="prelod-progress">
+                            <div class="prelod-slice-bar"></div>
+                        </div>
+                    </div>
+                    <div class="game-list-content" v-lazy-container="{ selector: 'img'}">
+                        <img :data-src="'/static/images/'+ game.ImgId" data-loading="/Content/Web/common/images/overlay.png" :alt="game.Name" :style="routeStyle">
+                        <button class='btn_try' :data="cultureRoute + item.TargetLink+'&amp;RealMoney=False'" position='EGAME' v-if="item.IsFun == 1">COBA SEKARANG</button>
+                        <button :data="cultureRoute + item.TargetLink +'&amp;RealMoney=True'" position='EGAME'>MAIN SEKARANG</button>
+                    </div>
+                </div>
+                <div class="figure-text">
+                    <p v-html="game.Name"></p>
+                </div>
+            </template>
+        </div>
+    </template>
+    
+
+
+
+</div>
+<script>
+    var gameModule = '{&quot;Game&quot;:[{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Aloha! Christmas&quot;,&quot;ImgId&quot;:&quot;2aa9232b78c04d43aa6722ea91e8701a.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;阿罗哈！圣诞&quot;,&quot;ImgId&quot;:&quot;a93c22781801440ea358f889f685eed4.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;alohaxmas0000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:76,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=alohaxmas0000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Aloha! Cluster Pays&quot;,&quot;ImgId&quot;:&quot;febea6cae03a4cbab516d8c4b8c49f2f.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;阿罗哈！符号串赢奖&quot;,&quot;ImgId&quot;:&quot;1310213518004dcdbe947783f80fb924.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;alohaj0r00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:75,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=alohaj0r00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;American Roulette&quot;,&quot;ImgId&quot;:&quot;8e9b7187da904052b6cb47fccd59fff5.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;美式轮盘赌&quot;,&quot;ImgId&quot;:&quot;dcfaf27f4aa948f8918b5e6b4d90b1d7.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;ameriroulette3ne&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;TABLE&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:74,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=ameriroulette3ne&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Asgardian Stones&quot;,&quot;ImgId&quot;:&quot;e283394d2c414c598ce8ec6380941c75.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;仙宫宝石&quot;,&quot;ImgId&quot;:&quot;b308abf0678a41399e7a4af4bea5d90d.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;asgardianstones0&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:73,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=asgardianstones0&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Baccarat&quot;,&quot;ImgId&quot;:&quot;d312e543662d45049aa1db272faa8ec8.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;百家乐&quot;,&quot;ImgId&quot;:&quot;eb25b573b4f24191984e06292fc24209.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;baccarat2ne00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;TABLE&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:72,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=baccarat2ne00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;BlackJack&quot;,&quot;ImgId&quot;:&quot;279a495ec0ca4612930dba5ab350c449.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;二十一点&quot;,&quot;ImgId&quot;:&quot;d0903f6b20a14bad9b02760a88a3d007.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;blackjack3ne0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;TABLE&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:71,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=blackjack3ne0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Blood Suckers&quot;,&quot;ImgId&quot;:&quot;1b5ec52760f244f6aac5d3d34d5f9831.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;吸血男爵&quot;,&quot;ImgId&quot;:&quot;140ce93b8f614b94b11ece277cb21124.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;bloodsuckersj0r2&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:70,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=bloodsuckersj0r2&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Blood Suckers II&quot;,&quot;ImgId&quot;:&quot;db024dc6222d45a28777e16589efc399.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;吸血男爵 II&quot;,&quot;ImgId&quot;:&quot;a980e3aa1464444a944d9bee4ae1faf9.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;bloodsuckers2000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:69,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=bloodsuckers2000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Butterfly Staxx&quot;,&quot;ImgId&quot;:&quot;d62f1f828b74477eaa6c540c3d33e860.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;寻蝶记&quot;,&quot;ImgId&quot;:&quot;af9a731a89bc468abec7095fbee839f8.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;butterflystaxx00&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:68,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=butterflystaxx00&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Butterfly Staxx 2&quot;,&quot;ImgId&quot;:&quot;d1be4e6e542b49ac984e8b0a9f194154.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;寻蝶记 2&quot;,&quot;ImgId&quot;:&quot;5a7807c390e24df7a96566903456734f.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;butterflystaxx20&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:67,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=butterflystaxx20&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Codex of Fortune&quot;,&quot;ImgId&quot;:&quot;7ef653f26a554acba6a871e7b5e72459.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;财富法典&quot;,&quot;ImgId&quot;:&quot;7e2a9dec7a7141f9891cc170a9a62759.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;codexoffortune00&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:66,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=codexoffortune00&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Dark King: Forbidden Riches&quot;,&quot;ImgId&quot;:&quot;a1a299c3e23c4d569b4f627e899111fd.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;黑暗之王：禁忌财富&quot;,&quot;ImgId&quot;:&quot;9f6182c2ef5346d8afcebcf206ef3997.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;darkking00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:65,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=darkking00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Dazzle Me&quot;,&quot;ImgId&quot;:&quot;60a1509c7e5e49ecbf5f543ba9fb2d05.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;炫目宝石&quot;,&quot;ImgId&quot;:&quot;ae2e9948a2784c5d9ea4e0f70beeed9f.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;dazzle0000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:64,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=dazzle0000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Dazzle Me Megaways&quot;,&quot;ImgId&quot;:&quot;584d58e1891d4a87937cf5bc089ae99e.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;炫目宝石 巨额路线&quot;,&quot;ImgId&quot;:&quot;06ad5efeab98484484f0d9f4f1f4e3b3.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;dazzlemwr3000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:63,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=dazzlemwr3000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Dead or Alive&quot;,&quot;ImgId&quot;:&quot;f8dcad4913554b948e6cd4545ba6e8d8.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;亡命对决&quot;,&quot;ImgId&quot;:&quot;8e58576563a3492b8da1ef4bee11bf94.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;deadoralive00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:62,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=deadoralive00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Dead or Alive 2&quot;,&quot;ImgId&quot;:&quot;7717bd76899744e590da60a489053f09.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;亡命对决 2&quot;,&quot;ImgId&quot;:&quot;9e9c71330e8243fd98346aa9a4b5048e.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;deadoralive20000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:61,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=deadoralive20000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Divine Fortune Megaways&quot;,&quot;ImgId&quot;:&quot;564d1ec1bcbc4edf86b69e47f02d89ad.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;天赐好运 巨额路线&quot;,&quot;ImgId&quot;:&quot;b8132d4f15c648b0a82b015eb7b9d9d0.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;divinemegaways00&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:60,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=divinemegaways00&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Double Stacks&quot;,&quot;ImgId&quot;:&quot;a6eb8417fd0449d4a9d111c591f11f6b.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;双重堆叠&quot;,&quot;ImgId&quot;:&quot;410380193ed440cc8ca755be71b33dc4.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;doublestacks0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:59,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=doublestacks0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Drive: Multiplier Mayhem&quot;,&quot;ImgId&quot;:&quot;d323a4655c73416e951d920eab5f3e85.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;竞速：多重狂欢&quot;,&quot;ImgId&quot;:&quot;99bc50de82c44267982871046d333353.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;multipliermayhem&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:58,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=multipliermayhem&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Elements: The Awakening&quot;,&quot;ImgId&quot;:&quot;ffcc2ebe77154bb184ae34b1917f3401.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;元素：觉醒&quot;,&quot;ImgId&quot;:&quot;44648c9343ad49afba2463eebf93157c.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;elements00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:57,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=elements00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;European Roulette&quot;,&quot;ImgId&quot;:&quot;328464ba07de475aa8220b69620e1732.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;欧式轮盘&quot;,&quot;ImgId&quot;:&quot;903c94ce548e4291aabb1d41f89f9438.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;europroulette3ne&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;TABLE&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:56,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=europroulette3ne&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Finn and the Swirly Spin&quot;,&quot;ImgId&quot;:&quot;af1e020c3ece4d4f802b0929f0a1ae9f.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;精灵菲恩与漩涡转盘&quot;,&quot;ImgId&quot;:&quot;25c20346032d4e188643c1c45233dec7.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;finn000000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:55,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=finn000000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Finn&#39;s Golden Tavern&quot;,&quot;ImgId&quot;:&quot;006c291428bc48199066af24af274bad.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;菲恩的金酒馆&quot;,&quot;ImgId&quot;:&quot;8727222eb9fe41bc8b77ab00b8b8efce.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;goldentavern0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:54,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=goldentavern0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Flowers&quot;,&quot;ImgId&quot;:&quot;26150e7590d543109788f25a275fdfbb.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;花朵&quot;,&quot;ImgId&quot;:&quot;6f0e07b1bd114b258b4b9eefe6c0b078.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;flowers000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:53,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=flowers000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;French Roulette&quot;,&quot;ImgId&quot;:&quot;0a86e90ed03542a6844a792c81161df4.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;法式轮盘&quot;,&quot;ImgId&quot;:&quot;00e24b6f2425433b880c191c34ad041c.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;frenchroulettene&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;TABLE&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:52,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=frenchroulettene&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Fruit Shop&quot;,&quot;ImgId&quot;:&quot;adb14bce00ad4d159b5310870d19011e.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;水果商店&quot;,&quot;ImgId&quot;:&quot;1b2c52668caf42b7a6d1bd14b41dd225.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;fruitshop0000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:51,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=fruitshop0000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Fruit Shop Christmas Edition&quot;,&quot;ImgId&quot;:&quot;82ef857ef22443119e6b7bc0e6b3c211.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;水果商店圣诞版&quot;,&quot;ImgId&quot;:&quot;a701a59acd0e49f59b1897d495db4ea5.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;fruitshopchristm&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:50,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=fruitshopchristm&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Fruit Shop Megaways&quot;,&quot;ImgId&quot;:&quot;5938e9ff1d0e4383811337918c73d6c4.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;水果商店 巨额路线&quot;,&quot;ImgId&quot;:&quot;82c447afdac44737a45ba9a1ebffde0b.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;fruitshopawaysr1&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:49,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=fruitshopawaysr1&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Fruit Spin&quot;,&quot;ImgId&quot;:&quot;c0ab861bd9414b75a3eabfd58d18eb51.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;水果转盘&quot;,&quot;ImgId&quot;:&quot;0b4eb8e98b1e4e478d307169ec6a02b7.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;jewelfruits00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:48,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=jewelfruits00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Gonzo&#39;s Quest&quot;,&quot;ImgId&quot;:&quot;2d5857040ea2490fb9a6de98c34ec0a7.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;贡佐的探险&quot;,&quot;ImgId&quot;:&quot;83516b6774354577899a13252a8dc415.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;eldorado00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:47,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=eldorado00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;热线&quot;,&quot;ImgId&quot;:&quot;5a6150695610460c95684403137309f8.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;},{&quot;Name&quot;:&quot;Hotline&quot;,&quot;ImgId&quot;:&quot;9df02ff6a59d420f85c14f3617f3027d.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;}],&quot;GameCode&quot;:&quot;hotline000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:43,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=hotline000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Hotline 2&quot;,&quot;ImgId&quot;:&quot;1605abfdb26d42f2af1759b684185e1d.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;热线 2&quot;,&quot;ImgId&quot;:&quot;c3304559249b4230a01ff807c7989c50.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;hotline2f1g10000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:42,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=hotline2f1g10000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Irish Pot Luck&quot;,&quot;ImgId&quot;:&quot;fd946670721c44dd91f4ffd79b0e7ae6.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;爱尔兰幸运罐子&quot;,&quot;ImgId&quot;:&quot;6167e3660c0a4543acf82d4e0cf3f691.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;irishpotluck0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:41,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=irishpotluck0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Jack and the Beanstalk&quot;,&quot;ImgId&quot;:&quot;78517ddb3a1b4bbc93bb3f9bbebfe66c.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;杰克和魔豆&quot;,&quot;ImgId&quot;:&quot;a50b6148cef74132bf96941291fc12bd.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;jackandbeanstalk&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:40,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=jackandbeanstalk&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Jack Hammer 2: Fishy Business&quot;,&quot;ImgId&quot;:&quot;b054a20df4d5492bad3e4975fa83fa29.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;杰克&#183;汉墨 2&quot;,&quot;ImgId&quot;:&quot;00791972f9e849b0a4c5fdbf89e36077.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;jackhammer200000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:39,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=jackhammer200000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Jingle Spin&quot;,&quot;ImgId&quot;:&quot;40e2f8436229434f851e7741aa6dc190.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;圣诞铃铛转盘&quot;,&quot;ImgId&quot;:&quot;ea6d11108cc44bdb972673fe829598c3.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;jinglespin000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:37,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=jinglespin000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Jungle Spirit: Call of the Wild&quot;,&quot;ImgId&quot;:&quot;634c2bf455804de49ace5b81139b03ed.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;丛林精灵：百搭互换&quot;,&quot;ImgId&quot;:&quot;2bbfbbc2198f4f3e971f100252b758b0.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;junglespirit0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:35,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=junglespirit0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Koi Princess&quot;,&quot;ImgId&quot;:&quot;d0e94d1b12f44493a356600f716564b1.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;锦鲤公主&quot;,&quot;ImgId&quot;:&quot;fed4010e7a7641c582fea12cbacffec3.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;koiprincess00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:34,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=koiprincess00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Lost Relics&quot;,&quot;ImgId&quot;:&quot;a7292ef2d9674a6fa6f83b56dec90308.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;失落遗迹&quot;,&quot;ImgId&quot;:&quot;32353da14c0742b2a1e869795af4cf64.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;lostrelics000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:33,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=lostrelics000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Parthenon: Quest for Immortality&quot;,&quot;ImgId&quot;:&quot;339caf30f98b4c0596090c16ed331c0c.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;帕台农神庙：探索永生&quot;,&quot;ImgId&quot;:&quot;a8cb4d50c63741329a751b4581cbc680.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;parthenonr100000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:29,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=parthenonr100000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Piggy Riches&quot;,&quot;ImgId&quot;:&quot;1e27a9927aae434a9b71f7e8d97ee419.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;财富小猪&quot;,&quot;ImgId&quot;:&quot;d160ecb22cf140798f25bac83cf7f034.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;piggyriches00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:28,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=piggyriches00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Pyramid: Quest for Immortality&quot;,&quot;ImgId&quot;:&quot;7855504e08a043a2add8140eb54b697c.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;金字塔：探索永生&quot;,&quot;ImgId&quot;:&quot;0a29e90f7be44e5c8c8b59aa0735115f.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;pyramid000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:27,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=pyramid000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Rage of the Seas&quot;,&quot;ImgId&quot;:&quot;99aae75b4628439cbeaa75eccf9d41fb.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;怒海狂涛&quot;,&quot;ImgId&quot;:&quot;b93205e1b2d545aab65f3fbe3446b7ea.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;rageoftheseas000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:26,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=rageoftheseas000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Reef Raider&quot;,&quot;ImgId&quot;:&quot;c4e6b44335bb4339875750e8f6bc8957.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;暗礁奇兵&quot;,&quot;ImgId&quot;:&quot;0122a10f297943998217a5305266f0f0.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;reefraiderr30000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:25,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=reefraiderr30000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Reel Rush&quot;,&quot;ImgId&quot;:&quot;26354227077a474f9dc6d55fa882f52f.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;赏金冲刺&quot;,&quot;ImgId&quot;:&quot;f9e187f794804868b2d315e33e2cefd9.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;reelrush00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:24,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=reelrush00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Riches of Midgard: Land and Expand&quot;,&quot;ImgId&quot;:&quot;6c5478eb93b844b7b4b2554df6396c33.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;米德加德的财富：出现并扩展&quot;,&quot;ImgId&quot;:&quot;4d67d548114546b593b7fb014fabdc70.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;richesofmdgardf1&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:23,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=richesofmdgardf1&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Rome: The Golden Age&quot;,&quot;ImgId&quot;:&quot;6c086ca0e801414ba7871571cefe557c.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;罗马：黄金时代&quot;,&quot;ImgId&quot;:&quot;d98d2a9bf44648ccaad545da45b8599e.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;romer20000000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:22,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=romer20000000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Scruffy Duck&quot;,&quot;ImgId&quot;:&quot;68650ea5e3144d0a8dbc2092e0efd3e1.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;邋遢鸭&quot;,&quot;ImgId&quot;:&quot;a7ab8ad7b52644d0a918de91bd9ef919.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;scruffyduck00000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:21,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=scruffyduck00000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Secret of the Stones&quot;,&quot;ImgId&quot;:&quot;10ac9d49fabc41cd801e0eff1efb71d8.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;古岩的奥秘&quot;,&quot;ImgId&quot;:&quot;56359ada98d445fd81ac3dbb6bc6116e.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;secretofthestone&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:20,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=secretofthestone&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Secrets of Atlantis&quot;,&quot;ImgId&quot;:&quot;cebc4919060043c6a4f1dc14d0463e82.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;亚特兰蒂斯的秘密&quot;,&quot;ImgId&quot;:&quot;1be35c624b514c5b84a6e78190a872a0.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;highlights000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:19,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=highlights000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Secrets of Christmas&quot;,&quot;ImgId&quot;:&quot;49a4d4b70641423e8ea06b87c6bba17a.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;圣诞秘密&quot;,&quot;ImgId&quot;:&quot;b55efc077f6d4da691106fccdc70342a.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;secretsofchristm&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:18,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=secretsofchristm&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Serengeti Kings&quot;,&quot;ImgId&quot;:&quot;c14d502cec7b44a98855b059d35100c3.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;塞伦盖蒂之王&quot;,&quot;ImgId&quot;:&quot;9e0c41684ffa4231bd935b07e39c94c6.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;serengetikings00&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:17,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=serengetikings00&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Space Wars&quot;,&quot;ImgId&quot;:&quot;9b6a85b65eff464a86862807531ba227.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;太空战争&quot;,&quot;ImgId&quot;:&quot;471d59fae8f64afab29979854082307a.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;spacewars0000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:16,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=spacewars0000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Starburst&quot;,&quot;ImgId&quot;:&quot;59578411faa7480fbbf60a1631c75cec.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;星光四射&quot;,&quot;ImgId&quot;:&quot;22880faec39448c6bae14fee99fa4ac9.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;starburst0000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:15,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=starburst0000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Starburst XXXtreme&quot;,&quot;ImgId&quot;:&quot;b3549ddbbb3c458fa354dad939c691ad.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;星光四射 超极限&quot;,&quot;ImgId&quot;:&quot;7f894d7685034d8ea814cf80e606f304.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;starbursttremef1&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:14,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=starbursttremef1&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Steam Tower&quot;,&quot;ImgId&quot;:&quot;eb4b3d9c791447bdb712423255b536ed.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;蒸汽之塔&quot;,&quot;ImgId&quot;:&quot;d83464b15bb64b32b8438442c60ba904.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;steamtower000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:13,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=steamtower000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Turn Your Fortune&quot;,&quot;ImgId&quot;:&quot;0d8836c0da804766b9dbbae6d2aeb222.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;幸运旋转&quot;,&quot;ImgId&quot;:&quot;9223afbdbcdd4a18a8edadebc6027358.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;turnyourfortune0&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:10,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=turnyourfortune0&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Twin Spin&quot;,&quot;ImgId&quot;:&quot;ed92d84832b1455288a405aef5f0db23.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;双子卷轴&quot;,&quot;ImgId&quot;:&quot;58b82873275e4ed9aa17b5e5be161ba8.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;twinspin00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:9,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=twinspin00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Twin Spin Megaways&quot;,&quot;ImgId&quot;:&quot;e68b7ba85e8245e7bbea098fa3ab477e.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;双子卷轴巨额路线&quot;,&quot;ImgId&quot;:&quot;2a51631bc94944a08c26ea3061a0bc85.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;twinspinmw000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:8,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=twinspinmw000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Victorious&quot;,&quot;ImgId&quot;:&quot;b4c4ccf191de436d87b075e2497a4fc1.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;凯旋&quot;,&quot;ImgId&quot;:&quot;86aa1c2bf9484040826f5bbf4382677d.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;victorious000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:7,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=victorious000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Warlords: Crystals of Power&quot;,&quot;ImgId&quot;:&quot;d994ba1e81a24d70af8e0338be4a5cf9.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;霸主：神力水晶&quot;,&quot;ImgId&quot;:&quot;c1393d049f8d4e8aac41c6b6b2873d75.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;warlords00000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:5,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=warlords00000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Wild Water&quot;,&quot;ImgId&quot;:&quot;66ef02292482461b8953b4f8adeb9801.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;激流勇进&quot;,&quot;ImgId&quot;:&quot;fd33dda199c54beaa21c7bd49d75c5d3.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;wildwater0000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:4,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=wildwater0000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Wild Wild West: The Great Train Heist&quot;,&quot;ImgId&quot;:&quot;c70c6e045b514c18919346587884249f.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;狂野西部：火车大劫案&quot;,&quot;ImgId&quot;:&quot;5a0dc7aaa8f94b11920659cb7265fdbd.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;wildwildwest0000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:3,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=wildwildwest0000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Wild Worlds&quot;,&quot;ImgId&quot;:&quot;cccd09160b4d4feab7fa4a2fbe482871.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;野蛮世界&quot;,&quot;ImgId&quot;:&quot;c8e1f4690c80451eb7aa47e657c24a37.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;wildworlds000000&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:2,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=wildworlds000000&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null},{&quot;Language&quot;:[{&quot;Name&quot;:&quot;Willy&#39;s Hot Chillies&quot;,&quot;ImgId&quot;:&quot;aac6292970bf44598b6f330cf0b26f61.png&quot;,&quot;Language&quot;:&quot;EN-US&quot;},{&quot;Name&quot;:&quot;威利的火热辣椒&quot;,&quot;ImgId&quot;:&quot;aebad76a28694901a22da775ba3f6e89.png&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;}],&quot;GameCode&quot;:&quot;willyshotchillie&quot;,&quot;GameName&quot;:&quot;&quot;,&quot;GameType&quot;:&quot;&quot;,&quot;SupportCurrency&quot;:&quot;CNY,IDR,KRW,MYR,THB,USD,VND&quot;,&quot;Category&quot;:&quot;SLOT&quot;,&quot;PoolName&quot;:&quot;&quot;,&quot;IsFun&quot;:0,&quot;IsTop&quot;:0,&quot;GameIndex&quot;:1,&quot;Platform&quot;:-1,&quot;TargetLink&quot;:&quot;/GamePage?Provider=NES&amp;GameCode=willyshotchillie&quot;,&quot;WebPageCatalog&quot;:&quot;EGAME&quot;,&quot;ProviderId&quot;:&quot;NES&quot;,&quot;ProviderName&quot;:null}],&quot;Category&quot;:[{&quot;DisplayValue&quot;:&quot;SLOT&quot;,&quot;Language&quot;:&quot;EN-MY&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;SLOT&quot;,&quot;Language&quot;:&quot;EN-US&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;SLOT&quot;,&quot;Language&quot;:&quot;ID-ID&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;SLOT&quot;,&quot;Language&quot;:&quot;KO-KR&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;สล็อต&quot;,&quot;Language&quot;:&quot;TH-TH&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;SLOT&quot;,&quot;Language&quot;:&quot;VI-VN&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;老虎机&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;,&quot;Category&quot;:&quot;SLOT&quot;},{&quot;DisplayValue&quot;:&quot;TABLE GAMES&quot;,&quot;Language&quot;:&quot;EN-MY&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;TABLE GAMES&quot;,&quot;Language&quot;:&quot;EN-US&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;TABLE GAMES&quot;,&quot;Language&quot;:&quot;ID-ID&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;TABLE GAMES&quot;,&quot;Language&quot;:&quot;KO-KR&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;เกมโต๊ะ&quot;,&quot;Language&quot;:&quot;TH-TH&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;BẢNG TR&#210; CHƠI&quot;,&quot;Language&quot;:&quot;VI-VN&quot;,&quot;Category&quot;:&quot;TABLE&quot;},{&quot;DisplayValue&quot;:&quot;桌面游戏&quot;,&quot;Language&quot;:&quot;ZH-CN&quot;,&quot;Category&quot;:&quot;TABLE&quot;}]}';
+    gameModule={"Game":[{"Language":[{"Name":"Aloha! Christmas","ImgId":"2aa9232b78c04d43aa6722ea91e8701a.png","Language":"EN-US"},{"Name":"阿罗哈！圣诞","ImgId":"a93c22781801440ea358f889f685eed4.png","Language":"ZH-CN"}],"GameCode":"alohaxmas0000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":76,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=alohaxmas0000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Aloha! Cluster Pays","ImgId":"febea6cae03a4cbab516d8c4b8c49f2f.png","Language":"EN-US"},{"Name":"阿罗哈！符号串赢奖","ImgId":"1310213518004dcdbe947783f80fb924.png","Language":"ZH-CN"}],"GameCode":"alohaj0r00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":75,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=alohaj0r00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"American Roulette","ImgId":"8e9b7187da904052b6cb47fccd59fff5.png","Language":"EN-US"},{"Name":"美式轮盘赌","ImgId":"dcfaf27f4aa948f8918b5e6b4d90b1d7.png","Language":"ZH-CN"}],"GameCode":"ameriroulette3ne","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"TABLE","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":74,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=ameriroulette3ne","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Asgardian Stones","ImgId":"e283394d2c414c598ce8ec6380941c75.png","Language":"EN-US"},{"Name":"仙宫宝石","ImgId":"b308abf0678a41399e7a4af4bea5d90d.png","Language":"ZH-CN"}],"GameCode":"asgardianstones0","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":73,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=asgardianstones0","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Baccarat","ImgId":"d312e543662d45049aa1db272faa8ec8.png","Language":"EN-US"},{"Name":"百家乐","ImgId":"eb25b573b4f24191984e06292fc24209.png","Language":"ZH-CN"}],"GameCode":"baccarat2ne00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"TABLE","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":72,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=baccarat2ne00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"BlackJack","ImgId":"279a495ec0ca4612930dba5ab350c449.png","Language":"EN-US"},{"Name":"二十一点","ImgId":"d0903f6b20a14bad9b02760a88a3d007.png","Language":"ZH-CN"}],"GameCode":"blackjack3ne0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"TABLE","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":71,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=blackjack3ne0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Blood Suckers","ImgId":"1b5ec52760f244f6aac5d3d34d5f9831.png","Language":"EN-US"},{"Name":"吸血男爵","ImgId":"140ce93b8f614b94b11ece277cb21124.png","Language":"ZH-CN"}],"GameCode":"bloodsuckersj0r2","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":70,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=bloodsuckersj0r2","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Blood Suckers II","ImgId":"db024dc6222d45a28777e16589efc399.png","Language":"EN-US"},{"Name":"吸血男爵 II","ImgId":"a980e3aa1464444a944d9bee4ae1faf9.png","Language":"ZH-CN"}],"GameCode":"bloodsuckers2000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":69,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=bloodsuckers2000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Butterfly Staxx","ImgId":"d62f1f828b74477eaa6c540c3d33e860.png","Language":"EN-US"},{"Name":"寻蝶记","ImgId":"af9a731a89bc468abec7095fbee839f8.png","Language":"ZH-CN"}],"GameCode":"butterflystaxx00","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":68,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=butterflystaxx00","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Butterfly Staxx 2","ImgId":"d1be4e6e542b49ac984e8b0a9f194154.png","Language":"EN-US"},{"Name":"寻蝶记 2","ImgId":"5a7807c390e24df7a96566903456734f.png","Language":"ZH-CN"}],"GameCode":"butterflystaxx20","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":67,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=butterflystaxx20","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Codex of Fortune","ImgId":"7ef653f26a554acba6a871e7b5e72459.png","Language":"EN-US"},{"Name":"财富法典","ImgId":"7e2a9dec7a7141f9891cc170a9a62759.png","Language":"ZH-CN"}],"GameCode":"codexoffortune00","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":66,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=codexoffortune00","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Dark King: Forbidden Riches","ImgId":"a1a299c3e23c4d569b4f627e899111fd.png","Language":"EN-US"},{"Name":"黑暗之王：禁忌财富","ImgId":"9f6182c2ef5346d8afcebcf206ef3997.png","Language":"ZH-CN"}],"GameCode":"darkking00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":65,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=darkking00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Dazzle Me","ImgId":"60a1509c7e5e49ecbf5f543ba9fb2d05.png","Language":"EN-US"},{"Name":"炫目宝石","ImgId":"ae2e9948a2784c5d9ea4e0f70beeed9f.png","Language":"ZH-CN"}],"GameCode":"dazzle0000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":64,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=dazzle0000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Dazzle Me Megaways","ImgId":"584d58e1891d4a87937cf5bc089ae99e.png","Language":"EN-US"},{"Name":"炫目宝石 巨额路线","ImgId":"06ad5efeab98484484f0d9f4f1f4e3b3.png","Language":"ZH-CN"}],"GameCode":"dazzlemwr3000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":63,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=dazzlemwr3000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Dead or Alive","ImgId":"f8dcad4913554b948e6cd4545ba6e8d8.png","Language":"EN-US"},{"Name":"亡命对决","ImgId":"8e58576563a3492b8da1ef4bee11bf94.png","Language":"ZH-CN"}],"GameCode":"deadoralive00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":62,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=deadoralive00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Dead or Alive 2","ImgId":"7717bd76899744e590da60a489053f09.png","Language":"EN-US"},{"Name":"亡命对决 2","ImgId":"9e9c71330e8243fd98346aa9a4b5048e.png","Language":"ZH-CN"}],"GameCode":"deadoralive20000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":61,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=deadoralive20000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Divine Fortune Megaways","ImgId":"564d1ec1bcbc4edf86b69e47f02d89ad.png","Language":"EN-US"},{"Name":"天赐好运 巨额路线","ImgId":"b8132d4f15c648b0a82b015eb7b9d9d0.png","Language":"ZH-CN"}],"GameCode":"divinemegaways00","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":60,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=divinemegaways00","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Double Stacks","ImgId":"a6eb8417fd0449d4a9d111c591f11f6b.png","Language":"EN-US"},{"Name":"双重堆叠","ImgId":"410380193ed440cc8ca755be71b33dc4.png","Language":"ZH-CN"}],"GameCode":"doublestacks0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":59,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=doublestacks0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Drive: Multiplier Mayhem","ImgId":"d323a4655c73416e951d920eab5f3e85.png","Language":"EN-US"},{"Name":"竞速：多重狂欢","ImgId":"99bc50de82c44267982871046d333353.png","Language":"ZH-CN"}],"GameCode":"multipliermayhem","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":58,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=multipliermayhem","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Elements: The Awakening","ImgId":"ffcc2ebe77154bb184ae34b1917f3401.png","Language":"EN-US"},{"Name":"元素：觉醒","ImgId":"44648c9343ad49afba2463eebf93157c.png","Language":"ZH-CN"}],"GameCode":"elements00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":57,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=elements00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"European Roulette","ImgId":"328464ba07de475aa8220b69620e1732.png","Language":"EN-US"},{"Name":"欧式轮盘","ImgId":"903c94ce548e4291aabb1d41f89f9438.png","Language":"ZH-CN"}],"GameCode":"europroulette3ne","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"TABLE","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":56,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=europroulette3ne","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Finn and the Swirly Spin","ImgId":"af1e020c3ece4d4f802b0929f0a1ae9f.png","Language":"EN-US"},{"Name":"精灵菲恩与漩涡转盘","ImgId":"25c20346032d4e188643c1c45233dec7.png","Language":"ZH-CN"}],"GameCode":"finn000000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":55,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=finn000000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Finn's Golden Tavern","ImgId":"006c291428bc48199066af24af274bad.png","Language":"EN-US"},{"Name":"菲恩的金酒馆","ImgId":"8727222eb9fe41bc8b77ab00b8b8efce.png","Language":"ZH-CN"}],"GameCode":"goldentavern0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":54,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=goldentavern0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Flowers","ImgId":"26150e7590d543109788f25a275fdfbb.png","Language":"EN-US"},{"Name":"花朵","ImgId":"6f0e07b1bd114b258b4b9eefe6c0b078.png","Language":"ZH-CN"}],"GameCode":"flowers000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":53,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=flowers000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"French Roulette","ImgId":"0a86e90ed03542a6844a792c81161df4.png","Language":"EN-US"},{"Name":"法式轮盘","ImgId":"00e24b6f2425433b880c191c34ad041c.png","Language":"ZH-CN"}],"GameCode":"frenchroulettene","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"TABLE","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":52,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=frenchroulettene","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Fruit Shop","ImgId":"adb14bce00ad4d159b5310870d19011e.png","Language":"EN-US"},{"Name":"水果商店","ImgId":"1b2c52668caf42b7a6d1bd14b41dd225.png","Language":"ZH-CN"}],"GameCode":"fruitshop0000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":51,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=fruitshop0000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Fruit Shop Christmas Edition","ImgId":"82ef857ef22443119e6b7bc0e6b3c211.png","Language":"EN-US"},{"Name":"水果商店圣诞版","ImgId":"a701a59acd0e49f59b1897d495db4ea5.png","Language":"ZH-CN"}],"GameCode":"fruitshopchristm","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":50,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=fruitshopchristm","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Fruit Shop Megaways","ImgId":"5938e9ff1d0e4383811337918c73d6c4.png","Language":"EN-US"},{"Name":"水果商店 巨额路线","ImgId":"82c447afdac44737a45ba9a1ebffde0b.png","Language":"ZH-CN"}],"GameCode":"fruitshopawaysr1","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":49,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=fruitshopawaysr1","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Fruit Spin","ImgId":"c0ab861bd9414b75a3eabfd58d18eb51.png","Language":"EN-US"},{"Name":"水果转盘","ImgId":"0b4eb8e98b1e4e478d307169ec6a02b7.png","Language":"ZH-CN"}],"GameCode":"jewelfruits00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":48,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=jewelfruits00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Gonzo's Quest","ImgId":"2d5857040ea2490fb9a6de98c34ec0a7.png","Language":"EN-US"},{"Name":"贡佐的探险","ImgId":"83516b6774354577899a13252a8dc415.png","Language":"ZH-CN"}],"GameCode":"eldorado00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":47,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=eldorado00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"热线","ImgId":"5a6150695610460c95684403137309f8.png","Language":"ZH-CN"},{"Name":"Hotline","ImgId":"9df02ff6a59d420f85c14f3617f3027d.png","Language":"EN-US"}],"GameCode":"hotline000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":43,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=hotline000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Hotline 2","ImgId":"1605abfdb26d42f2af1759b684185e1d.png","Language":"EN-US"},{"Name":"热线 2","ImgId":"c3304559249b4230a01ff807c7989c50.png","Language":"ZH-CN"}],"GameCode":"hotline2f1g10000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":42,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=hotline2f1g10000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Irish Pot Luck","ImgId":"fd946670721c44dd91f4ffd79b0e7ae6.png","Language":"EN-US"},{"Name":"爱尔兰幸运罐子","ImgId":"6167e3660c0a4543acf82d4e0cf3f691.png","Language":"ZH-CN"}],"GameCode":"irishpotluck0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":41,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=irishpotluck0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Jack and the Beanstalk","ImgId":"78517ddb3a1b4bbc93bb3f9bbebfe66c.png","Language":"EN-US"},{"Name":"杰克和魔豆","ImgId":"a50b6148cef74132bf96941291fc12bd.png","Language":"ZH-CN"}],"GameCode":"jackandbeanstalk","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":40,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=jackandbeanstalk","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Jack Hammer 2: Fishy Business","ImgId":"b054a20df4d5492bad3e4975fa83fa29.png","Language":"EN-US"},{"Name":"杰克·汉墨 2","ImgId":"00791972f9e849b0a4c5fdbf89e36077.png","Language":"ZH-CN"}],"GameCode":"jackhammer200000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":39,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=jackhammer200000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Jingle Spin","ImgId":"40e2f8436229434f851e7741aa6dc190.png","Language":"EN-US"},{"Name":"圣诞铃铛转盘","ImgId":"ea6d11108cc44bdb972673fe829598c3.png","Language":"ZH-CN"}],"GameCode":"jinglespin000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":37,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=jinglespin000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Jungle Spirit: Call of the Wild","ImgId":"634c2bf455804de49ace5b81139b03ed.png","Language":"EN-US"},{"Name":"丛林精灵：百搭互换","ImgId":"2bbfbbc2198f4f3e971f100252b758b0.png","Language":"ZH-CN"}],"GameCode":"junglespirit0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":35,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=junglespirit0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Koi Princess","ImgId":"d0e94d1b12f44493a356600f716564b1.png","Language":"EN-US"},{"Name":"锦鲤公主","ImgId":"fed4010e7a7641c582fea12cbacffec3.png","Language":"ZH-CN"}],"GameCode":"koiprincess00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":34,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=koiprincess00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Lost Relics","ImgId":"a7292ef2d9674a6fa6f83b56dec90308.png","Language":"EN-US"},{"Name":"失落遗迹","ImgId":"32353da14c0742b2a1e869795af4cf64.png","Language":"ZH-CN"}],"GameCode":"lostrelics000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":33,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=lostrelics000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Parthenon: Quest for Immortality","ImgId":"339caf30f98b4c0596090c16ed331c0c.png","Language":"EN-US"},{"Name":"帕台农神庙：探索永生","ImgId":"a8cb4d50c63741329a751b4581cbc680.png","Language":"ZH-CN"}],"GameCode":"parthenonr100000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":29,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=parthenonr100000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Piggy Riches","ImgId":"1e27a9927aae434a9b71f7e8d97ee419.png","Language":"EN-US"},{"Name":"财富小猪","ImgId":"d160ecb22cf140798f25bac83cf7f034.png","Language":"ZH-CN"}],"GameCode":"piggyriches00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":28,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=piggyriches00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Pyramid: Quest for Immortality","ImgId":"7855504e08a043a2add8140eb54b697c.png","Language":"EN-US"},{"Name":"金字塔：探索永生","ImgId":"0a29e90f7be44e5c8c8b59aa0735115f.png","Language":"ZH-CN"}],"GameCode":"pyramid000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":27,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=pyramid000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Rage of the Seas","ImgId":"99aae75b4628439cbeaa75eccf9d41fb.png","Language":"EN-US"},{"Name":"怒海狂涛","ImgId":"b93205e1b2d545aab65f3fbe3446b7ea.png","Language":"ZH-CN"}],"GameCode":"rageoftheseas000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":26,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=rageoftheseas000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Reef Raider","ImgId":"c4e6b44335bb4339875750e8f6bc8957.png","Language":"EN-US"},{"Name":"暗礁奇兵","ImgId":"0122a10f297943998217a5305266f0f0.png","Language":"ZH-CN"}],"GameCode":"reefraiderr30000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":25,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=reefraiderr30000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Reel Rush","ImgId":"26354227077a474f9dc6d55fa882f52f.png","Language":"EN-US"},{"Name":"赏金冲刺","ImgId":"f9e187f794804868b2d315e33e2cefd9.png","Language":"ZH-CN"}],"GameCode":"reelrush00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":24,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=reelrush00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Riches of Midgard: Land and Expand","ImgId":"6c5478eb93b844b7b4b2554df6396c33.png","Language":"EN-US"},{"Name":"米德加德的财富：出现并扩展","ImgId":"4d67d548114546b593b7fb014fabdc70.png","Language":"ZH-CN"}],"GameCode":"richesofmdgardf1","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":23,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=richesofmdgardf1","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Rome: The Golden Age","ImgId":"6c086ca0e801414ba7871571cefe557c.png","Language":"EN-US"},{"Name":"罗马：黄金时代","ImgId":"d98d2a9bf44648ccaad545da45b8599e.png","Language":"ZH-CN"}],"GameCode":"romer20000000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":22,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=romer20000000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Scruffy Duck","ImgId":"68650ea5e3144d0a8dbc2092e0efd3e1.png","Language":"EN-US"},{"Name":"邋遢鸭","ImgId":"a7ab8ad7b52644d0a918de91bd9ef919.png","Language":"ZH-CN"}],"GameCode":"scruffyduck00000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":21,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=scruffyduck00000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Secret of the Stones","ImgId":"10ac9d49fabc41cd801e0eff1efb71d8.png","Language":"EN-US"},{"Name":"古岩的奥秘","ImgId":"56359ada98d445fd81ac3dbb6bc6116e.png","Language":"ZH-CN"}],"GameCode":"secretofthestone","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":20,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=secretofthestone","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Secrets of Atlantis","ImgId":"cebc4919060043c6a4f1dc14d0463e82.png","Language":"EN-US"},{"Name":"亚特兰蒂斯的秘密","ImgId":"1be35c624b514c5b84a6e78190a872a0.png","Language":"ZH-CN"}],"GameCode":"highlights000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":19,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=highlights000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Secrets of Christmas","ImgId":"49a4d4b70641423e8ea06b87c6bba17a.png","Language":"EN-US"},{"Name":"圣诞秘密","ImgId":"b55efc077f6d4da691106fccdc70342a.png","Language":"ZH-CN"}],"GameCode":"secretsofchristm","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":18,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=secretsofchristm","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Serengeti Kings","ImgId":"c14d502cec7b44a98855b059d35100c3.png","Language":"EN-US"},{"Name":"塞伦盖蒂之王","ImgId":"9e0c41684ffa4231bd935b07e39c94c6.png","Language":"ZH-CN"}],"GameCode":"serengetikings00","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":17,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=serengetikings00","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Space Wars","ImgId":"9b6a85b65eff464a86862807531ba227.png","Language":"EN-US"},{"Name":"太空战争","ImgId":"471d59fae8f64afab29979854082307a.png","Language":"ZH-CN"}],"GameCode":"spacewars0000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":16,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=spacewars0000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Starburst","ImgId":"59578411faa7480fbbf60a1631c75cec.png","Language":"EN-US"},{"Name":"星光四射","ImgId":"22880faec39448c6bae14fee99fa4ac9.png","Language":"ZH-CN"}],"GameCode":"starburst0000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":15,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=starburst0000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Starburst XXXtreme","ImgId":"b3549ddbbb3c458fa354dad939c691ad.png","Language":"EN-US"},{"Name":"星光四射 超极限","ImgId":"7f894d7685034d8ea814cf80e606f304.png","Language":"ZH-CN"}],"GameCode":"starbursttremef1","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":14,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=starbursttremef1","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Steam Tower","ImgId":"eb4b3d9c791447bdb712423255b536ed.png","Language":"EN-US"},{"Name":"蒸汽之塔","ImgId":"d83464b15bb64b32b8438442c60ba904.png","Language":"ZH-CN"}],"GameCode":"steamtower000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":13,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=steamtower000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Turn Your Fortune","ImgId":"0d8836c0da804766b9dbbae6d2aeb222.png","Language":"EN-US"},{"Name":"幸运旋转","ImgId":"9223afbdbcdd4a18a8edadebc6027358.png","Language":"ZH-CN"}],"GameCode":"turnyourfortune0","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":10,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=turnyourfortune0","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Twin Spin","ImgId":"ed92d84832b1455288a405aef5f0db23.png","Language":"EN-US"},{"Name":"双子卷轴","ImgId":"58b82873275e4ed9aa17b5e5be161ba8.png","Language":"ZH-CN"}],"GameCode":"twinspin00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":9,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=twinspin00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Twin Spin Megaways","ImgId":"e68b7ba85e8245e7bbea098fa3ab477e.png","Language":"EN-US"},{"Name":"双子卷轴巨额路线","ImgId":"2a51631bc94944a08c26ea3061a0bc85.png","Language":"ZH-CN"}],"GameCode":"twinspinmw000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":8,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=twinspinmw000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Victorious","ImgId":"b4c4ccf191de436d87b075e2497a4fc1.png","Language":"EN-US"},{"Name":"凯旋","ImgId":"86aa1c2bf9484040826f5bbf4382677d.png","Language":"ZH-CN"}],"GameCode":"victorious000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":7,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=victorious000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Warlords: Crystals of Power","ImgId":"d994ba1e81a24d70af8e0338be4a5cf9.png","Language":"EN-US"},{"Name":"霸主：神力水晶","ImgId":"c1393d049f8d4e8aac41c6b6b2873d75.png","Language":"ZH-CN"}],"GameCode":"warlords00000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":5,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=warlords00000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Wild Water","ImgId":"66ef02292482461b8953b4f8adeb9801.png","Language":"EN-US"},{"Name":"激流勇进","ImgId":"fd33dda199c54beaa21c7bd49d75c5d3.png","Language":"ZH-CN"}],"GameCode":"wildwater0000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":4,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=wildwater0000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Wild Wild West: The Great Train Heist","ImgId":"c70c6e045b514c18919346587884249f.png","Language":"EN-US"},{"Name":"狂野西部：火车大劫案","ImgId":"5a0dc7aaa8f94b11920659cb7265fdbd.png","Language":"ZH-CN"}],"GameCode":"wildwildwest0000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":3,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=wildwildwest0000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Wild Worlds","ImgId":"cccd09160b4d4feab7fa4a2fbe482871.png","Language":"EN-US"},{"Name":"野蛮世界","ImgId":"c8e1f4690c80451eb7aa47e657c24a37.png","Language":"ZH-CN"}],"GameCode":"wildworlds000000","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":2,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=wildworlds000000","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null},{"Language":[{"Name":"Willy's Hot Chillies","ImgId":"aac6292970bf44598b6f330cf0b26f61.png","Language":"EN-US"},{"Name":"威利的火热辣椒","ImgId":"aebad76a28694901a22da775ba3f6e89.png","Language":"ZH-CN"}],"GameCode":"willyshotchillie","GameName":"","GameType":"","SupportCurrency":"CNY,IDR,KRW,MYR,THB,USD,VND","Category":"SLOT","PoolName":"","IsFun":0,"IsTop":0,"GameIndex":1,"Platform":-1,"TargetLink":"/GamePage?Provider=NES&GameCode=willyshotchillie","WebPageCatalog":"EGAME","ProviderId":"NES","ProviderName":null}],"Category":[{"DisplayValue":"SLOT","Language":"EN-MY","Category":"SLOT"},{"DisplayValue":"SLOT","Language":"EN-US","Category":"SLOT"},{"DisplayValue":"SLOT","Language":"ID-ID","Category":"SLOT"},{"DisplayValue":"SLOT","Language":"KO-KR","Category":"SLOT"},{"DisplayValue":"สล็อต","Language":"TH-TH","Category":"SLOT"},{"DisplayValue":"SLOT","Language":"VI-VN","Category":"SLOT"},{"DisplayValue":"老虎机","Language":"ZH-CN","Category":"SLOT"},{"DisplayValue":"TABLE GAMES","Language":"EN-MY","Category":"TABLE"},{"DisplayValue":"TABLE GAMES","Language":"EN-US","Category":"TABLE"},{"DisplayValue":"TABLE GAMES","Language":"ID-ID","Category":"TABLE"},{"DisplayValue":"TABLE GAMES","Language":"KO-KR","Category":"TABLE"},{"DisplayValue":"เกมโต๊ะ","Language":"TH-TH","Category":"TABLE"},{"DisplayValue":"BẢNG TRÒ CHƠI","Language":"VI-VN","Category":"TABLE"},{"DisplayValue":"桌面游戏","Language":"ZH-CN","Category":"TABLE"}]};
+</script>
+
+
+
+        </div>
+        
+<div class="submenu">
+    <div class="main_width borderdot">
+        <ul>
+            <li><a type="help" href="../Home/Contact.html" target="_blank">HUBUNGI KAMI</a></li>
+                <li>|&nbsp;&nbsp;<a href="http://qqgalaxyca.com/mobile/id-ID/Home/TransferDevice?SwitchDevice=I%2blCIQTHBGKUXCyhhiSU9YFIYfuOEpbYXT2StR2LwxaIA2TKyIY3S%2b1B%2fHuUSuUmqaTUNw6ope4%3d&amp;" target="_blank">GOTOWEBSITE</a></li>
+        </ul>
+        <span>Hak Cipta &#169; 2021 QQGALAXY Semua hak dilindungi undang-undang.</span>
+    </div>
+</div>
+    </div>
+
+
+    
+<div class="footer">
+    <div class="main_width">
+        <div class="footer_nav_list">
+                <div class="footer_nav_license">
+                    <h6>Lisensi</h6>
+                        <a><img src="../../Content/Web/common/images/license_logo_default.png" alt="license"></a>
+                </div>
+            
+<div class="footer_nav_resp">
+    <h6>Permainan yang Bertanggung Jawab</h6>
+    <a href="#">License</a>
+</div>
+<div class="footer_nav_browser">
+    <h6>Mendukung Peramban</h6>
+    <ol>
+        <li><a class="chrome" title="Chrome">Chrome</a></li>
+        <li><a class="firefox" title="Firefox">Firefox</a></li>
+        <li><a class="ie" title="IE">IE</a></li>
+        <li><a class="safari" title="Safari">Safari</a></li>
+    </ol>
+</div>
+
+        </div>
+        <div class="footer_nav_list" data-item="ckGame">
+            <h6>Pemberi</h6>
+            
+                <div class="provider_group col-12-width">
+                    <p>SPORTS</p>
+                    <ul>
+                                    <li><a class="logo_bet368" href=../GamePage8697.html?Provider=CDL&amp;RealMoney=True position="SportsBook" target="_blank" title="C-Sport">C-Sport</a></li>
+                                    <li><a class="logo_bti" href=../GamePagee233.html?Provider=BTL&amp;RealMoney=True position="SportsBook" target="_blank" title="B-Sport">B-Sport</a></li>
+                                    <li><a class="logo_sbobet" href=../GamePage5099.html?Provider=STL&amp;RealMoney=True position="SportsBook" target="_blank" title="S-Sport">S-Sport</a></li>
+                                    <li><a class="logo_isport" href=../GamePage9f13.html?Provider=ICL&amp;RealMoney=True position="SportsBook" target="_blank" title="i-Sport">i-Sport</a></li>
+                                    <li><a class="logo_opus" href=../GamePage4786.html?Provider=OPL&amp;GameCode=xs&amp;RealMoney=True position="SportsBook" target="_blank" title="O-Sport">O-Sport</a></li>
+                                    <li><a class="logo_iml" href=../GamePage158c.html?Provider=IML&amp;RealMoney=True position="SportsBook" target="_blank" title="IM-Sport">IM-Sport</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>CASINO</p>
+                    <ul>
+                                    <li><a class="logo_pragmatic" href=../GamePage0235.html?Provider=PPC&amp;GameCode=101&amp;RealMoney=True position="LiveCasino" target="_blank" title="PP Casino">PP Casino</a></li>
+                                    <li><a class="logo_mg" href=../GamePagef9e6.html?Provider=MGC&amp;GameCode=Baccarat&amp;RealMoney=True position="LiveCasino" target="_blank" title="MG Kasino">MG Kasino</a></li>
+                                    <li><a class="logo_ogplus" href=../GamePaged8ec.html?Provider=OGC&amp;GameCode=xo&amp;RealMoney=True position="LiveCasino" target="_blank" title="OG Kasino">OG Kasino</a></li>
+                                    <li><a class="logo_dg" href=../GamePage50e1.html?Provider=DGC&amp;GameCode=10101&amp;RealMoney=True position="LiveCasino" target="_blank" title="DG Kasino">DG Kasino</a></li>
+                                    <li><a class="logo_bg" href=../GamePage426c.html?Provider=BGC&amp;GameCode=10101&amp;RealMoney=True position="LiveCasino" target="_blank" title="BG Kasino">BG Kasino</a></li>
+                                    <li><a class="logo_gameplay" href=../GamePagebfb6.html?Provider=GPC&amp;RealMoney=True&amp;GameCode=2d position="LiveCasino" target="_blank" title="GP Kasino">GP Kasino</a></li>
+                                    <li><a class="logo_opus" href=../GamePageffb6.html?Provider=OPC&amp;GameCode=xx&amp;RealMoney=True position="LiveCasino" target="_blank" title="OPUS Kasino">OPUS Kasino</a></li>
+                                    <li><a class="logo_allbet" href=../GamePagec1d5.html?Provider=ABC&amp;RealMoney=True position="LiveCasino" target="_blank" title="Allbet Casino">Allbet Casino</a></li>
+                                    <li><a class="logo_ag" href=../GamePage4982.html?Provider=AGC&amp;RealMoney=True&amp;GameCode=1 position="LiveCasino" target="_blank" title="AG Kasino">AG Kasino</a></li>
+                                    <li><a class="logo_playtech" href=../GamePagec882.html?Provider=PT&amp;GameCode=7bal&amp;RealMoney=True position="LiveCasino" target="_blank" title="PT Kasino">PT Kasino</a></li>
+                                    <li><a class="logo_ebet" href=../GamePage4694.html?Provider=EBC&amp;GameCode=1&amp;RealMoney=True position="LiveCasino" target="_blank" title="EBET">EBET</a></li>
+                                    <li><a class="logo_sexy" href=../GamePage650a.html?Provider=SEC&amp;GameCode=MX-LIVE-001&amp;RealMoney=True position="LiveCasino" target="_blank" title="AE Sexy">AE Sexy</a></li>
+                                    <li><a class="logo_egccasino" href=../GamePagef091.html?Provider=EGC&amp;GameCode=game_shows&amp;RealMoney=True position="LiveCasino" target="_blank" title="Evo Casino">Evo Casino</a></li>
+                                    <li><a class="logo_sagaming" href=../GamePagedf3c.html?Provider=SAC&amp;GameCode=A1058&amp;RealMoney=True position="LiveCasino" target="_blank" title="SA Casino">SA Casino</a></li>
+                                    <li><a class="logo_wmcasino" href=../GamePage73db.html?Provider=WMC&amp;GameCode=Lobby&amp;RealMoney=True position="LiveCasino" target="_blank" title="WM Casino">WM Casino</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>SLOT</p>
+                    <ul>
+                                    <li><a class="logo_Spadegaming" href=SgsGames.html title="Spadegaming">Spadegaming</a></li>
+                                    <li><a class="logo_mg" href=MgsGames.html title="Microgaming">Microgaming</a></li>
+                                    <li><a class="logo_pragmatic" href=PpsGames.html title="Pragmatic Play">Pragmatic Play</a></li>
+                                    <li><a class="logo_booongo" href=BgsGames.html title="Boongo">Boongo</a></li>
+                                    <li><a class="logo_joker" href=JksGames.html title="Joker">Joker</a></li>
+                                    <li><a class="logo_pgsoft" href=PgsGames.html title="PG Soft">PG Soft</a></li>
+                                    <li><a class="logo_ygg" href=YgsGames.html title="YGG">YGG</a></li>
+                                    <li><a class="logo_habanero" href=HbsGames.html title="HABANERO">HABANERO</a></li>
+                                    <li><a class="logo_cq9" href=CqsGames.html title="CQ9 Slot">CQ9 Slot</a></li>
+                                    <li><a class="logo_playtech" href=Ptegames.html title="Playtech">Playtech</a></li>
+                                    <li><a class="logo_ttg" href=TtgGames.html title="TTG">TTG</a></li>
+                                    <li><a class="logo_betsoft" href=BssGames.html title="BETSOFT">BETSOFT</a></li>
+                                    <li><a class="logo_playson" href=PssGames.html title="Playson">Playson</a></li>
+                                    <li><a class="logo_playstar" href=PrsGames.html title="Playstar">Playstar</a></li>
+                                    <li><a class="logo_kingmaker" href=AwdGames.html title="AWC">AWC</a></li>
+                                    <li><a class="logo_yds" href=YdsGames.html title="DC Slot">DC Slot</a></li>
+                                    <li><a class="logo_aes" href=AesGames.html title="AE Slot">AE Slot</a></li>
+                                    <li><a class="logo_sws" href=SwsGames.html title="Skywind">Skywind</a></li>
+                                    <li><a class="logo_nes" href=NesGames.html title="NETENT">NETENT</a></li>
+                                    <li><a class="logo_nss" href=NssGames.html title="NSoft">NSoft</a></li>
+                                    <li><a class="logo_fss" href=FssGames.html title="Fastspin">Fastspin</a></li>
+                                    <li><a class="logo_bns" href=BnsGames.html title="BBIN">BBIN</a></li>
+                                    <li><a class="logo_jls" href=JlsGames.html title="JILI">JILI</a></li>
+                                    <li><a class="logo_cgs" href=CgsGames.html title="CG">CG</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>FISH</p>
+                    <ul>
+                                    <li><a class="logo_Spadegaming" href=SgsGames.html#FISHING title="SG FISH">SG FISH</a></li>
+                                    <li><a class="logo_joker" href=JksGames.html#FISHING title="Joker FISH">Joker FISH</a></li>
+                                    <li><a class="logo_pragmatic" href=PpsGames.html#FISHING title="PP FISH">PP FISH</a></li>
+                                    <li><a class="logo_cq9" href=CqsGames.html#FISHING title="CQ9 FISH">CQ9 FISH</a></li>
+                                    <li><a class="logo_playstar" href=PrsGames.html#FISHING title="Playstar FISH">Playstar FISH</a></li>
+                                    <li><a class="logo_playtech" href=Ptegames.html#FISHING title="PT Cash Fish">PT Cash Fish</a></li>
+                                    <li><a class="logo_bns" href=BnsGames.html#FISHING title="BBIN FISH">BBIN FISH</a></li>
+                                    <li><a class="logo_jls" href=JlsGames.html#FISHING title="JL FISH">JL FISH</a></li>
+                                    <li><a class="logo_fss" href=FssGames.html#FISHING title="FS FISH">FS FISH</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-12-width">
+                    <p>LOTTERY</p>
+                    <ul>
+                                    <li><a class="logo_qqkeno" href=../MaintenanceProviderfef2.html?Provider=KNN&amp;GameCode=keno position="Lottery" target="_blank" title="QQKENO">QQKENO</a></li>
+                                    <li><a class="logo_isport" href=../GamePagec6d1.html?Provider=ICL&amp;RealMoney=True&amp;GameCode=numbergame position="Lottery" target="_blank" title="Number Game">Number Game</a></li>
+                                    <li><a class="logo_qqnumber" href=../MaintenanceProvider208d.html?Provider=QNN&amp;GameCode=qnn position="Lottery" target="_blank" title="QQNumber">QQNumber</a></li>
+                    </ul>
+                </div>
+                <div class="provider_group col-5-width">
+                    <p>RACING</p>
+                    <ul>
+                    </ul>
+                </div>
+
+            <div class="clear"></div>
+                    <p> <h3 style="text-align: left;"><span style="color: #800080;">QQGalaxy Situs Judi Slot Online Resmi dan Terpercaya 2021</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Permainan judi online sekarang sudah menjadi salah satu kegiatan yang paling sering dimainkan oleh bettor seluruh dunia termasuk mereka yang tinggal di dalam negeri. Casino memiliki banyak sekali tipe permainan di dalamnya termasuk dengan slot online yang selalu dianggap sebagai judi terpopuler dibandingkan yang lainnya. Belum lagi jackpot online uang asli dalam bentuk progresif bisa kamu menangkan kalau kamu beruntung untuk mendapatkan kombinasi yang sama.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">3 Alasan Harus Gabung Dengan Situs Judi Slot Online Resmi QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Menemukan situs judi online terbaik saat ini bukan hal yang cukup mudah karena banyak situs saling bersaing satu dengan yang lainnya untuk dapat memberikanmu keuntungan yang maksimal. Kamu bisa mencari rekomendasi yang akan benar-benar memberikanmu referensi tentang situs terbaik yang kamu mau dan kamu bisa bergabung dengan QQGalaxy. Kamu yang sudah tidak asing dengan dunia judi online tentu akan mengetahui situs ini dengan baik dan banyak direkomendasikan bettor.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Ini merupakan situs judi slot online resmi yang terpercaya dan terbaik dengan reputasi terkenal yang bukan hanya berlaku di wilayah Indonesia saja melainkan juga di seluruh Asia. Bettor profesional banyak yang menyarankan para pemula untuk dapat bergabung dengan QQGalaxy ini apabila ingin bermain judi casino terbaik termasuk <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Slot-Games"><strong>slot online</strong></a> karena begitu banyak provider yang mereka gunakan di dalamnya. Keuntungannya pun juga berlimpah dan inilah alasan mengapa kamu harus coba gabung dengan QQGalaxy antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>1. Permainan Slot Online Terlengkap Bisa Deposit Pulsa</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Memiliki permainan slot beragam yang berasal dari berbagai provider terkenal di seluruh dunia seperti contohnya Spadegaming, <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Slot-Games/MgsGames"><strong>Microgaming</strong></a>, Pragmatic Play, Playtech dan lainnya yang semuanya dikenal sebagai perusahaan game dan judi online terbaik di dunia dengan pengalaman lebih dari belasan bahkan puluhan tahun.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>2. Situs Slot Online Terbaik dan Terpercaya</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Dibekali dengan banyak provider terbaik di permainan judi online slot ini menyebabkan terdapat ratusan bahkan ribuan judul mesin slot dengan tema yang unik dan juga berkesan untuk bettor. Ditambah lagi, kamu juga bukan hanya melihat tema yang bagus saja melainkan kamu juga akan melihat tipe slot berbeda yang disediakan untukmu seperti tipe klasik yang memiliki 3 reel, tipe modern yaitu video slot dengan 5 reel, tipe modern yang memiliki banyak payline, bonus slot dan sebagainya. Semua itu bisa kamu mainkan di dalam situs <a style="color: #800080;" href="https://95.111.195.144:20318/"><strong>QQGalaxy</strong></a> ini tanpa kesulitan atau batasan tertentu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>3. Judi Slot Online Jackpot Terbesar</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Situs QQGalaxy memberikanmu jackpot progresif untuk hampir semua mesin slot yang mereka miliki sehingga kamu akan bertambah semangat untuk melakukan taruhan dengan nominal jackpot online penghasil uang yang terus bertambah seiring dengan taruhan yang masuk ke dalamnya. Jackpot yang diberikan oleh mesin ini pun juga tidak dimulai dari nominal yang kecil karena starting point dari jackpot ini besar sehingga kalau ada bettor beruntung yang mendapatkannya lagi, maka mereka tidak akan kecewa dengan hasilnya.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Tips Daftar Jackpot Online di Dalam Situs QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Siapa yang tidak akan tertarik dengan hadiah yang besar apalagi jackpot di dalam permainan dengan metode memainkan yang begitu sederhana? QQGalaxy dianggap sebagai situs jackpot online Indonesia yang paling royal dalam memberikan hadiah dan ini semua dikarenakan semua provider yang bekerja sama dengan agen menyiapkan jackpot yang nominalnya bisa mengubah kehidupan bettor menjadi jauh lebih baik. Kini sudah waktunya kamu untuk gabung dengan situs tersebut.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tidak sulit sama sekali untuk mendapatkan akun di dalam QQGalaxy untuk bermain casino dan agen akan mempermudah sekaligus mempercepat seluruh macam prosesnya selama kamu sudah memegang dan memiliki syarat maupun prosedur yang dibutuhkan untuk melakukan registrasi. Kalau kamu ingin registrasi dengan lancar, maka ikuti dulu beberapa tips yang akan sangat membantu ini:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu sudah cukup umur untuk bermain di QQGalaxy karena hanya mereka yang berusia minimal 18 tahun ke atas yang boleh bermain judi online dan sudah dianggap dewasa untuk memiliki penghasilan sendiri dan bertanggung jawab atas diri mereka.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu sudah memiliki semua identitas atau informasi pribadi yang dibutuhkan untuk melakukan registrasi sehingga kamu tidak akan mendapatkan penolakan sama sekali. Pastikan kalau semua identitas yang kamu miliki termasuk dengan rekening bank itu atas namamu dan bukan nama orang lain atau meminjam karena kalau kamu meminjam milik orang lain bahkan meskipun itu adalah milik keluargamu sendiri, kamu akan ditolak oleh agen.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Pastikan kalau kamu tidak melakukan kesalahan ketik apapun ketika registrasi dan mengisi data diri karena kalau kamu salah ketik, maka ini bisa menjadi masalah dan akhirnya ada problem ketika transaksi dilakukan. Hal ini akan sangat fatal untukmu yang menginginkan keuntungan dan manfaat ketika bermain judi di dalam situs ini. Daripada kamu buru-buru untuk registrasi, lebih baik kamu pelan-pelan saja dalam mengetik sekaligus melakukan double check supaya kamu bisa tenang dan memastikan tidak ada kesalahan yang dibuat.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">- Ketika melakukan <a style="color: #800080;" href="https://95.111.195.144:20318/id-ID/Member/Register"><strong>register</strong></a> / daftar jackpot online, pastikan kalau kamu sudah percaya dengan peraturan yang terdapat di dalam situs tersebut dan terlebih lagi kamu juga harus mengikuti ketentuan yang diberikan sehingga kamu tidak akan lagi protes dengan apapun dan bisa bermain dengan lancar.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Apa Saja Keunggulan Permainan Jackpot Online Indonesia di Situs QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Meskipun slot online mungkin menjadi bintang atau produk yang paling sering dicari oleh bettor yang bergabung dengan QQGalaxy, tapi kamu harus tahu bahwa yang kamu mainkan di dalam situs tersebut bukan hanya slot online saja melainkan beragam permainan judi online lengkap dan menguntungkan untukmu. Kamu bisa bermain beragam jenis permainan judi casino yang lainnya seperti Baccarat, Blackjack dan sebagainya bahkan dalam versi live yang saat ini sedang disukai.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Kamu bahkan juga bisa memainkan togel di dalamnya karena agen QQGalaxy ini juga menyediakan permainan togel terbaik dari berbagai jenis pasaran yang ada di seluruh dunia plus adanya jackpot online togel yang menguntungkan untukmu dengan nominal menjanjikan. Kamu bisa memainkannya dengan lengkap dan terlebih lagi, masih ada pula keunggulan yang dimiliki QQGalaxy sebagai situs casino plus togel yang tidak akan dapat kamu temukan di dalam situs judi yang lainnya antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Judi Slot Deposit Pulsa 10 rb</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Sistem deposit yang sangat canggih karena sekarang kamu tidak lagi harus memainkan judi dengan metode deposit yang ribet atau harus membuat kamu mengantri di ATM. Selain memiliki sistem e-wallet yang canggih dengan dukungan banyak platform keuangan seperti OVO dan sebagainya, situs QQGalaxy ini juga menyediakan sistem paling canggih saat ini untuk deposit yaitu dengan menggunakan pulsa. Kamu cukup mengirimkan transfer pulsa dengan menggunakan provider ponsel yang sama yaitu Telkomsel dan dana itu bisa kamu gunakan untuk bermain judi yang kamu suka di dalam situs ini dan kalau menang, uang kemenangan itu akan langsung dikirimkan pada akun rekening milikmu dan bukan pulsa.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Dikelolah Oleh Agen Judi Online yang Profesional</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Semua permainan judi di dalam QQGalaxy selalu dimaintain atau dikelola dengan baik oleh provider masing-masing termasuk agen sehingga tidak akan ada masalah maupun kendala seperti error yang akan membuatmu tidak nyaman dalam bermain. Semuanya selalu dirawat dan dicek secara berkala sehingga bisa tetap memberikanmu pengalaman bermain judi online yang positif tanpa kamu harus bergabung dengan agen judi yang lainnya lagi. Dikarenakan cukup banyak provider yang gabung dengan situs ini, maka pengecekan berkala selalu dilakukan demi tetap menjaga keamanan dan kenyamanan semua member.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- 1 User ID untuk Semua Permainan</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">ukup menggunakan satu ID saja untuk memainkan semua jenis permainan judi yang kamu bisa temukan di dalam agen QQGalaxy ini tanpa harus mempersiapkan akun cadangan apapun. Entah kamu mau memainkan casino, togel atau slot dari berbagai macam provider yang ada di dalamnya, kamu hanya membutuhkan yang namanya satu ID saja sehingga tidak lagi harus melakukan registrasi kembali, kamu juga tidak perlu harus mengingat lebih banyak akun judi yang melelahkan dan sebagainya. Satu ID saja sudah cukup untuk membuatmu nyaman dalam bermain judi.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Download Jackpot Online Casino dan Togel</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Situs download jackpot online yang satu ini tidak lagi perlu dikhawatirkan sama sekali kredibilitas dari segi pelayanan yang diberikan sebab agen yang satu ini akan memberikanmu pelayanan bak raja yang cepat dan responsif. Kamu tidak harus menunggu CS untuk waktu lama dalam menjawab seluruh macam pertanyaan, kritik hingga masalah yang kamu miliki sebab CS disini profesional dan bukan pegawai dengan pengalaman yang masih sedikit. CS yang dimiliki agen QQGalaxy ini memiliki sikap yang ramah, sopan, cepat tanggap, bertanggung jawab, cerdas dalam memberikan solusi dan tidak akan meremehkanmu.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Situs QQGalaxy Unggul Dalam Hal Provider Jackpot Online Casino</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Keunggulan lain yang terlihat di dalam situs QQGalaxy ini adalah dari segi provider yang paling banyak karena provider yang dimiliki oleh agen ini adalah puluhan yang mana semuanya merupakan provider terkenal yang namanya bahkan dikenal bukan hanya di kalangan bettor saja melainkan mereka yang suka dengan permainan game online biasa. Inilah yang menyebabkan jackpot online casino yang agen ini tawarkan bahkan jauh lebih besar dibandingkan dengan situs judi serupa lain.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tak tanggung-tanggung bukan hanya slot online saja yang diberikan jackpot besar melainkan juga seluruh permainan casino di dalamnya termasuk game judi online di luar kategori casino sesuai dengan provider masing-masing. Memiliki provider satu saja itu sulit sebab agen yang mau bekerja sama dengan mereka harus memenuhi berbagai syarat yang diberikan dan diminta oleh provider ini supaya provider mau memberikan pelayanan servis permainan yang mereka inginkan untuk bisnis.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Bukan hanya harus memenuhi syarat dan juga lolos dari kualifikasi yang provider inginkan melainkan agen judi yang mau menggunakan permainan dan menawarkannya ke dalam situs mereka juga harus mengeluarkan modal sebab bekerja sama dengan provider itu tidak murah. Tentu saja provider juga berbisnis dan ingin untung supaya tetap bertahan sehingga agen harus mengeluarkan modal sesuai dengan nilai yang diminta untuk menggunakan seluruh permainan dan menawarkannya.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Keamanan Situs Slot Online Terbaik 2021 dari QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Melihat banyaknya provider ini, sudah pasti bettor akan berpikir bahwa situs slot online terbaik 2021 ini adalah QQGalaxy karena mereka bonafit dan sudah menunjukkan seberapa besar modal yang mereka miliki untuk dikembangkan ke dalam situs judi mereka. Untuk itulah, kamu sama sekali tidak perlu lagi meragukan situs yang satu ini dan bisa percaya kepada mereka sebab agen ini juga memberikan keamanan kepada semua member yang belum tentu bisa dilakukan oleh agen judi yang lainnya antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">A. Menggunakan teknologi yang canggih dan terbaru untuk sistem keamanan di dalam situs mereka sehingga identitas bettor semua yang bergabung dengan mereka tetap aman dan tidak akan digunakan untuk kepentingan yang lainnya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">B. Menyediakan bank yang terkenal di dalam metode deposit dan withdraw sehingga kamu tidak akan ragu untuk transfer dana maupun memberikan seluruh keterangan mengenai nama bank atau rekening kepada agen. Kamu tidak harus pula melakukan transfer antar bank sebab agen ini menyediakan semua bank yang terkenal dan dinilai bettor memiliki rekeningnya. Belum lagi kamu juga tidak harus melakukan transfer menuju bank luar negeri yang prosedurnya rumit dan bisa jadi justru gagal melakukannya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">C. Tidak akan menjual identitas yang kamu miliki kepada pihak ketiga hingga menyebabkan email yang kamu miliki itu penuh dengan spam yang asalnya bukan dari situs judi ini. Apabila kamu bergabung dengan agen judi lain dan menemukan spam di dalam kotak masuk email milikmu tapi bukan berasal dari agen tempat kamu bergabung dengan mereka, maka dapat dipastikan jika agen yang kamu pilih itu sudah melakukan penjualan identitas kepada pihak lain demi keuntungan mereka. QQGalaxy ini merupakan situs judi slot online terpercaya 2021 yang tidak akan melakukan tindakan seperti itu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">D. Fair dan bebas dari manipulasi atau kecurangan apapun. Mereka tidak menggunakan bot sama sekali pada sistem table games maupun meminta admin untuk memainkan judi sehingga bettor tidak bisa menang atau lainnya. Mereka juga tidak akan sama sekali menggunakan sistem atau software yang akan membuat permainan tertentu akan memberikan hasil yang tidak dapat dimenangkan atau apapun. Permainan slot online yang mereka punya pun juga merupakan permainan judi yang diatur sempurna oleh RNG sehingga hasilnya benar-benar acak dan hanya keberuntungan yang akan kamu gunakan.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Apa Kelebihan Mesin Slot di Dalam Situs Judi Slot Online Jackpot Terbesar QQGalaxy?</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">QQGalaxy benar-benar dikenal sebagai situs judi slot online jackpot terbesar akibat dukungan dari provider yang mereka pilih dan beberapa provider memang telah dikenal memiliki keunggulan yang lebih tinggi di bidang slot online daripada permainan casino yang lain sehingga wajar kalau bettor akan menikmati pengalaman seru bermain slot di dalamnya. Selain itu, slot yang dimiliki oleh agen ini memiliki beberapa keuntungan yang lebih baik daripada situs judi lain yang memiliki provider berbeda antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Tersedianya Ratusan Jenis Mesin Slot Online yang Aktraktif</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Slot online yang ada di dalam situs ini memiliki beragam tipe seperti yang telah disampaikan sebelumnya dan tema yang berbeda-beda dimana tema yang ada di dalam mesin ini sama sekali tidak akan membosankan seperti dulu. Jika dulu tema permainan slot hanya sekedar buah-buahan atau tema animasi biasa yang membosankan, kini provider sudah banyak mengembangkan permainan slot yang memiliki tema seperti film, superhero dan masih banyak lagi yang lainnya dan sesuai dengan apa yang masyarakat sukai saat ini.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tema di dalam slot online situs QQGalaxy ini dibuat bukan hanya untuk bagian depan atau covernya saja melainkan seluruh simbol yang terdapat di dalam <a style="color: #800080;" href="https://en.wikipedia.org/wiki/Slot_machine"><strong>mesin slot</strong></a> itu juga dibuat sesuai dengan temanya. Contohnya adalah Marvel dimana simbol di dalamnya adalah superhero terkenal yang sudah Anda sukai dengan beragam simbol khusus untuk hadiah tertentu di dalamnya sehingga semakin menarik secara visual dan tidak akan membosankan.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Mesin slot online yang terdapat di dalam situs ini juga berbeda dengan yang lain karena tidak hanya akan dimainkan dalam waktu yang singkat saja. Seperti yang kamu tahu, permainan slot online itu selalu selesai hanya dalam hitungan detik kecuali bettor mendapatkan beberapa bonus yang dapat memperpanjang waktu mereka bermain disana sebelum kemudian melakukan taruhan lagi untuk mulai bermain kembali. Slot online agen yang satu ini memiliki tema dimana tema itu akan muncul sebagai cerita atau narasi di dalam mesin slot tersebut sehingga bettor dapat menikmati cerita yang ada di dalamnya dan tidak hanya sekedar menekan tombol spin saja.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Game Slot RTP Tertinggi</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Nilai RTP yang dimiliki situs judi slot online resmi ini juga jauh lebih menguntungkan dibandingkan dengan nilai RTP yang terdapat di dalam mesin slot casino darat yang ada di seluruh dunia. Di dalam casino darat, nilai RTP mesin slot tidak besar atau bahkan jarang ada yang mencapai 90% karena mereka memiliki banyak sekali tanggungan pembayaran yang lain seperti menggaji karyawan, melakukan perawatan rutin di dalam casino dan sebagainya. Tapi nilai RTP mesin slot online yang ada di dalam situs judi QQGalaxy ini bahkan di atas 95% dan ada yang benar-benar mendekati 99% sehingga pengembalian atau return yang akan kamu dapatkan kalau berhasil menang itu sungguh besar nominalnya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;"><strong>- Free Spin Slot yang Mudah Didapatkan</strong></span></p>
+<p style="text-align: left;"><span style="color: #800080;">Berbeda dengan mesin slot jaman dulu yang bonusnya sedikit, mesin slot online yang terdapat di dalam QQGalaxy ini bonusnya banyak sehingga kamu juga tidak harus selalu mengeluarkan jumlah uang yang sama terus untuk bermain. Terdapat belasan bahkan puluhan bonus free spin di dalam mesin slot ini sehingga kamu bisa menggunakannya untuk menekan tombol spin tanpa harus dengan uang taruhan dan puluhan free spin itu bahkan terdapat di dalam satu mesin saja. Masih ada pula bonus game dimana kamu bisa mendapatkan bonus free spin atau yang lainnya dengan cara menyelesaikan mini game yang akan muncul di layar kamu apabila kamu mendapatkan kombinasi bonus game itu.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">7 Tips Bermain Aman di Situs Slot Online Terlengkap QQGalaxy</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Di dalam situs slot online terlengkap ini, kamu memiliki banyak peluang untuk menang dan memilih mesin slot mana yang paling kamu inginkan atau yang paling menguntungkan buatmu. Kamu diberikan kebebasan memainkan judi apapun selain slot online kalau kamu mau dan cukup mencari di dalam menu permainan kemudian temukan game yang kamu suka. Selanjutnya kamu melakukan deposit dan berjuang untuk mendapatkan kemenangan yang kamu harapkan di dalam permainan itu.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tapi kalau kamu begitu tertarik dengan permainan slot online yang begitu mendominasi situs QQGalaxy ini, maka kamu sebaiknya memiliki beberapa tips yang cukup membantumu untuk dapat meraih untung atau bisa juga kamu gunakan untuk mencegah kerugian besar yang selalu muncul. Dibandingkan dengan permainan judi yang lain, slot memang jauh lebih mudah tapi sayangnya house edge permainan ini cukup besar dan itu yang membuatmu tidak bisa selalu konsisten dalam meraih kemenangan.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Slot murni hanya kamu mainkan dengan mengandalkan hoki yang kamu punya dan untuk itulah, tidak ada yang dapat menebak kapan kamu akan berhasil menang, kapan kamu dapat jackpot atau yang lainnya. Semuanya murni keberuntungan dan hanya waktu yang bisa menentukannya sehingga kamu hanya cukup berjuang dan berusaha menang supaya kamu dapat memperoleh untung yang besar. Gunakan beberapa tips maupun saran berikut yang akan memberikanmu pencerahan dalam memainkan slot online di dalam agen QQGalaxy ini antara lain:</span></p>
+<p style="text-align: left;"><span style="color: #800080;">1. Pilih lebih dulu tipe mesin slot apa yang kamu mau mainkan karena hal ini juga nantinya akan berpengaruh terhadap berapa jumlah uang taruhan yang mau kamu gunakan, berapa target kemenangan yang mau kamu dapatkan dan sebagainya. Setiap mesin itu berbeda dimana mesin klasik yang memiliki 3 reel tidak memberikan hasil kemenangan sebesar video slot yang punya banyak payline atau baris pembayaran di dalam mesin itu. Kalau kamu suka dengan model permainan judi klasik yang lebih aman khususnya untuk taruhan, maka kamu bisa memainkan itu tapi kalau kamu ingin jackpot progresif yang besar, video slot 5 reel adalah pilihan yang tepat.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">2. Ketika kamu memainkan judi di dalam slot online terpercaya deposit pulsa ini dan mengincar jackpot progresif, maka kamu harus menyiapkan uang lebih dari cukup untuk digunakan melakukan taruhan maksimum sebab taruhan yang maksimum itu adalah yang kamu butuhkan untuk mengejar terus jackpot progresif dan meningkatkan nilainya. Kalau mesin slot itu meminta lima koin yang merupakan nilai maksimum taruhan, maka kamu harus setorkan setiap kali bermain lima koin itu karena jackpot di dalam permainan slot ini hanya bisa diperoleh kalau kamu bermain dengan taruhan maksimum saja.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">3. Selalu pilih slot yang nilai RTP melebihi 95% sebab makin tinggi RTP di dalamnya, makin besar pengembalian mesinnya sehingga kamu dapat menutupi jumlah kekalahan apabila berhasil mendapatkan hadiah kemenangan itu. Meskipun RTP di dalam slot online itu tinggi, kamu tetap harus bisa menentukan mana yang paling layak untuk kamu mainkan dan jangan hanya tertarik pada tema saja tapi lupa memperhatikan bahwa yang paling penting di dalam slot adalah persentase RTP-nya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">4. Lupakan tentang mitos ketika bermain slot online karena mitos itu tidak akan terjadi di dalam dunia slot dengan teknologi yang canggih ini. Mitos seperti mesin yang dingin bisa memberikanmu kemenangan lebih cepat sementara mesin yang panas itu sulit untuk dimenangkan karena begitu banyak bettor yang memainkannya. Tidak perlu percaya mitos semacam itu karena seperti yang telah disinggung sebelumnya dimana permainan slot ini hanya menggunakan RNG yang acak sehingga mesin manapun punya peluang yang sama dan kemenangan itu hanya keberuntungan yang akan menentukannya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">5. Memainkan slot online setiap hari bukan pilihan yang tepat karena hal ini akan merugikan kondisi keuanganmu sebab slot itu bisa menguras uang dengan cepat apabila pemasukan yang kamu punya tidak sebanding dengan pengeluaran yang dilakukan di dalam permainan judi itu. Kalau kamu mau memainkan slot lebih konsisten, pastikan pemasukan yang kamu punya itu cukup banyak dan kamu juga bisa memilih permainan judi lain di dalam situs QQGalaxy ini yang bisa memberikanmu uang seperti judi dengan strategi. Kalau kamu berhasil menang dengan menggunakan taktik yang kamu punya, maka sebagian uang yang kamu menangkan juga bisa digunakan untuk main slot.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">6. Mainkan semua tipe slot yang ada dan jangan hanya bergantung pada satu tipe apalagi satu judul slot saja karena kamu tidak tahu mesin mana di dalam situs itu yang akan memberikanmu kemenangan. Kamu tidak tahu mesin mana yang kamu bisa menangkan sehingga kamu jangan hanya bertahan cukup lama dalam satu mesin slot online apalagi sampai menghabiskan uang di dalam mesin itu karena merasa sebentar lagi kamu akan menang di dalamnya. Kalau kamu sudah kalah bahkan lebih dari 10 kali, sebaiknya jangan berpikir kamu akan menang sebentar lagi tapi hentikan permainanmu untuk saat ini atau lebih memilih mesin lain yang punya kesempatan besar.Lebih baik membuat jadwal ketika bermain slot karena main setiap hari atau setiap waktu itu juga beresiko pada kondisi finansial yang kamu punya apalagi kamu hidup tidak untuk main judi saja melainkan masih ada tanggung jawab dan keputusan yang lainnya. Selama kamu bisa mengatur jadwal main slot dengan dana yang kamu punya, maka kamu tidak akan rugi ketika memainkan slot. Jadwal yang kamu buat pun harus yang tepat dan mengandung dana di dalamnya yang mau kamu gunakan termasuk juga harus muncul yang namanya waktu seperti berapa kali kamu bermain slot per harinya.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">7. Jangan lupakan bonus karena bonus bukan hanya ditemukan di dalam mesin slot saja tapi agen QQGalaxy ini sudah memberikanmu bonus di luar permainan slot yang bisa kamu dapatkan supaya kamu pun bisa menggunakan uang bonus itu sebagai deposit untuk taruhan slot kembali. Kamu hanya cukup memaksimalkan usaha dan memenuhi syarat yang terdapat di dalamnya apakah kamu mau bonus deposit, bonus referral, bonus komisi mingguan, bonus cashback atau khusus untuk bettor baru, bonus new member. Kalau kamu konsisten memperoleh bonus, maka kamu pun bisa mengurangi beban taruhan yang kamu selalu harus keluarkan kalau kamu bermain slot.</span></p>
+<h3 style="text-align: left;"><span style="color: #800080;">Mainkan Game Slot Online Dimana Saja Dengan Sistem Mobile</span></h3>
+<p style="text-align: left;"><span style="color: #800080;">Meskipun bermain slot itu terkadang ada resikonya karena tidak sama seperti permainan judi yang lain, tapi judi yang satu ini adalah hiburan yang terbaik untuk semua bettor sebab mereka belum tentu akan menemukan lagi permainan judi menarik yang satu ini dengan menggunakan uang asli. Permainan slot online yang satu ini juga menguntungkan karena kamu bisa memainkanya mobile atau dengan menggunakan gadget mobile seperti tablet dan ponsel pintar tanpa harus duduk di depan layar monitor PC kamu lagi.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Kamu bisa memainkannya dimanapun kamu berada selama kamu terhubung dengan internet dan selama kamu punya cukup dana untuk taruhan. Kamu bisa iseng memainkannya karena siapa tahu keberuntungan akan memihakmu dengan cepat sekarang. Baik dengan PC maupun dengan mobile gadget, tidak akan ada yang berubah dari metode memainkannya, nominal taruhannya sampai dengan berapa jumlah hadiah yang kamu bisa menangkan di dalamnya sehingga kamu bisa pilih mana yang lebih nyaman.</span></p>
+<p style="text-align: left;"><span style="color: #800080;">Tak mengherankan lagi sekarang jika agen QQGalaxy ini disebut sebagai situs judi slot online terpercaya 2021 karena semua kecanggihan teknologi hingga keuntungannya bisa diraih sempurna oleh bettor dan agen tetap melayani dengan baik menggunakan pengalamannya bertahun-tahun di bisnis judi online ini.</span></p> </p>
+
+        </div>
+    </div>
+</div>
+    <div class="pagetop" title="Scroll Back to Top"></div>
+    <div class="downloadbar">
+        <p>DOWNLOAD</p>
+        <ul class="content">
+            <li><a class="android" href="../MobileExplorec31b.html?android">ANDROID<br />DOWNLOAD</a></li>
+            <li><a class="ios" href="../MobileExplore9e30.html?ios">IOS<br />DOWNLOAD</a></li>
+            
+        </ul>
+    </div>
+    <div class="siderbar  siderbar_close" id="siderbar">
+        <p>HUBUNGI KAMI<span>arrow</span></p>
+        <div class="content">
+            <dl class="memberser">
+                <dt>24<span>X</span>7</dt>
+                <dd>Layanan Pemain</dd>
+            </dl>
+            <ul class="liveitem">
+                <li><a href="../Home/GetLiveChat.html" target="livechat">LIVE HELP</a></li>
+                    <li><a class="joinselect notlogin" href="../Member/Register.html">BERGABUNG SEKARANG</a></li>
+            </ul>
+            <ul class="lang_nav">
+                            <li><a class="indo" title="Bahasa Indonesia" datafld="id-ID" group="lang" href="#">Indonesia</a></li>
+            </ul>
+            <div id="contact_col">
+                        <div class="contact_col">
+                            <span class="icon_contact_phone" contact-type="phone"></span>
+                            <a href="#">+6281384218101</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_whatsapp" contact-type="watsapp"></span>
+                            <a href="#">+6281384218101</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_line" contact-type="line"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_skype" contact-type="skype"></span>
+                            <a href="#">QQGalaxy</a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_wechat" contact-type="wechat"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_bbm" contact-type="bbm"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_email" contact-type="email"></span>
+                            <a href="#"><span class="__cf_email__" data-cfemail="b4e5e5d3d5d8d5cccd8c8c8d8df4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_yahoo" contact-type="yahoo"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_qq" contact-type="qq"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_kakaotalk" contact-type="kakaotalk"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_telegram" contact-type="telegram"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+                        <div class="contact_col">
+                            <span class="icon_contact_zalo" contact-type="zalo"></span>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://qqgalaxyca.com/Content/Web/library?v=ntj4GcOZ3ESAxq5fUEd_3fVVjtiCqlIeDNPP_T5IW7k1"></script>
+
+    <script>
+        var ckLogin = $('#CheckLogin').val().toUpperCase();
+    </script>
+    <script src="https://qqgalaxyca.com/Content/Web/basejs?v=qIGClSKkBvVeBp_1V-ZiVhIMThgKsleIc8Nfb8rXWq41"></script>
+
+
+    
+
+    
+    <script src="../../Content/Web/Scripts/pages/ProviderMaintenancePopup400b.js?c5e9a6"></script><script>
+         $("#loginPwd").keypress(function (e) {
+             var code = (e.keyCode ? e.keyCode : e.which);
+             if (code == 13) {
+                 $("#LoginButton").trigger('click');
+             }
+         });
+    </script>
+    <script src="https://qqgalaxyca.com/Content/Web/app/gamesjs?v=k6sfMy3sC3EG0HDKiwf-VmUcO1azP5FpJcbRlKB08OA1"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ('True' === 'False') {
+                CheckCashbackRule();
+                CheckFreeBetRule();
+            }
+            var contactSlider = "";
+            $('#contact_col').append(contactSlider);
+            $(document).on("click", "#GamePanel .game_slot button, #GamePanel a, [data-item='ckGame'] a, .product-modle a", function (e) {
+                var url = !$(this).attr("href") ? $(this).attr("data") : $(this).attr("href");
+                if (url && url.toLowerCase().indexOf("gamepage") > -1) {
+                    e.preventDefault();
+                    Experience($(this));
+                }
+            });
+
+            // https或http
+            const expiresTime = new Date(new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1); // 當天有效時間
+            $.cookie("protocol", location.protocol, { expires: expiresTime, path: '/' });
+            var getProtocol = $.cookie('protocol');
+            if ($.cookie('protocol')) {
+                if ((getProtocol == "https%3A" || getProtocol == "NesGames.html") && (location.protocol != "https%3A") && (location.protocol != "NesGames.html")) {
+                    window.location.href = window.location.origin.replace('NesGames.html','NesGames.html');
+                }
+            }
+        });
+    </script>
+
+    
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+<script type="text/javascript">
+  window.__lc = window.__lc || {};
+  window.__lc.license = 11674920;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+</script>
+<noscript>
+<a href="https://www.livechatinc.com/chat-with/11674920/" rel="nofollow">Chat with us</a>,
+powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+</noscript>
+<!-- End of LiveChat code -->
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+6281384218101", // WhatsApp number
+            call_to_action: "Klik disini untuk WA QQGalaxy", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+    </body>
+
+
+<!-- Mirrored from qqgalaxyca.com/id-ID/Slot-Games/NesGames by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Sep 2022 07:20:15 GMT -->
+</html>
